@@ -1,0 +1,2759 @@
+﻿UIComponent
+{
+	rollOverColor: #AADEFF;
+	selectionColor: #7FCDFE;
+	textRollOverColor:#666666;
+	textSelectedColor:#1e1e1e;
+	disabledColor:#1e2326;     
+	selectionDisabledColor: #000000;
+	modalTransparencyColor: #000000;
+	modalTransparency: 0.8;
+	backgroundDisabledColor: #1e2326;
+	disabledOverlayAlpha: 0.4;
+	fontFamily:simsun;
+	/*fontWeight:bold;*/
+	
+	backgroundColor:#111111;
+	backgroundAlpha:0;
+	
+	borderColor:#005555;
+	borderThickness:0;
+	borderAlpha:.5;
+	
+	
+	color: #fff1b3;
+    fontSize: 12;
+    textAlign: left;
+	
+    
+    textShadowStrength:10;
+    textShadowDistance: 0;
+    textShadowBlurX:2;
+    textShadowBlurY:2;
+    textShadowColor:#000000;
+    textShadowAlpha:0.8;
+}
+
+Slider
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 5;
+	paddingBottom: 5;
+
+
+	sliderTrackWidth: 10;
+	trackPaddingTop: 8;
+	trackPaddingBottom: 6;
+	trackSkin: Scale9Grid(source="projX_skin_swf", symbol="HSlider_TrackSkin");	
+	/*trackHighlightSkin: Scale9Grid(source="projX_skin_swf", symbol="HSlider_TrackHightLightSkin");	*/
+	thumbStyleName:.hsliderThumb;
+}
+
+.hsliderThumb
+{
+	upSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_ThumbSkin");
+	overSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_ThumbSkin"); 
+	downSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_ThumbSkin");
+	disabledSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_ThumbSkin");
+}
+
+.HSlider_Grid: HSlider
+{
+	sliderTrackWidth: 10;
+	trackSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_Grid_TrackSkin");	
+	thumbStyleName:.hslider_grid_Thumb;
+}
+
+.hslider_grid_Track
+{
+	upSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_Grid_TrackSkin");	
+	
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+}
+
+.hslider_grid_Thumb
+{
+	upSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_Grid_BarUpSkin");
+	overSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_Grid_BarOverSkin"); 
+	downSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_Grid_BarDownSkin");
+	disabledSkin: Left_Top(source="projX_skin_swf", symbol="HSlider_Grid_BarDownSkin");
+}
+
+/*
+Window
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin",paddingTop = "35");
+	headerBackgroundSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_headerSkin");
+	headerHeight: 35;
+	paddingTop: 7;
+	paddingLeft: 22;
+	paddingRight: 22;
+	paddingBottom: 17;
+	closeStyleName:.closeButton;
+	modalTransparencyColor: #ffffff;
+	modalTransparency: .2;
+	
+	headerPaddingTop: 11;
+	headerPaddingRight:12;
+	headerPaddingLeft: 30;
+	headerHorizontalGap: 5;
+	
+	color:#ffffff;
+	textShadowStrength:255;
+	textShadowDistance: 0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#1f0e0a;
+	textShadowAlpha:1;
+	
+	fontWeight:bold;
+	fontSize: 14;
+	
+}
+*/
+
+.G_Window_BrownBackground : Window
+{
+	/*upSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin");
+	paddingTop: 0;
+	paddingLeft: 6;
+	paddingRight: 6;
+	paddingBottom: 6;*/
+}
+
+.Window_NoHeader : Window
+{
+	upSkin:  Scale9Grid(source="projX_skin_swf", symbol="Window_NPC_Dialog",paddingLeft = "0");
+	headerBackgroundSkin: ;
+	headerHeight: 0;
+	paddingTop: 2;
+	paddingLeft: 2;
+	paddingRight: 5;
+	paddingBottom: 0;
+}
+
+
+
+
+
+.canvasWindow: Container
+{
+	paddingLeft: 4;
+	paddingRight: 4;
+	paddingTop: 4;
+	paddingBottom: 4;
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin") Scale9Grid(source="projX_skin_swf", symbol="Window_headerSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin") Scale9Grid(source="projX_skin_swf", symbol="Window_headerSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin") Scale9Grid(source="projX_skin_swf", symbol="Window_headerSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin") Scale9Grid(source="projX_skin_swf", symbol="Window_headerSkin");
+}
+
+
+/**/
+
+
+.alertWindow: Window
+{
+	/*upSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin") Scale9Grid(source="projX_skin_swf", symbol="Tab_Background_UpSkin",paddingTop="34",paddingLeft="6",paddingRight="6",paddingBottom="6");
+	headerBackgroundSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Tip_HeaderSkin");
+	headerHeight: 31;
+	headerPaddingTop: 6;
+	headerPaddingRight:8;
+	headerPaddingLeft: 8;
+	headerHorizontalGap: 5;
+	closeStyleName:;*/
+}
+/*	Tab	*/
+TabNavigator
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_Background_UpSkin");
+	headerHeight: 21;
+	tabBarStyleName: .tabNavigatorTab;
+	
+	paddingTop: 6;
+	paddingLeft: 7;             /*tab与底的左对齐间距*/
+	paddingRight: 7;
+	paddingBottom: 0;
+	
+	color:#dcdcdc;
+	textShadowStrength:255;
+	textShadowDistance: 1;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#946826;
+	textShadowAlpha:1;
+}
+
+TabBar
+{
+	tabStyleName: .G_Tab;
+}
+
+.tabNavigatorTab : TabBar
+{
+	tabStyleName: .G_Tab;
+	tabWidth:80;
+	paddingTop: 0;
+	paddingLeft: 10;             /*tab与底的左对齐间距*/
+	paddingRight: 0;
+	paddingBottom: 0;
+	horizontalGap: 6;
+}
+
+.G_Tab : SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Normal_DisableSkin"); 
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Normal_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Normal_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Normal_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Normal_DisableSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Selected_OverSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_Selected_OverSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="TabBar_SelectedSkin"); 
+	
+	paddingTop: 0;
+	paddingLeft: 20;
+	paddingRight: 20;
+	paddingBottom: 0;
+	
+	color: #80684f;
+	fontSize: 12;
+	textShadowStrength: 255;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #5f2d13;
+	textShadowAlpha: 1;
+	textAlign: center;
+
+	textRollOverColor: #bf9670;
+	textRollOverFontSize:12;
+	textRollOverShadowStrength:255;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:0;
+	textRollOverShadowBlurY:0;
+	textRollOverShadowColor: #5f2d13;
+	textRollOverShadowAlpha:1;
+	textRollOverAlign: center;
+
+	textDownColor:#bf9670;
+	textDownFontSize:12;
+	textDownShadowStrength:255;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:0;
+	textDownShadowBlurY:0;
+	textDownShadowColor:#5f2d13;
+	textDownShadowAlpha:1;
+	textDownAlign: center;
+
+	textDisableColor:#767676;
+	textDisableFontSize:12;
+	textDisableShadowStrength:255;
+	textDisableShadowDistance:0;
+	textDisableShadowBlurX:0;
+	textDisableShadowBlurY:0;
+	textDisableShadowColor:#5f2d13;
+	textDisableShadowAlpha:1;
+	textDisableAlign: center;
+	
+	textSelectedColor: #bf9670;
+	textSelectedFontSize: 12;
+	textSelectedShadowStrength: 255;
+	textSelectedShadowDistance: 0;
+	textSelectedShadowBlurX: 0;
+	textSelectedShadowBlurY: 0;
+	textSelectedShadowColor: #5f2d13;
+	textSelectedShadowAlpha: 1;
+	textSelectedAlign: center;
+	
+	textOverSelectedColor: #bf9670;
+	textOverSelectedFontSize: 12;
+	textOverSelectedShadowStrength: 255;
+	textOverSelectedShadowDistance: 0;
+	textOverSelectedShadowBlurX: 0;
+	textOverSelectedShadowBlurY: 0;
+	textOverSelectedShadowColor: #5f2d13;
+	textOverSelectedShadowAlpha: 1;
+	textOverSelectedAlign: center;
+	
+	textDownSelectedColor: #bf9670;
+	textDownSelectedFontSize: 12;
+	textDownSelectedShadowStrength: 255;
+	textDownSelectedShadowDistance: 0;
+	textDownSelectedShadowBlurX: 0;
+	textDownSelectedShadowBlurY: 0;
+	textDownSelectedShadowColor: #5f2d13;
+	textDownSelectedShadowAlpha: 1;
+	textDownSelectedAlign: center;
+	
+	fontWeight:normal;
+	textOverFontWeight:normal;
+	textDownFontWeight:normal;
+	textDisableFontWeight:normal;
+	textSelectedFontWeight:normal;
+	textOverSelectedFontWeight:normal;
+	textDownSelectedFontWeight:normal;
+	
+}
+
+ViewStack
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+}
+
+Box
+{
+	horizontalGap: 1;
+	verticalGap: 1;
+}
+
+
+.VBox_center_all:VBox
+{
+	horizontalAlign: center;
+	verticalAlign: center;
+}
+
+.HBox_center_all:HBox
+{
+	horizontalAlign: center;
+	verticalAlign: center;
+}
+
+.VBox_TextVGapControl:Vbox
+{
+	verticalGap: 0;
+}
+
+
+Tile
+{
+	disabledSkin:;
+	downSkin:;
+	overSkin:;
+	upSkin:;
+	horizontalGap: 2;
+	verticalGap: 2;
+}
+
+Container
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	backgroundAlpha: 0;
+	verticalGap: 2;
+	horizontalGap: 2;
+}
+/*  Canvas */
+
+Canvas
+{
+	disabledSkin:;
+	downSkin:;
+	overSkin:;
+	upSkin:;
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	backgroundAlpha: 0;
+}
+
+.G_GTab_BackgroundSkin: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Tab_Background_UpSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Tab_Background_UpSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Tab_Background_UpSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Tab_Background_UpSkin");
+	paddingLeft: 2;
+	paddingRight: 2;
+	paddingTop: 8;
+	paddingBottom: 0;
+}
+/*
+	如.G_DarkBrown_NoBorder_Rightangle，为矩形，DarkBrown为颜色，NoBorder边框情况，Rightangle为直角，Fillet为圆角
+*/
+
+
+.G_Line_Horizontal: Container
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal",bottom = "0");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal",bottom = "0");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal",bottom = "0");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal",bottom = "0");
+}
+
+.G_Line_Horizontal_02: Container
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal_02");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal_02");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal_02");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LineHorizontal_02");
+}
+
+.G_Canvas_01: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_01_UpSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_01_UpSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_01_UpSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_01_UpSkin");
+	
+	paddingTop: 5;
+	paddingLeft: 7;
+	paddingRight: 7;
+	paddingBottom: 2;
+}
+
+.G_Canvas_02: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_02_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_02_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_02_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_02_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	
+	paddingTop: 4;
+	paddingLeft: 4;
+	paddingRight: 4;
+	paddingBottom: 4;
+	horizontalGap: 2;
+	verticalGap: 2;
+}
+
+.G_Canvas_03: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_04_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_04_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_04_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_04_UpSkin",paddingLeft = "-3",paddingRight = "-3",paddingTop = "-3",paddingBottom = "-3");
+	
+	paddingTop: 10;
+	paddingLeft: 10;
+	paddingRight: 10;
+	paddingBottom: 5;
+	horizontalGap: 2;
+	verticalGap: 2;
+}
+
+.G_ItemList_Background: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_03_ItemListBack",paddingLeft = "-4",paddingRight = "-4",paddingTop = "-4",paddingBottom = "-4");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_03_ItemListBack",paddingLeft = "-4",paddingRight = "-4",paddingTop = "-4",paddingBottom = "-4");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_03_ItemListBack",paddingLeft = "-4",paddingRight = "-4",paddingTop = "-4",paddingBottom = "-4");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_03_ItemListBack",paddingLeft = "-4",paddingRight = "-4",paddingTop = "-4",paddingBottom = "-4");
+	
+	paddingTop: 5;
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingBottom: 5;
+	horizontalGap: 2;
+	verticalGap: 2;
+}
+
+.G_ListItem_MouseEnable: Container 
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas");
+}
+
+.G_ListItem_SelectedSkin: Container 
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_Background");
+}
+
+.G_ListItem_02_SelectedSkin: Container 
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_02_Background");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_02_Background");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_02_Background");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Title_02_Background");
+}
+
+.G_LightGrey_NoBorder_Rectangle: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip_backgroundSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip_backgroundSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip_backgroundSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip_backgroundSkin");
+}
+
+.guide_Yellow_BrownBorder_Fillet: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Window_WithTile");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Window_WithTile");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Window_WithTile");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Window_WithTile");
+}
+
+.lineupBackLight: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Light");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Light");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Light");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Light");
+}
+
+.lineupBackDark: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Dark");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Dark");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Dark");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="LineupBack_Dark");
+}
+
+
+
+.ProgressBar_Big_01 : ProgressBar
+{
+	trackSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Large_01_TrackSkin");
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Large_01_BarSkin");
+	
+	trackPaddingLeft: 0;
+	trackPaddingRight: 0;
+	trackPaddingTop: 0;
+	trackPaddingBottom: 0;
+	
+	barPaddingLeft: 2;
+	barPaddingRight: 2;
+	barPaddingTop: 2;
+	barPaddingBottom: 0;
+	
+	color: #ffffff;
+}
+
+
+/*
+.ProgressBar_Green : ProgressBar
+{
+	trackSkin: Left_Top(source="projX_skin_swf", symbol="Progress_Fixed_Green_TrackSkin",tile = "true");
+	barSkin: Left_Top(source="projX_skin_swf", symbol="Progress_Fixed_Green_BarSkin",tile = "true") Scale9Grid(source="projX_skin_swf", symbol="Progress_Fixed_Green_HightLightSkin",paddingRight = "-2");
+	
+	trackPaddingLeft: 0;
+	trackPaddingRight: 0;
+	trackPaddingTop: 0;
+	trackPaddingBottom: 0;
+	
+	barPaddingLeft: 5;
+	barPaddingRight: 5;
+	barPaddingTop: 3;
+	barPaddingBottom: 0;
+	
+	barMotionFrames: 5;
+}
+*/
+
+.progressBar_Vip: ProgressBar
+{
+ 	trackSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Vip_TrackSkin");
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Vip_BarSkin");
+	barPaddingLeft: 3;
+	barPaddingRight: 3;
+	barPaddingTop: 3;
+	color: #ffffff;
+	fontWeight: bold;
+}
+
+
+.mainUIGreenProgressBar: ProgressBar
+{
+ 	trackSkin: ;/*Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_TrackSkin");*/
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_Green_BarSkin");
+	barPaddingTop: 0;
+	barPaddingLeft: 0;
+	barPaddingRight: 0;
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #342319;
+	textShadowAlpha: 1;
+	textPaddingLeft: 2;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 5;
+}
+
+.mainUIYellowProgressBar: ProgressBar
+{
+	trackSkin: ;/*Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_TrackSkin");*/
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_Yellow_BarSkin");
+	barPaddingTop: 0;
+	barPaddingLeft: 0;
+	barPaddingRight: 0;
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #342319;
+	textShadowAlpha: 1;
+	textPaddingLeft: 2;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 5;
+}
+
+.mainUIBlueProgressBar: ProgressBar
+{
+	trackSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_TrackSkin");
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_Blue_BarSkin");
+	barPaddingTop: 4;
+	barPaddingLeft: 7;
+	barPaddingRight: 7;
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #342319;
+	textShadowAlpha: 1;
+	textPaddingLeft: 2;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 5;
+}
+
+.mainUIPurpleProgressBar: ProgressBar
+{
+ 	trackSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_TrackSkin");
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_Purple_BarSkin");
+	barPaddingTop: 4;
+	barPaddingLeft: 7;
+	barPaddingRight: 7;
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #342319;
+	textShadowAlpha: 1;
+	textPaddingLeft: 2;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 5;
+}
+
+.mainUIRedProgressBar: ProgressBar
+{
+ 	trackSkin: Scale9Grid(source="projX_skin_swf", symbol=" ProgressBar_Main_TrackSkin");
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="ProgressBar_Main_Red_BarSkin");
+	barPaddingTop: 4;
+	barPaddingLeft: 7;
+	barPaddingRight: 7;
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #342319;
+	textShadowAlpha: 1;
+	textPaddingLeft: 2;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 5;
+}
+
+.yellowGridProgressBar: ProgressBar
+{
+ 	trackSkin: Left_Top(source="projX_skin_swf", symbol="ProgressProduce_TrackSkin");
+	barSkin: Left_Bottom(source="projX_skin_swf", symbol="ProgressProduce_BarSkin", tile="true",bottom = "0");
+	barPaddingTop: 0;
+	barPaddingLeft: 0;
+	barPaddingRight: 0;
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #342319;
+	textShadowAlpha: 1;
+	textPaddingLeft: 2;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 5;
+}
+
+.progressFightBlue: ProgressBar
+{
+ 	trackSkin: ;
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="Progress_Fight_Blue");
+	
+	trackPaddingLeft: 0;
+	trackPaddingRight: 0;
+	trackPaddingTop: 0;
+	trackPaddingBottom: 0;
+	
+	barPaddingLeft: 0;
+	barPaddingRight: 0;
+	barPaddingTop: 0;
+	barPaddingBottom: 0;
+	
+	barMotionFrames: 0;
+}
+
+.progressFightYellow: ProgressBar
+{
+ 	trackSkin: ;
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="Progress_Fight_Yellow");
+	
+	trackPaddingLeft: 0;
+	trackPaddingRight: 0;
+	trackPaddingTop: 0;
+	trackPaddingBottom: 0;
+	
+	barPaddingLeft: 0;
+	barPaddingRight: 0;
+	barPaddingTop: 0;
+	barPaddingBottom: 0;
+	
+	barMotionFrames: 0;
+}
+
+.progressLargeGreen: ProgressBar
+{
+ 	trackSkin: Scale9Grid(source="projX_skin_swf", symbol="Progress_Large_TrackSkin");
+	barSkin: Scale9Grid(source="projX_skin_swf", symbol="Progress_Large_BarSkin");
+	
+	trackPaddingLeft: 0;
+	trackPaddingRight: 0;
+	trackPaddingTop: 0;
+	trackPaddingBottom: 0;
+	
+	barPaddingLeft: 0;
+	barPaddingRight: 0;
+	barPaddingTop: 0;
+	barPaddingBottom: 0;
+	
+	barMotionFrames: 0;
+	
+	color: #ffffff;
+	fontWeight: bold;
+}
+
+
+
+
+DataGrid
+{
+	headerPaddingTop: 0;
+	headerBackgroundSkin: Scale9Grid(source="projX_skin_swf", symbol="DataGrid_HeaderSkin");
+	/*headerCellSkin: Scale9Grid(source="projX_skin_swf", symbol="DataGrid_HeaderSkin");*/
+	headerHeight: 22;
+	headerGap: 1;
+	headerLines: true;
+	headerLineColor: #442e1e; 
+	headerTextAlign: center;
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="DataGrid_UpSkin",paddingTop = "22");
+	
+	/*footerBackgroundSkin: Scale9Grid(source="projX_skin_swf", symbol="N_GataGridHeaderSkin");*/
+	footerHeight: 4;
+	
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingTop: 0;
+	paddingBottom: 0;
+	
+	verticalGap: 1;
+	horizontalGridLines: false;
+	horizontalGridLineColor: #81694f;
+	
+	horizontalGap: 1;
+	verticalGridLines: true;
+	verticalGridLineColor: #442e1e;
+	
+	backgroundAlpha:0;
+	/*backgroundColor: #787878;*/
+	dataEditableBackgroundAlpha:1;
+	dataEditableBackgroundColor: #333333;
+	
+	rollOverColor: #f8d688;
+	selectionColor:#f8d688;
+	
+	color: #ffffff;
+	textRollOverColor: #ffffff;
+	textSelectedColor: #ffffff;
+	headerColor:#ffffff;
+	
+	oddLineBackgroundColor: #e5c983;
+	oddLineBackgroundAlpha: 1;
+	
+	evenLineBackgroundColor: #d3b875;
+	evenLineBackgroundAlpha: 1;
+	
+	rollOverLineSkin:; 
+	selectionLineSkin:; 
+	
+}
+
+Image
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	
+	brokenSkin: Scale9Grid(source="projX_skin_swf", symbol="Window_CloseBtn_upskin");
+	backgroundAlpha:0;
+	backgroundColor:#ffffff;
+}
+
+
+
+.toolTipWithArrow: Container
+{
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip",paddingBottom = "12") hcenter_bottom(source="projX_skin_swf", symbol="ToolTip_Arrow",hcenter = "0",bottom = "0");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip",paddingBottom ="12") hcenter_bottom(source="projX_skin_swf", symbol="ToolTip_Arrow",hcenter = "0",bottom = "0");
+	paddingLeft: 3;
+	paddingRight: 3;
+	paddingTop: 3;
+	paddingBottom: 3;
+}
+
+.toolTipContainer: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip");
+	headerBackgroundSkin: ;
+	headerHeight: 0;
+	paddingLeft: 3;
+	paddingRight: 3;
+	paddingTop: 3;
+	paddingBottom: 3;
+}
+
+.tooltipLabel: Label
+{
+	color: #ffffff;
+	fontWeight: normal;
+	textShadowStrength:155;
+	textShadowBlurX: 1;
+	textShadowBlurY: 1;
+	textShadowColor: #000000;
+	textShadowAlpha: 1;
+	
+}
+
+
+
+.labelAlignRight: Label
+{
+	color: #dcdcdc;
+	textAlign: right;
+}
+
+.labelAlignCenter: Label
+{
+	color: #dcdcdc;
+	textAlign: center;
+}
+
+.loginLevelLabel: Label
+{
+	color: #fffad4;
+	textAlign: center;
+	fontWeight:bold;
+	fontSize: 20;
+	textShadowStrength: 155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #e75200;
+	textShadowAlpha: 1;
+}
+
+TextInput
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="TextInput_upSkin"); 
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="TextInput_overSkin");
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingTop: 5;
+	color: #dcdcdc; 
+	textPaddingTop:2;
+}
+
+
+
+.textInputLoginRoleName:  TextInput
+{
+	upSkin: ; 
+	overSkin: ;
+	downSkin: ;
+	disabledSkin: ;
+	color: #ffd479;
+	textAlign: center;
+	fontWeight:bold;
+	fontSize: 14;
+	textShadowStrength: 155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #000000;
+	textShadowAlpha: 1;
+}
+
+Label
+{
+	color: #dcdcdc;
+	fontSize:12;
+}
+
+
+TextArea
+{
+	paddingLeft: 5;
+	paddingRight: 5;
+	paddingTop: 5;
+	paddingBottom: 5;
+	color:  #dcdcdc; 
+	fontSize: 12;
+	textPaddingRight: 2;
+	textPaddingRight: 2;
+	textLeading:4;
+	textShadowStrength:0;
+}
+
+
+
+Text
+{
+	color:#dcdcdc;
+	textLeading:4;
+}
+
+
+LinkButton
+{
+	disabledSkin: ;
+	downSkin: ;
+	overSkin: ;
+	upSkin: ;
+	
+	color: #75F761;
+	textShadowStrength: 10;
+	textShadowDistance: 0;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #000000;
+	textShadowAlpha: 0.5;
+	textAlign: center;
+	fontWeight: normal;
+	textDecoration: underline;
+	
+	textRollOverColor: #ffffff;
+	textRollOverFontSize:12;
+	textRollOverFontWeight: normal;
+	textRollOverShadowStrength: 10;
+	textRollOverShadowDistance: 0;
+	textRollOverShadowBlurX: 4;
+	textRollOverShadowBlurY: 4;
+	textRollOverShadowColor: #000000;
+	textRollOverShadowAlpha: 0.8;
+	textRollOverDecoration: underline;
+	
+	textDownColor:#75F761;
+	textDownFontSize:12;
+	textDownFontWeight: normal;
+	textDownDecoration:normal;
+	textDownShadowStrength:10;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:4;
+	textDownShadowBlurY:4;
+	textDownShadowColor:#000000;
+	textDownShadowAlpha:1;
+	textRollDownDecoration: underline;
+	
+	disabledColor: #b5b5b5;
+	textDisabledShadowStrength: 0;
+	textDisabledShadowDistance: 0;
+	textDisabledShadowBlurX: 0;
+	textDisabledShadowBlurY: 0;
+	textDisabledShadowColor: #ffffff;
+	textDisabledShadowAlpha: 0;
+	textDisabledAlign: center;
+	textDisabledFontWeight: normal;
+	textDisabledDecoration: normal;
+}
+
+.linkButton_left: LinkButton
+{
+	textAlign: left;
+}
+
+.Link_White_N_Brown: LinkButton
+{
+	disabledSkin: ;
+	downSkin: ;
+	overSkin: ;
+	upSkin: ;
+	
+	color: #ffffff;
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #ffffff;
+	textShadowAlpha: 0;
+	textAlign: center;
+	fontWeight: normal;
+	textDecoration: normal;
+	
+	textRollOverColor: #ffffff;
+	textRollOverFontSize:12;
+	textRollOverFontWeight: normal;
+	textRollOverShadowStrength: 155;
+	textRollOverShadowDistance: 0;
+	textRollOverShadowBlurX: 2;
+	textRollOverShadowBlurY: 2;
+	textRollOverShadowColor: #e7b05b;
+	textRollOverShadowAlpha: 1;
+	textRollOverDecoration: normal;
+	
+	textDownColor:#ffffff;
+	textDownFontSize:12;
+	textDownFontWeight: normal;
+	textDownDecoration:normal;
+	textDownShadowStrength:155;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:2;
+	textDownShadowBlurY:2;
+	textDownShadowColor:#e7b05b;
+	textDownShadowAlpha:1;
+	textRollDownDecoration: normal;
+	
+	disabledColor: #b5b5b5;
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #ffffff;
+	textShadowAlpha: 0;
+	textAlign: center;
+	fontWeight: normal;
+	textDecoration: normal;
+}
+
+.Link_Yellow_B_Black: LinkButton
+{
+	disabledSkin: ;
+	downSkin: ;
+	overSkin: ;
+	upSkin: ;
+	
+	color: #ffde00;
+	textShadowStrength: 155;
+	textShadowDistance: 0;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #000000;
+	textShadowAlpha: 1;
+	textAlign: center;
+	fontWeight: bold;
+	textDecoration:underline;
+	
+	textRollOverColor: #f78d1c;
+	textRollOverFontSize:12;
+	textRollOverFontWeight: bold;
+	textRollOverShadowStrength: 155;
+	textRollOverShadowDistance: 0;
+	textRollOverShadowBlurX: 2;
+	textRollOverShadowBlurY: 2;
+	textRollOverShadowColor: #000000;
+	textRollOverShadowAlpha: 1;
+	textRollOverDecoration: underline;
+	
+	textDownColor:#c4ad0f;
+	textDownFontSize:12;
+	textDownFontWeight: bold;
+	textDownShadowStrength:155;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:2;
+	textDownShadowBlurY:2;
+	textDownShadowColor:#000000;
+	textDownShadowAlpha:1;
+	textDownDecoration:underline;
+	
+	textDisableColor: #b5b5b5;
+	textDisableShadowStrength: 0;
+	textDisableShadowDistance: 0;
+	textDisableShadowBlurX: 0;
+	textDisableShadowBlurY: 0;
+	textDisableShadowColor: #ffffff;
+	textDisableShadowAlpha: 0;
+	textDisableAlign: center;
+	textDisableDecoration: normal;
+	textDisableFontWeight: normal;
+}
+
+
+
+Button   /*亮色*/
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_disableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_downSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_overSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_upSkin");
+
+	textAlign: center;
+	
+	color: #e7b05b;
+	
+	
+	textPaddingLeft: 0;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 0;
+	
+	textOverPaddingTop: 0;
+	textDisabledPaddingTop: 0;
+	textDownPaddingTop: 1;
+	
+	
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #440b04;
+	textShadowAlpha: 0;
+
+	textRollOverColor:#e7b05b;
+	textRollOverFontSize:12;
+	textRollOverShadowStrength:255;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:0;
+	textRollOverShadowBlurY:0;
+	textRollOverShadowColor:#440b04;
+	textRollOverShadowAlpha:1;
+
+	textDownColor:#bf9670;
+	textDownFontSize:12;
+	textDownShadowStrength:255;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:0;
+	textDownShadowBlurY:0;
+	textDownShadowColor:#440b04;
+	textDownShadowAlpha:1;
+
+	textDisableColor:#767676;
+	textDisableFontSize:12;
+	textDisableShadowStrength:255;
+	textDisableShadowDistance:0;
+	textDisableShadowBlurX:0;
+	textDisableShadowBlurY:0;
+	textDisableShadowColor:#413f3f;
+	textDisableShadowAlpha:1;
+	
+	
+	fontWeight: normal;
+	textOverFontWeight: normal;
+	textDownFontWeight: normal;
+	textDisableFontWeight: normal;
+	textSelectedFontWeight: normal;
+	textOverSelectedFontWeight: normal;
+	textDownSelectedFontWeight: normal;
+	
+	
+}
+
+.G_Button_01: Button  /*红色*/
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_02_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_02_DownSkin");/*这里不需要特殊九宫格*/
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_02_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_02_UpSkin");
+
+	color: #ffe7b5;
+	fontSize:12;
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #440b04;
+	textShadowAlpha: 0;
+
+	textRollOverColor:#ffe7b5;
+	textRollOverFontSize:12;
+	textRollOverShadowStrength:255;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:0;
+	textRollOverShadowBlurY:0;
+	textRollOverShadowColor:#440b04;
+	textRollOverShadowAlpha:1;
+
+	textDownColor:#ffe7b5;
+	textDownFontSize:12;
+	textDownShadowStrength:255;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:0;
+	textDownShadowBlurY:0;
+	textDownShadowColor:#440b04;
+	textDownShadowAlpha:1;
+
+	textDisableColor:#767676;
+	textDisableFontSize:12;
+	textDisableShadowStrength:255;
+	textDisableShadowDistance:0;
+	textDisableShadowBlurX:0;
+	textDisableShadowBlurY:0;
+	textDisableShadowColor:#413f3f;
+	textDisableShadowAlpha:1;
+	
+	
+	fontWeight: normal;
+	textOverFontWeight: normal;
+	textDownFontWeight: normal;
+	textDisableFontWeight: normal;
+	textSelectedFontWeight: normal;
+	textOverSelectedFontWeight: normal;
+	textDownSelectedFontWeight: normal;
+}
+
+SelectableButton
+{
+
+	
+	textPaddingLeft: 0;
+	textPaddingTop: 0;
+	textPaddingRight: 0;
+	textPaddingBottom: 0;
+
+	color: #80684f;
+	fontSize: 12;
+	textShadowStrength: 255;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #5f2d13;
+	textShadowAlpha: 1;
+	textAlign: center;
+	
+	textRollOverColor: #bf9670;
+	textRollOverFontSize:12;
+	textRollOverShadowStrength:255;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:0;
+	textRollOverShadowBlurY:0;
+	textRollOverShadowColor: #5f2d13;
+	textRollOverShadowAlpha:1;
+	textRollOverAlign: center;
+	
+	textDownColor:#bf9670;
+	textDownFontSize:12;
+	textDownShadowStrength:255;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:0;
+	textDownShadowBlurY:0;
+	textDownShadowColor:#5f2d13;
+	textDownShadowAlpha:1;
+	textDownAlign: center;
+	
+	textDisableColor:#767676;
+	textDisableFontSize:12;
+	textDisableShadowStrength:255;
+	textDisableShadowDistance:0;
+	textDisableShadowBlurX:0;
+	textDisableShadowBlurY:0;
+	textDisableShadowColor:#5f2d13;
+	textDisableShadowAlpha:1;
+	textDisableAlign: center;
+	
+	textSelectedColor: #bf9670;
+	textSelectedFontSize: 12;
+	textSelectedShadowStrength: 255;
+	textSelectedShadowDistance: 0;
+	textSelectedShadowBlurX: 0;
+	textSelectedShadowBlurY: 0;
+	textSelectedShadowColor: #5f2d13;
+	textSelectedShadowAlpha: 1;
+	textSelectedAlign: center;
+	
+	textOverSelectedColor: #bf9670;
+	textOverSelectedFontSize: 12;
+	textOverSelectedShadowStrength: 255;
+	textOverSelectedShadowDistance: 0;
+	textOverSelectedShadowBlurX: 0;
+	textOverSelectedShadowBlurY: 0;
+	textOverSelectedShadowColor: #5f2d13;
+	textOverSelectedShadowAlpha: 1;
+	textOverSelectedAlign: center;
+	
+	textDownSelectedColor: #bf9670;
+	textDownSelectedFontSize: 12;
+	textDownSelectedShadowStrength: 255;
+	textDownSelectedShadowDistance: 0;
+	textDownSelectedShadowBlurX: 0;
+	textDownSelectedShadowBlurY: 0;
+	textDownSelectedShadowColor: #5f2d13;
+	textDownSelectedShadowAlpha: 1;
+	textDownSelectedAlign: center;
+	
+	fontWeight:normal;
+	textOverFontWeight:normal;
+	textDownFontWeight:normal;
+	textDisableFontWeight:normal;
+	textSelectedFontWeight:normal;
+	textOverSelectedFontWeight:normal;
+	textDownSelectedFontWeight:normal;
+}
+
+.SButton_DarkBrown_Fillet: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_DownSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_DownSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_DownSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Brown_DownSkin"); 
+}
+
+.SButton_LightBrown_Rect: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ToolTip_backgroundSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_SelectedSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_SelectedSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_SelectedSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_LightBrown_MouseEnable_SelectedSkin"); 
+}
+
+CheckBox
+{
+  	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="CheckBox_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="CheckBox_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="CheckBox_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="CheckBox_UpSkin"); 
+	selectedDownSkin:Top_Left(source="projX_skin_swf", symbol="CheckBox_Selected_DownSkin"); 
+	selectedOverSkin: Top_Left(source="projX_skin_swf", symbol="CheckBox_Selected_OverSkin"); 
+	selectedUpSkin: Top_Left(source="projX_skin_swf", symbol="CheckBox_Selected_UpSkin"); 
+	selectedDisabledSkin: Top_Left(source="projX_skin_swf", symbol="CheckBox_Selected_DisabledSkin"); 
+	
+	color: #ffffff;
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #0b1b6d;
+	textShadowAlpha: 0;
+	
+	textRollOverColor: #ffffff;
+	textRollOverShadowStrength: 0;
+	textRollOverShadowDistance: 0;
+	textRollOverShadowBlurX: 0;
+	textRollOverShadowBlurY: 0;
+	textRollOverShadowColor: #0b1b6d;
+	textRollOverShadowAlpha: 0;
+	
+	textDownColor: #ffffff;
+
+}
+
+
+
+
+
+
+/*
+HScrollBar
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_TrackSkin_II");
+	scrollBarDownArrowStyleName:.HScrollBarUpArrow;
+	scrollBarUpArrowStyleName:.HScrollBarDownArrow;
+	scrollBarThumbStyleName:.HScrollBarThumb;
+}
+*/
+
+.HScrollBarDownArrow : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowDown_DownSkin_II");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowDown_DownSkin_II");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowDown_OverSkin_II");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowDown_UpSkin_II");
+}
+
+.HScrollBarUpArrow : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowUp_DownSkin_II");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowUp_DownSkin_II");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowUp_OverSkin_II");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_ArrowUp_UpSkin_II");
+}
+
+.HScrollBarThumb : Button
+{
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_Thumb_downSkin_II");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_Thumb_overSkin_II");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ScrollBar_Thumb_upSkin_II");
+}
+
+ButtonPager
+{
+	borderSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Default");
+	headerHeight: 0;
+	color:#dcdcdc;
+	paddingTop: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingBottom: 0;
+	prevButtonStyleName:.HbuttonPager_left;
+	nextButtonStyleName:.HbuttonPager_right;
+}
+
+.buttonPager_pre: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Left_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Left_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Left_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Left_UpSkin");
+}
+
+.buttonPager_next: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Right_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Right_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Right_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="PagerArrow_Right_UpSkin");
+}
+
+.HbuttonPager_left: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageUp_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageUp_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageUp_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageUp_UpSkin");
+}
+
+.HbuttonPager_right: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageDown_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageDown_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageDown_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_PageDown_UpSkin");
+}
+
+.HbuttonPager_firstPage: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_FirstPage_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_FirstPage_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_FirstPage_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_FirstPage_UpSkin");
+	
+}
+
+.HbuttonPager_lastPage: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_LastPage_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_LastPage_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_LastPage_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Arrow_LastPage_UpSkin");
+}
+
+.HCardPager_left: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageUp_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageUp_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageUp_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageUp_UpSkin");
+}
+
+.HCardPager_right: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageDown_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageDown_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageDown_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_BlueArrow_PageDown_UpSkin");
+}
+
+ /*主界面*/
+ 
+
+.mainUICanvas: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceCanvas");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceCanvas");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceCanvas");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceCanvas");
+}
+
+.mainUISmartCanvas: Canvas
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceSmartCanvas");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceSmartCanvas");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceSmartCanvas");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="MainInterfaceSmartCanvas");
+}
+
+
+.mainUI_RedCircle: Button  /*红色*/
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_RedCircle_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_RedCircle_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_RedCircle_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_RedCircle_UpSkin");
+}
+
+.smallSquareAdd: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallAdd_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallAdd_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallAdd_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallAdd_UpSkin");	
+}
+
+.smallSquareLookup: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallLookup_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallLookup_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallLookup_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallLookup_UpSkin");	
+}
+
+.smallSquareDelete: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallDelete_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallDelete_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallDelete_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallDelete_UpSkin");	
+}
+
+.smallSquareReplace: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallReplace_downSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallReplace_downSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallReplace_overSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_SmallReplace_UpSkin");	
+}
+
+
+.packagePage: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_Selected_DownSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_Selected_DownSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_Selected_OverSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_PackagePage_Selected_UpSkin"); 	
+}
+
+.chatFace: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ChatFace_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ChatFace_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ChatFace_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ChatFace_UpSkin");
+}
+
+
+/*.greyNoBorderContainer: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+}*/
+
+
+
+.mainUICloseBtn: Button
+{
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Panel_Close_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Panel_Close_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Panel_Close_UpSkin");
+}
+
+.BuildingCard: Canvas
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_UpSkin");
+}
+
+.BuildingCard_Highlight: Canvas
+{
+	paddingLeft: 0;
+	paddingRight: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_BuildingCard_OverSkin");
+}
+
+/*.mainUI_Delete: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_DisabledSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_DownSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_DownSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Delete_DownSkin"); 
+}
+
+.mainUI_Move: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_DisabledSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_DownSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_DownSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Move_DownSkin"); 
+}
+
+.mainUI_Refresh: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_DisabledSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_DownSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_DownSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Refresh_DownSkin"); 
+}
+
+.mainUI_Selected: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_DisabledSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_DisabledSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_DownSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_DownSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Select_DownSkin"); 
+}*/
+
+/*.packagePage_General: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_General_OverSkin"); 
+}
+
+.packagePage_Equip: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Equip_OverSkin"); 
+}
+
+.packagePage_Mission: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="ButtonPackage_Mission_OverSkin"); 
+}*/
+
+
+
+ /*聊天*/
+ .Grey_Button: SelectableButton
+ {
+ 	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_UpSkin");
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_SelectedSkin");
+	selectedDownSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_SelectedSkin");
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_SelectedSkin");
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_SelectedSkin");
+	
+	color:#686868;
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #0b1b6d;
+	textShadowAlpha: 0;
+
+	textRollOverColor:#8d8d8d;
+	textRollOverFontSize:12;
+	textRollOverShadowStrength:255;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:0;
+	textRollOverShadowBlurY:0;
+	textRollOverShadowColor:#946826;
+	textRollOverShadowAlpha:1;
+
+	textDownColor:#404145;
+	textDownFontSize:12;
+	textDownShadowStrength:255;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:0;
+	textDownShadowBlurY:0;
+	textDownShadowColor:#946826;
+	textDownShadowAlpha:1;
+
+	textDisableColor:#a5a5a5;
+	
+	textSelectedColor: #f4d453;
+	textSelectedFontSize: 12;
+	textSelectedShadowStrength: 255;
+	textSelectedShadowDistance: 0;
+	textSelectedShadowBlurX: 2;
+	textSelectedShadowBlurY: 2;
+	textSelectedShadowColor: #53390f;
+	
+	fontWeight:bold;
+	textOverFontWeight:bold;
+	textDownFontWeight:bold;
+	textDisableFontWeight:bold;
+ }
+ 
+ .chat_backgroundSkin: Canvas
+ {
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Canvas_BackgroundSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Canvas_BackgroundSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Canvas_BackgroundSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Canvas_BackgroundSkin");
+}
+
+ .chat_TextInput: Canvas
+ {
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_TextInput_UpSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_TextInput_UpSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_TextInput_UpSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_TextInput_UpSkin");
+	
+}
+
+.chat_ScrollBar: VScrollBar
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_trackSkin");
+	scrollBarDownArrowStyleName:.chatScrollBarUpArrow;
+	scrollBarUpArrowStyleName:.chatScrollBarDownArrow;
+	scrollBarThumbStyleName:.chatScrollBarThumb;
+}
+
+.chatScrollBarDownArrow : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonDown");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonDown_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonDown_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonDown");
+}
+
+.chatScrollBarUpArrow : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonUp");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonUp_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonUp_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_ButtonUp");
+}
+
+.chatScrollBarThumb : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_BarOverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_BarOverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_BarOverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ScrollBar_BarUpSkin");
+}
+
+.chat_BtnEnter: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol=" Chat_Button_Send_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Button_Send_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Button_Send_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Button_Send_UpSkin");
+}
+
+.chat_Resize_Up: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_UpArrow_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_UpArrow_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_UpArrow_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_UpArrow_UpSkin");
+}
+
+.chat_Resize_Down: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_DownArrow_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_DownArrow_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_DownArrow_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Resize_DownArrow_UpSkin");
+}
+
+.Chat_Combobox: ComboBox
+{
+ 	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Combobox_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Combobox_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Combobox_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_Combobox_UpSkin");
+	editableDisabledSkin: ;
+	editableDownSkin: ;
+	editableOverSkin: ;
+	editableUpSkin: ;
+	color: #fcc171;
+	textRollOverColor: #fcc171;
+	textSelectedColor: #fcc171;
+	textDisabledColor: #fcc171;
+	arrowButtonWidth:20;
+	paddingRight:7;
+	paddingLeft:7;
+	paddingTop:3;
+	dropdownStyleName: .chat_ComboBoxDropdown;
+
+	/*disabledColor: #C8D8A9;*/
+}
+
+.chat_ComboBoxDropdown: List
+{
+	headerHeight: 0;
+	footerHeight: 0;
+	
+	paddingLeft: 3;
+	paddingRight: 3;
+	paddingTop: 3;
+	paddingBottom: 3;
+	
+	
+	verticalGap: 1;                            /*下拉列表上的分割线*/
+	horizontalGridLines: false;
+	horizontalGridLineColor: #a3885c;
+	
+	color: #ffffff;
+	textRollOverColor: #ffffff;
+	textSelectedColor: #ffffff;
+	
+	backgroundAlpha:0;              
+	backgroundColor: #787878;
+	rollOverColor: #733c12;
+	selectionColor: #733c12;
+	
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ComboBox_DropDown");
+	
+	/*lineSkin:; 
+	oddLineSkin: ; 
+	evenLineSkin: ; */
+	rollOverLineSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ComboBox_DropDown_OverSkin"); 
+	selectionLineSkin: Scale9Grid(source="projX_skin_swf", symbol="Chat_ComboBox_DropDown_OverSkin"); 
+	
+}
+
+
+.mail_Tab_Vertical: SelectableButton
+{
+	downSkin:;
+	overSkin:;
+	upSkin:;
+	selectedDisabledSkin:;
+	selectedDownSkin:;
+	selectedOverSkin:;
+	selectedUpSkin:;
+	
+	color:#6c4822;
+	textShadowStrength: 0;
+	textShadowDistance: 0;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowColor: #0b1b6d;
+	textShadowAlpha: 0;
+
+	textRollOverColor:#ffffff;
+	textRollOverFontSize:12;
+	textRollOverShadowStrength:255;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:2;
+	textRollOverShadowBlurY:2;
+	textRollOverShadowColor:#946826;
+	textRollOverShadowAlpha:1;
+
+	textDownColor:#ffffff;
+	textDownFontSize:12;
+	textDownShadowStrength:255;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:2;
+	textDownShadowBlurY:2;
+	textDownShadowColor:#946826;
+	textDownShadowAlpha:1;
+
+	textDisableColor:#a5a5a5;
+	
+	textSelectedColor: #6c4822;
+	textSelectedFontSize: 12;
+	
+	textSelectedFontWeight:bold;
+	
+	fontWeight:;
+	textOverFontWeight:;
+	textDownFontWeight:;
+	textDisableFontWeight:;
+	textOverSelectedFontWeight:;
+	textDownSelectedFontWeight:;
+}
+/*道具*/
+
+.ItemBackground_Normal: Canvas
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_normal",tile = "true");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_normal",tile = "true");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_normal",tile = "true");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_normal",tile = "true");
+}
+
+.ItemBackground_Selected: Canvas
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_highlight",tile = "true");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_highlight",tile = "true");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_highlight",tile = "true");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_highlight",tile = "true");
+}
+
+.ItemBackground_Lock: Canvas
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_Lock",tile = "true");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_Lock",tile = "true");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_Lock",tile = "true");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_ItemContainer_Lock",tile = "true");
+}
+
+
+.ItemBackground_54_Square: Container
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Square_BrownBorder_54",tile = "true");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Square_BrownBorder_54",tile = "true");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Square_BrownBorder_54",tile = "true");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_Square_BrownBorder_54",tile = "true");
+}
+
+/*
+
+描边
+	titleShadowStrength:155;
+	titleShadowBlurX:2;
+	titleShadowBlurY:2;
+	titleShadowColor:#ffffff;
+	titleShadowAlpha:1;
+
+	color:#ffffff;
+	textFontSize:12;
+	textDecoration:underline;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#ffffff;
+	textShadowAlpha:1;
+
+	textRollOverColor:#ffffff;
+	textRollOverFontSize:12;
+	textRollOverDecoration:underline;
+	textRollOverShadowStrength:155;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:2;
+	textRollOverShadowBlurY:2;
+	textRollOverShadowColor:#ffffff;
+	textRollOverShadowAlpha:1;
+
+	textDownColor:#ffffff;
+	textDownFontSize:12;
+	textDownDecoration:underline;
+	textDownShadowStrength:155;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:2;
+	textDownShadowBlurY:2;
+	textDownShadowColor:#ffffff;
+	textDownShadowAlpha:1;
+
+	textDisableColor:#ffffff;
+	textDisableFontSize:12;
+	textDisableDecoration:underline;
+	textDisableShadowStrength:155;
+	textDisableShadowDistance:0;
+	textDisableShadowBlurX:2;
+	textDisableShadowBlurY:2;
+	textDisableShadowColor:#ffffff;
+	textDisableShadowAlpha:1;
+	
+	textSelectedColor: #00ffff;
+	textSelectedFontSize: 14;
+	textSelectedDecoration: none;
+	textSelectedShadowStrength: 155;
+	textSelectedShadowDistance: 0;
+	textSelectedShadowBlurX: 2;
+	textSelectedShadowBlurY: 2;
+	textSelectedShadowColor: #ff0000;
+	textSelectedShadowAlpha: 1;
+
+加粗
+
+	fontWeight:bold;
+	textOverFontWeight:bold;
+	textDownFontWeight:bold;
+	textDisableFontWeight:bold;
+
+
+*/
+
+
+/*图标栏*/
+
+
+/*.menuBuild : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Build_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Build_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Build_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Build_UpSkin");
+}
+
+.menuBuild_CancleRoad : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_CancleRoad_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_CancleRoad_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_CancleRoad_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_CancleRoad_UpSkin");
+}
+
+.menuBook : Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Mission_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Mission_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Mission_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Menu_Mission_UpSkin");
+}
+
+.menuTree: Button
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tree_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tree_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tree_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tree_UpSkin");
+}
+
+.menuAlliance: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Tech_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tech_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tech_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Tech_UpSkin");
+}
+
+.menuHero: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Hero_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Hero_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Hero_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Hero_UpSkin");
+}
+
+.menuShop: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Shop_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Shop_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Shop_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Shop_UpSkin");
+}
+
+.menuHome: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Home_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Home_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Home_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Home_UpSkin");
+}
+
+.menuShip: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Ship_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Ship_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Ship_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Ship_UpSkin");
+}
+
+.menuRank: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Rank_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Rank_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Rank_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Rank_UpSkin");
+}
+
+.menuPackage: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Package_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Package_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Package_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Package_UpSkin");
+}
+
+.menuMail: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Mail_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Mail_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Mail_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Mail_UpSkin");
+}
+
+.menuOceanMap: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_OceanMap_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_OceanMap_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_OceanMap_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_OceanMap_UpSkin");
+}
+
+.menuStoreHouse: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_StoreHouse_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_StoreHouse_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_StoreHouse_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_StoreHouse_UpSkin");
+}
+
+.menuMap: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_Log_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Log_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Log_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_Log_UpSkin");
+}
+
+.menuPortList: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_PortList_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_PortList_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_PortList_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_PortList_UpSkin");
+}
+
+.menuEquipEnhance: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Menu_EquipEnhance_DisableSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_EquipEnhance_OverSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_EquipEnhance_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Menu_EquipEnhance_UpSkin");
+}*/
+
+
+/*改名按钮
+.s_Write_Button: Button
+{
+	disabledSkin:Scale9Grid(source="projX_skin_swf", symbol="Button_Name_Write_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Name_Write_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Name_Write_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_Name_Write_UpSkin");
+}*/
+
+
+
+/*red底yellow条*/
+
+
+.s_Small_Dialog_Window: Canvas
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_SmallDialog");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_SmallDialog");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_SmallDialog");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_SmallDialog");
+	paddingLeft: 6;
+	paddingRight: 6;
+	paddingTop : 6;
+	paddingBottom: 10;
+}
+
+.loginButton: Button
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_TextInput_UpSkin"); 
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_TextInput_OverSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_TextInput_DownSkin");
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_TextInput_DisableSkin");
+
+	color: #dbbf74;
+	fontSize: 14; 
+	textFontSize:14;
+	textRollOverColor:#dbbf74;
+	textRollOverFontSize:14;
+	textDownColor:#dbbf74;
+	textDownFontSize:14;
+	textDisableColor:#dbbf74;
+	textDisableFontSize:14;
+	fontWeight:bold;
+	textOverFontWeight:bold;
+	textDownFontWeight:bold;
+	textDisableFontWeight:bold;
+
+}
+
+
+.login_male: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_UpSkin");
+	selectedDownSkin:Scale9Grid(source="projX_skin_swf", symbol="Login_Male_Selected_UpSkin"); 
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_Selected_UpSkin"); 
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_Selected_UpSkin"); 
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Male_Selected_UpSkin"); 
+}
+
+.login_female: SelectableButton
+{
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_DownSkin");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_DownSkin");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_OverSkin");
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_UpSkin");
+	selectedDownSkin:Scale9Grid(source="projX_skin_swf", symbol="Login_Female_Selected_UpSkin"); 
+	selectedOverSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_Selected_UpSkin"); 
+	selectedUpSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_Selected_UpSkin"); 
+	selectedDisabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Login_Female_Selected_UpSkin"); 
+}
+
+.yellowSquareSign_Add: Button
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_AddSign_UpSkin"); 
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_AddSign_OverSkin");
+	downSkin: Scale9Grid(ource="projX_skin_swf", symbol="Sea_AddSign_DownSkin");
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_AddSign_DownSkin");
+}
+
+.yellowSquareSign_Minus: Button
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_MinusSign_UpSkin"); 
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_MinusSign_OverSkin");
+	downSkin: Scale9Grid(ource="projX_skin_swf", symbol="Sea_MinusSign_DownSkin");
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_MinusSign_DownSkin");
+}
+
+.seaSearchButton: Button
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_Search_UpSkin"); 
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_Search_OverSkin");
+	downSkin: Scale9Grid(ource="projX_skin_swf", symbol="Sea_Search_DownSkin");
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Sea_Search_DownSkin");
+}
+
+.harborButton: Button
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy"); 
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+	disabledSkin: Scale9Grid(source="projX_skin_swf", symbol="Canvas_EnergyBuy");
+	
+	color:#ffca58;
+	textFontSize:12;
+	textDecoration:underline;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#000000;
+	textShadowAlpha:1;
+
+	textRollOverColor:#ffd67d;
+	textRollOverFontSize:12;
+	textRollOverDecoration:underline;
+	textRollOverShadowStrength:155;
+	textRollOverShadowDistance:0;
+	textRollOverShadowBlurX:2;
+	textRollOverShadowBlurY:2;
+	textRollOverShadowColor:#000000;
+	textRollOverShadowAlpha:1;
+
+	textDownColor:#a27a23;
+	textDownFontSize:12;
+	textDownDecoration:underline;
+	textDownShadowStrength:155;
+	textDownShadowDistance:0;
+	textDownShadowBlurX:2;
+	textDownShadowBlurY:2;
+	textDownShadowColor:#000000;
+	textDownShadowAlpha:1;
+
+	textDisableColor:#a27a23;
+	textDisableFontSize:12;
+	textDisableDecoration:underline;
+	textDisableShadowStrength:155;
+	textDisableShadowDistance:0;
+	textDisableShadowBlurX:2;
+	textDisableShadowBlurY:2;
+	textDisableShadowColor:#000000;
+	textDisableShadowAlpha:1;
+	
+}
+/*B表示加粗，N表示不加粗，第二个颜色表示描边颜色*/
+/*游戏多数默认颜色值 ffffff */
+/*文字颜色*/
+
+.Global_Title_Color: Label
+{
+	color: #bf9670;
+	fontSize:12;
+	fontWeight: normal;
+	/*textShadowStrength:255;
+	textShadowDistance:0;
+	textShadowBlurX:0;
+	textShadowBlurY:0;
+	textShadowColor:#5f2d13;
+	textShadowAlpha:1;*/
+}
+
+/*样式 5 颜色   字体  12  正常*/
+.Global_Title_02_Color: Label
+{
+	color: #e7b05b;
+	fontSize:12;
+	fontWeight: normal;
+}
+
+.Global02_Label_Color: Label
+{
+	color: #674927;
+	fontSize:12;
+	fontWeight: normal;
+	/*textShadowStrength:255;
+	textShadowDistance:0;
+	textShadowBlurX:0;
+	textShadowBlurY:0;
+	textShadowColor:#5f2d13;
+	textShadowAlpha:1;*/
+}
+
+.Global02_Title_Color: Label
+{
+	color: #674927;
+	fontSize:12;
+	fontWeight: bold;
+	/*textShadowStrength:255;
+	textShadowDistance:0;
+	textShadowBlurX:0;
+	textShadowBlurY:0;
+	textShadowColor:#5f2d13;
+	textShadowAlpha:1;*/
+}
+
+/*加粗  14号*/
+.G_Yellow_B_14: Label
+{
+	color: #e7b05b; 
+	fontSize:14;
+	fontWeight: bold;	
+}
+
+.G_White_N_Black:Label
+{
+	color: #ffffff;
+	fontWeight: normal;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+}
+
+.White_B_Black: Label
+{
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+}
+
+.White_B_Black_center : Label
+{
+	color: #ffffff;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+	textAlign: center;
+}
+
+.White_B_Yellow : Label
+{
+	color: #ffe1b3;
+	fontWeight: bold;
+	fontSize: 14;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #5c3e26;
+	textShadowAlpha: 1;
+	textAlign: center;
+}
+
+.Purple_B_Black: Label
+{
+	color: #c042fe;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+}
+
+.Brown_B: Label
+{
+	color: #7e4728;
+	fontWeight: bold;
+}
+
+.Brown_B_AlignRight: Label
+{
+	color: #7e4728;
+	fontWeight: bold;
+	textAlign: right;
+}
+
+.Brown_B_center: Label
+{
+	color: #ffffff;
+	fontWeight: bold;
+	textAlign: center;
+}
+
+.Brown_B_LightYellow: Label
+{
+	color: #ffffff;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #ffe7ba;
+	textShadowAlpha: 1;
+	fontWeight: normal;
+}
+
+.LightBrown_B: Label
+{
+	color: #7d4a2f;
+	fontWeight: bold;
+}
+
+.LightBlue_B_Black: Label
+{
+	color: #badefe;
+	textFontSize:12;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowDistance:1;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#01213a;
+	textShadowAlpha:1;
+}
+
+.Blue_B: Label
+{
+	color: #004695;
+	fontWeight: bold;
+}
+
+.Blue_B_Black: Label
+{
+	color: #428bfe;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+}
+
+.Red: Label
+{
+	color: #e32b00;
+}
+
+.Red_B: Label
+{
+	color: #e32b00;
+	fontWeight: bold;
+}
+
+.Red_N_Black: Label
+{
+	color: #e32b00;
+	textFontSize:12;
+	fontWeight: normal;
+	textShadowStrength:55;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#000000;
+	textShadowAlpha:1;
+}
+
+.Red_B_White: Label
+{
+	color: #e32b00;
+	textFontSize:12;
+	fontWeight: bold;
+	textShadowStrength:55;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#ffedb0;
+	textShadowAlpha:1;
+}
+
+.Black_B_White: Label
+{
+	color: #000000;
+	textFontSize:12;
+	fontWeight: bold;
+	textShadowStrength:55;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#ffedb0;
+	textShadowAlpha:1;
+}
+
+.Red_B_DarkBrown: Label
+{
+	color: #e32b00;
+	textFontSize:12;
+	fontWeight: bold;
+	textShadowStrength:55;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#441414;
+	textShadowAlpha:1;
+	textDecoration: normal;
+	textAlign: left;
+}
+
+.Red_B_14: Label
+{
+	color: #e7b05b;
+	fontWeight: bold;
+	fontSize: 14;
+	textShadowStrength:155;
+	textShadowBlurX: 0;
+	textShadowBlurY: 0;
+	textShadowAlpha: 1;
+}
+
+.Green_B_DarkBrown: Label
+{
+	color: #62ba30;
+	textFontSize:12;
+	fontWeight: bold;
+	textShadowStrength:55;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#091f02;
+	textShadowAlpha:1;
+	textDecoration: normal;
+	textAlign: left;
+}
+
+.Green: Label
+{
+	color: #62ba30;
+}
+
+.Green_B: Label
+{
+	color: #62ba30;
+	fontWeight: bold;
+}
+
+.Green_N_DarkBrown: Label
+{
+	color: #62ba30;
+	fontWeight: normal;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#34231b;
+	textShadowAlpha:1;
+}
+
+.Green_B_Black: Label
+{
+	color: #62ba30;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+}
+
+.Yellow: Label
+{
+	color: #ffa416;
+}
+
+.Yellow_B_DarkBrown: Label
+{
+	color: #ffa416;/*#ffdc39;*/
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#251701;
+	textShadowAlpha:1;
+}
+
+.Yellow_B_Brown: Label
+{
+	color: #ffa416;/*#ffdc39;*/
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#744128;
+	textShadowAlpha:1;
+}
+
+
+.DarkYellow_B_Black: Label
+{
+	color: #ffa41b;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowBlurX: 2;
+	textShadowBlurY: 2;
+	textShadowColor: #382b25;
+	textShadowAlpha: 1;
+}
+
+.Grey_B: Label
+{
+	color: #acacab;
+	fontWeight: bold;
+}
+
+.loginLabel: Label
+{
+	color: #cd9353;
+	fontSize: 28;
+	fontWeight: bold;
+	textAlign: center;
+}
+
+.harborLabel: Label
+{
+	color: #ffca56;
+	fontSize: 14;
+	fontWeight: bold;
+	textAlign: center;
+}
+
+.harborLabel_DarkBrown: Label
+{
+	color: #ffca56;
+	fontSize: 12;
+	fontWeight: bold;
+	textAlign: center;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#000000;
+	textShadowAlpha:1;
+}
+
+.traceHarvestLabel: Label
+{
+	color: #f5d81c;
+	fontSize: 14;
+	fontWeight: bold;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#6d513c;
+	textShadowAlpha:1;
+}
+
+.labelFriendAlignCenter: Label
+{
+	color: #7e2513;
+	textAlign: center;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:1;
+	textShadowBlurY:1;
+	textShadowColor:#fad67e;
+	textShadowAlpha:1;
+}
+
+.labelFriendAddCenter: Label
+{
+	color: #c49b65;
+	fontSize: 14;
+	fontWeight: bold;
+	textAlign: center;
+	textShadowStrength:155;
+	textShadowDistance:0;
+	textShadowBlurX:2;
+	textShadowBlurY:2;
+	textShadowColor:#140b04;
+	textShadowAlpha:1;
+}
+
+
+
+
+.button_play
+{
+	upSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_overSkin", frames="0-5", animation="play");
+	overSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_overSkin", frames="0-5", animation="loop");
+	downSkin: Scale9Grid(source="projX_skin_swf", symbol="Button_01_overSkin", animation="loop");
+}
+
+.unembedButton : Button
+{   
+	downSkin: Scale9Grid(source="assets/image/9.png");
+	overSkin: Scale9Grid(source="assets/image/8_1.png");
+	upSkin: Scale9Grid(source="assets/image/8.png");
+}

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<!-- 项目运行时配置 -->
+    <AppSettings>
+        <!-- 当前版本 -->
+        <version>#BUILDVERSION#</version>
+        <!-- 安全设置 -->
+        <SecuritySettings>
+            <!-- crossdomain文件列表配置 -->
+            <CrossDomainPolicies>
+
+            </CrossDomainPolicies>
+            <!-- allowedDomain配置 -->
+            <AllowedDomains>
+                <domain>*</domain>
+            </AllowedDomains>
+        </SecuritySettings>
+    </AppSettings>
+
+    <!-- 服务器配置表 -->
+    <Servers>
+        <!--服务器配置设置格式：
+            id: 服务的唯一标识符
+            domain: 主域名
+            host:socket服务器地址
+            port:端口号
+            swfPath: swf文件路径，支持绝对和相对路径。如果为相对路径则为：domain + swfPath
+            assetPath: 资源文件路径，支持绝对和相对路径。如果为相对路径则为：domain + assetPath
+            configPath: 配置路径，支持绝对和相对路径。如果为相对路径则为：domain + configPath
+            cgiPath: 配置路径，支持绝对和相对路径。如果为相对路径则为：domain + cgiPath
+            version: 当前服务器版本号，格式为：年月日+编译号 -->
+
+        <!--flash开发用服务配置，在上线时可以删除 -->
+        <Server id="webDev"
+                domain=""
+                swfPath=""
+                assetPath="../../../release/dev/asset/"
+                configPath="../../../release/dev/flash/"
+                cgiPath=""
+                version="#BUILDVERSION#"/>
+        <!--gameEditor本地测试配置 -->
+        <Server id="localDev"
+                domain=""
+                swfPath="swf/"
+                assetPath="image/"
+                configPath="conf/"
+                cgiPath=""
+                version="#BUILDVERSION#s"/>
+        <!--上线版本服务配置 -->
+        <Server id="release"
+                domain=""
+                swfPath="swf/"
+                assetPath="image/"
+                configPath="conf/"
+                cgiPath=""
+                version="#BUILDVERSION#"/>
+    </Servers>
+
+    <!-- 项目中需要用到的参数配置 -->
+    <ProjectSettings>
+    	<!--<Add key="socketURL" value="外网Debug||10.12.232.23:7002"/>-->
+        <!--<Add key="socketURL" value="外网Debug||10.12.232.23:7120"/>-->
+        <Add key="socketURL" value="branch_debug|101.227.160.29:7001|10.217.152.184:7001"/>
+        <Add key="socketURL" value="vicliu||10.12.232.24:7025"/>
+        <Add key="socketURL" value="branch_online|101.227.160.28:7106|10.217.152.184:7106"/>
+         <Add key="socketURL" value="genryhou||10.12.232.24:7027"/>
+        <Add key="socketURL" value="test1|101.227.160.28:7103|10.217.152.184:7103"/>
+        <Add key="socketURL" value="test2|101.227.160.28:7104|10.217.152.184:7104"/>
+        <Add key="socketURL" value="test3|101.227.160.28:7105|10.217.152.184:7105" />
+        <Add key="socketURL" value="liwei||10.12.232.24:7014"/>
+        <Add key="socketURL" value="freeze||10.12.232.24:7015"/>
+        <Add key="socketURL" value="yixiang||10.12.232.24:7022"/>  
+        <Add key="socketURL" value="trunk_debug|101.227.160.28:7001|10.210.140.7:7001"/>
+        <Add key="socketURL" value="内网Release|101.227.160.28:80|10.217.152.184:8001"/>
+        <Add key="socketURL" value="外网正式环境|s1.zone.pvz.qq.com:80|s1.zone.pvz.qq.com:80"/>
+        <Add key="socketURL" value="plant|101.227.160.36:7004|10.217.136.169:7004"/>
+        <!-- 
+        <Add key="socketURL" value="fox||10.12.232.24:7011"/>
+        <Add key="socketURL" value="xufeng||10.12.232.24:7016"/>
+        <Add key="socketURL" value="bryanywang||10.12.232.24:7012"/>		
+        <Add key="socketURL" value="sebachang||10.12.232.24:7010"/>
+        <Add key="socketURL" value="andy||10.12.232.24:7017"/>
+        <Add key="socketURL" value="real|s1.zone.pvz.qq.com:80|s1.zone.pvz.qq.com:80"/>
+         -->
+        
+        <Add key="defaultUid" value="75023008"/>
+		<Add key="cssPath" value="assets/css/"/>
+		<!-- 定于语言类型 -->
+		<Add key="traceSocketData" value="1"/>
+    	<!-- 定于语言类型 -->
+        <Add key="language" value="zh-CN"/>
+        <!--是否使用本地模拟全局开关，除强制部分外默认使用此参数-->
+        <Add key="isUseLocal" value="0"/>
+        <!--强制使用本地模拟-->
+        <Add key="forceUseLocal" value="21"/>
+        <!--本地模拟时的UIN-->
+        <Add key="localUin" value="190"/>
+       	<!--avatar lotFiles Path-->
+       	<Add key="lotFilesPath" value="{$domain}{$assetPath}avatarImg/"/>
+        <!--local Protocol-->
+        <!--TDR 测试login-->
+        <Add key="21" value="{$domain}{$configPath}localData/fl_login.json"/>
+        <!-- 配置文件路径 -->
+        <!-- 战斗模块配置 -->
+        <Add key="mapConfigPath" value="{$domain}{$configPath}FightMapInfo.bin"/>
+        <Add key="mapBGPath" value="{$domain}{$assetPath}map/{0}/bg.png"/>
+		<!-- 技能配置 -->
+		<Add key="skillIconPath" value="{$domain}{$assetPath}skill/icon/"/>
+		<Add key="skillFontPath" value="{$domain}{$assetPath}skill/fontIcon/"/>
+		<Add key="homesite" value="http://pvz.qq.com" />
+		<Add key="closeSound" value="0" />
+    </ProjectSettings>
+
+	<!-- 预加载文件列表 -->
+    <PreloadFiles>
+        <!-- 参数说明：
+            url: 需要加载文件url.可以是相对或绝对地址，可以使用通配符，支持的有：
+            	Server参数：domain、assetPath、swfPath、configPath、cgiPath
+            	ProjectSettings中定义的key，例如ProjectSettings设置有key为cPath的值，
+            		就可以在url中写{$cPath}myfile.swf
+            name: 资源名称
+            type: 文件类型，可选值xml|swf|image|byte
+            v: 版本号 -->
+        <!-- <File url="{$domain}{$swfPath}td/tdGameRes.swf" name="tdGameRes" type="swf" v="#BUILDVERSION#"/>-->
+		<!--<File url="{$domain}{$assetPath}ui/start_bg.swf" name="start_bg" type="image" v="#BUILDVERSION#"/>-->
+		<!-- 战斗配置不在一个开始加载<File url="{$domain}{$configPath}flash/fl_fightMapNode.xml" name="fightMapNode" type="xml" v="#BUILDVERSION#"/> -->
+	</PreloadFiles>
+
+	
+    <!-- 模块设置，非开发人员勿动! -->
+    <Modules>
+<!--    <Module
+			name="ShellModule"
+			clz="milan.modules.shell::ShellModule"
+			encoded="false"
+			preloading="false"
+			url="milan/modules/shell/ShellModule.swf"/>
+        <Module 
+			name="MapModule"
+			clz="pluto.modules.map::MapModule"
+			encoded="false"
+			preloading="false"
+			url="pluto/modules/map/MapModule.swf"/>
+-->
+    </Modules>
+    <Sections>
+    </Sections>
+</Configuration>

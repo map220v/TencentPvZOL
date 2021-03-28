@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- order数字尾号使用规则：    clairli:5 -->
+<!-- order数字尾号使用规则：    winstonyang:4 -->
+<configuration>
+	<System>
+		<applicationClassName value="com.qq.MyApplication" />
+		<!--[常驻]声音模块--><module value="ModuleSound.swf" order="1" resourceOrder="" cmdListenInit="SoundCommand" viewCloseToUnload="" />
+		<!--[场景]塔防模块--><module value="ModuleTD.swf" order="2" resourceOrder="9,10,17,23,255" cmdListenInit="TDUICommand" viewCloseToUnload="" />
+		<!--[场景]选关模块--><module value="ModuleLS.swf" order="3" resourceOrder="13,255" cmdListenInit="LSViewCommand,LSProxyCommand" viewCloseToUnload="" />
+		<!--[常驻]玩家信息模块--><module value="ModuleRoleInfo.swf" order="4" resourceOrder="11" cmdListenInit="RoleInfoCommand" viewCloseToUnload="" />
+		<!--[场景]城市模块--><module value="ModuleCity.swf" order="5" resourceOrder="12,24" cmdListenInit="" viewCloseToUnload="" />
+		<!--天赋模块，启动方式比较特殊，先不清理--><module value="ModulePlantTalent.swf" order="6" resourceOrder="305" cmdListenInit="" viewCloseToUnload="" />
+		<module value="ModuleBattleLineup.swf" order="7" resourceOrder="16" cmdListenInit="BattleLineupCommand" viewCloseToUnload="" />
+		<module value="ModuleBattle.swf" order="8" resourceOrder="19" cmdListenInit="BattleServiceCommand" viewCloseToUnload="" />
+		<module value="ModuleQuest.swf" order="9" resourceOrder="18" cmdListenInit="QuestCommand" viewCloseToUnload="" />
+		<!--[场景]副本模块--><module value="ModuleFuben.swf" order="10" resourceOrder="20" cmdListenInit="FubenViewCommand" />
+		<module value="ModuleMarket.swf" order="10" resourceOrder="" cmdListenInit="MarketCommand" viewCloseToUnload="" />
+		<module value="ModuleRecruitCard.swf" order="11" resourceOrder="26" cmdListenInit="RecruitCardCommand" viewCloseToUnload="" />
+		<module value="ModuleDrawCard.swf" order="12" resourceOrder="" cmdListenInit="DrawCardCommand" viewCloseToUnload="" />
+		<module value="ModuleBattleCardMarket.swf" order="12" resourceOrder="27" cmdListenInit="" viewCloseToUnload="" />
+		<module value="ModuleLab.swf" order="13" resourceOrder="28" cmdListenInit="" viewCloseToUnload="" />
+		<module value="ModuleEmbattle.swf" order="14" resourceOrder="24" cmdListenInit="EmbattleCommand" viewCloseToUnload="" />
+		<module value="ModuleCard.swf" order="15" resourceOrder="25,201,220,412" cmdListenInit="CardViewCommand" viewCloseToUnload="" />
+		<module value="ModuleCollectCoin.swf" order="16" resourceOrder="18" cmdListenInit="CollectCoinCommand" viewCloseToUnload="" />
+		<!--<module value="ModuleMap.swf" order="17" resourceOrder="" cmdListenInit="" viewCloseToUnload="" />-->
+		<!--[场景]地图模块--><module value="ModuleMap.swf" order="17" resourceOrder="34" cmdListenInit="MapViewCommand" viewCloseToUnload="" />
+		<module value="ModuleMail.swf" order="18" resourceOrder="32" cmdListenInit="MailCommand" viewCloseToUnload="MailView" />
+		<module value="ModuleBag.swf" order="19" resourceOrder="31,33" cmdListenInit="BagViewCommand" viewCloseToUnload="BagWindow" />
+		<module value="ModuleUnion.swf" order="20" resourceOrder="35" cmdListenInit="UnionCommand" viewCloseToUnload="" />
+		<module value="ModuleChat.swf" order="21" resourceOrder="30" cmdListenInit="" viewCloseToUnload="" />
+		<module value="ModuleArena.swf" order="22" resourceOrder="36" cmdListenInit="ArenaCommand" viewCloseToUnload="" />
+		<module value="ModuleDodgeAndCat.swf" order="23" resourceOrder="37" cmdListenInit="DodgeAndCatCommand,WelfareHallCommand" viewCloseToUnload="" />
+		<module value="ModuleVip.swf" order="24" resourceOrder="11,38" cmdListenInit="VipCommand" viewCloseToUnload="" />
+		<module value="ModuleDownloadShortcut.swf" order="25" resourceOrder="" cmdListenInit="DownloadShortcutCommand" viewCloseToUnload="DownloadShortcutWindow" />
+		<module value="ModuleSignIn.swf" order="26" resourceOrder="" cmdListenInit="SignInViewCommand, WelfareHallViewCommand" viewCloseToUnload="" />
+		<module value="ModuleDailyTD.swf" order="27" resourceOrder="40" cmdListenInit="DailyTdViewCommand" viewCloseToUnload="" />
+		<module value="ModulePreview.swf" order="28" resourceOrder="39" cmdListenInit="PreviewViewCommand"/>
+		<module value="ModuleMine.swf" order="29" resourceOrder="406" cmdListenInit="MineViewCommand"/>
+		<module value="ModuleTemple.swf" order="30" resourceOrder="408" cmdListenInit="TempleViewCommand, TempleProxyCommand"/>
+		<module value="ModuleBank.swf" order="31" resourceOrder="" cmdListenInit="BankViewCommand"/>
+		<module value="ModuleUrlJump.swf" order="32" resourceOrder="" cmdListenInit="UrlJumpCommand"/>
+		<module value="ModuleGoldExchange.swf" order="33" resourceOrder="" cmdListenInit="GoldExchangeViewCommand"/>
+		<module value="ModuleRechargeRebate.swf" order="35" resourceOrder="" cmdListenInit="RechargeRebateViewCommand" viewCloseToUnload="" />
+		<module value="ModuleCheatCheck.swf" order="36" resourceOrder="" cmdListenInit="CheatCheckCommand" viewCloseToUnload="" />
+		<module value="ModuleWorldBoss.swf" order="34" resourceOrder="41" cmdListenInit="WorldBossCommand" viewCloseToUnload="" />
+		<module value="ModuleShop.swf" order="35" resourceOrder="42" cmdListenInit="ShopCommand" viewCloseToUnload="ShopWindow" />
+		<module value="ModuleExchange.swf" order="36" resourceOrder="43" cmdListenInit="ExchangeCommand" viewCloseToUnload="ExchangePanel" />
+		<!--[常驻]活跃度（需要监听活跃度变化）--><module value="ModuleDailyActivity.swf" order="37" resourceOrder="44" cmdListenInit="DailyActivityViewCommand" viewCloseToUnload="" />
+		<module value="ModuleDaily3366.swf" order="38" resourceOrder="" cmdListenInit="Daily3366ViewCommand" viewCloseToUnload="Daily3366Window" />
+		<module value="ModuleZombieIsland.swf" order="39" resourceOrder="45" cmdListenInit="ZombieIslandCommand" viewCloseToUnload="" />
+		<module value="ModuleLoginReward.swf" order="40" resourceOrder="" cmdListenInit="LoginRewardViewCommand" viewCloseToUnload="LoginRewardWindow" />
+		<module value="ModuleHealthDegree.swf" order="42" resourceOrder="" cmdListenInit="HealthDegreeCommand" viewCloseToUnload="HealthDegreeView" />
+		<module value="ModuleBetaReward.swf" order="41" resourceOrder="" cmdListenInit="BetaRewardViewCommand" viewCloseToUnload="BetaRewardWindow" />
+		<module value="ModulePrivilege.swf" order="43" resourceOrder="" cmdListenInit="PrivilegeViewCommand" viewCloseToUnload="" />
+		<module value="ModuleTreasure.swf" order="44" resourceOrder="46" cmdListenInit="TreasureCommand" viewCloseToUnload="" />
+		<module value="ModuleDailyWelfare.swf" order="45" resourceOrder="" cmdListenInit="DailyWelfareCommand" viewCloseToUnload="DailyWelfareWindow" />
+		<module value="ModuleOnlineReward.swf" order="46" resourceOrder="" cmdListenInit="OnlineRewardCommand, WelfareHallViewCommand" viewCloseToUnload="" />
+		<module value="ModuleNutrition.swf" order="48" resourceOrder="47" cmdListenInit="NutritionViewCommand" viewCloseToUnload="" />
+		<module value="ModuleBuy.swf" order="49" resourceOrder="" cmdListenInit="BuyViewCommand, BuyProxyCommand" viewCloseToUnload="" /><!--支付模块-->
+		<module value="ModuleBlueDiamond.swf" order="50" resourceOrder="" cmdListenInit="BlueVipCommand" viewCloseToUnload="BlueVipWindow" />
+		<module value="ModuleEndlessTD.swf" order="51" resourceOrder="53" cmdListenInit="EndlessTDViewCommand" viewCloseToUnload="" />
+		<module value="ModuleFirstRecharge.swf" order="52" resourceOrder="209" cmdListenInit="FirstRechargeViewCommand" viewCloseToUnload="FirstRechargeWindow" />
+		<module value="ModuleEveryDayBuy.swf" order="53" resourceOrder="50" cmdListenInit="EveryDayBuyCommand" viewCloseToUnload="EveryDayBuy" />
+		<module value="ModuleGroupBuying.swf" order="54" resourceOrder="" cmdListenInit="GroupBuyingViewCommand" viewCloseToUnload="GroupBuyingWindow" />
+		<module value="ModuleQQBrower.swf" order="55" resourceOrder="" cmdListenInit="QQBrowerCommand" viewCloseToUnload="QQBMainWd" />
+		<module value="ModuleMiniClient.swf" order="56" resourceOrder="49" cmdListenInit="MiniClientViewCommand" viewCloseToUnload="MiniClientActivity" />
+		<module value="ModuleSinglesDay.swf" order="58" resourceOrder="52" cmdListenInit="SinglesDayViewCommand" viewCloseToUnload="SinglesDayWindow" />
+		<module value="ModuleNotice.swf" order="57" resourceOrder="51" cmdListenInit="NoticeCommand" viewCloseToUnload="" /><!--常驻-->
+		<module value="ModuleBuffActivity.swf" order="59" resourceOrder="" cmdListenInit="BuffActivityViewCommand" viewCloseToUnload="BuffActivityWindow" />
+		<module value="ModuleShelling.swf" order="60" resourceOrder="54" cmdListenInit="ShellingViewCommand" viewCloseToUnload="" /><!--椰子大炮模块，自启动？-->
+		<module value="ModuleRank.swf" order="61" resourceOrder="55" cmdListenInit="RankViewCommand" viewCloseToUnload="" />
+		<module value="ModuleThanksgiving.swf" order="62" resourceOrder="56" cmdListenInit="ThanksgivingCommand" viewCloseToUnload="ThanksgivingWindow" />
+		<!--[常驻]回归活动（需要监听活跃度变化）--><module value="ModuleOfflineReward.swf" order="63" resourceOrder="57" cmdListenInit="OfflineRewardViewCommand" viewCloseToUnload="" />
+		<module value="ModuleActivityForTimes.swf" order="64" resourceOrder="58" cmdListenInit="ActivityForTimesCommand" viewCloseToUnload="ActivityForTimesWindow" />
+		<module value="ModuleYellowDiamond.swf" order="65" resourceOrder="59" cmdListenInit="YellowDiamondViewCommand" viewCloseToUnload="YellowDiamondWindow" />
+		<module value="ModuleTrialRoad.swf" order="66" resourceOrder="61" cmdListenInit="TrialRoadViewCommand" viewCloseToUnload="TrialRoadScene" />
+		<module value="ModuleServerActivity.swf" order="67" resourceOrder="62" cmdListenInit="ServerActivityViewCommand" viewCloseToUnload="ServerActivityWindow" />
+		<module value="ModuleCommEmbattle.swf" order="68" resourceOrder="63" cmdListenInit="CommEmbattleCommand" viewCloseToUnload="CommEmbattleShowWin" />
+		<module value="ModuleRankArena.swf" order="69" resourceOrder="64" cmdListenInit="RankArenaViewCommand" viewCloseToUnload="" />
+		<module value="ModuleArenaEntrance.swf" order="70" resourceOrder="65" cmdListenInit="ArenaEntranceViewCommand" viewCloseToUnload="" />
+		<module value="ModuleActPinball.swf" order="71" resourceOrder="66" cmdListenInit="ActPinballCommand" viewCloseToUnload="ActPinballWin" />
+		<module value="ModuleYetiTD.swf" order="72" resourceOrder="67" cmdListenInit="YetiTDViewCommand" viewCloseToUnload="" />
+		<module value="ModuleGuide.swf" order="73" resourceOrder="69" cmdListenInit="" />
+		<module value="ModuleRename.swf" order="74" resourceOrder="" cmdListenInit="RenameCommand" viewCloseToUnload="" />
+		<module value="ModuleGuide.swf" order="75" resourceOrder="68" cmdListenInit="" />
+		<module value="ModuleGarden.swf" order="76" resourceOrder="69,405" cmdListenInit="GardenViewCommand" />
+		<module value="ModuleFuzion.swf" order="77" resourceOrder="70" cmdListenInit="FuzionCommand" viewCloseToUnload="FuzionSignUpWin,FuzionWin"/>
+		<module value="ModuleExped.swf" order="78" resourceOrder="71" cmdListenInit="ExpedViewCommand" viewCloseToUnload="ExpedWindow" />
+		<module value="ModuleStrengthen.swf" order="79" resourceOrder="72" cmdListenInit="StrengthenViewCommand" viewCloseToUnload="StrengthenWindow" />
+		<module value="ModuleWorldTree.swf" order="100" resourceOrder="100" cmdListenInit="WTCommand" viewCloseToUnload="" />
+		<module value="ModuleIWanPrivilege.swf" order="101" resourceOrder="" cmdListenInit="IWanVeiwCommand" viewCloseToUnload="PrivilegeIWanWindow" />
+		<module value="ModuleUnionFuben.swf" order="102" resourceOrder="55,101,102" cmdListenInit="UnionFubenCommand, UnionFubenRankViewCommand" viewCloseToUnload="UnionFubenWin" />
+		<module value="ModuleCommIntr.swf" order="103" resourceOrder="103" cmdListenInit="CommIntrCommand" viewCloseToUnload="CommIntr" />
+		<module value="ModuleSpring.swf" order="104"  resourceOrder="104" cmdListenInit="SpringViewCommand"  viewCloseToUnload="SpringWindow" />
+		<module value="ModuleActivityChallengeLimitTime.swf" order="105"  resourceOrder="105" cmdListenInit="ActivityChallengeLimitTimeViewCommand"  viewCloseToUnload="ActivityChallengeLimitTimeWd" />
+		<module value="ModuleSlot.swf" order="200" resourceOrder="200" cmdListenInit="SlotViewCommand" viewCloseToUnload="SlotWindow" />
+		<module value="ModuleScratch.swf" order="202" resourceOrder="202" cmdListenInit="ScratchProxyCommand,ScratchViewCommand" viewCloseToUnload="ScratchWindow" />
+		<module value="ModuleWelfareHall.swf" order="205" resourceOrder="205" cmdListenInit="WelfareHallCommand" viewCloseToUnload="WelfareHallWindow" />
+		<module value="ModuleActivityArenaDoubleBonus.swf" order="210" resourceOrder="210" cmdListenInit="ActivityArenaDoubleBonusViewCommand" viewCloseToUnload="ActivityArenaDoubleBonusWd" />
+		<module value="ModuleSecondaryPassword.swf" order="215" resourceOrder="215" cmdListenInit="SecondaryPasswordCommand" viewCloseToUnload="" />
+		<module value="ModulePlantExplore.swf" order="801" resourceOrder="801" cmdListenInit="PlantExploreCommand" viewCloseToUnload="PlantExploreWin" />
+		<module value="ModuleTGP.swf" order="225" resourceOrder="225" cmdListenInit="TgpCommand" viewCloseToUnload="TgpDownloadWindow, TgpGiftWindow" />
+		<module value="ModuleEntryIcon.swf" order="114" resourceOrder="114" cmdListenInit="" />
+		<module value="ModuleActDf51.swf" order="802" resourceOrder="802" cmdListenInit="ActDf51Command" />
+		<module value="ModuleChildrenDay.swf" order="400" resourceOrder="400" cmdListenInit="ChildrenDayViewCommand" viewCloseToUnload="ChildrenDayWindow" />
+		<module value="ModulePcManager.swf" order="401" resourceOrder="401" cmdListenInit="PcManagerViewCommand" viewCloseToUnload="PcManagerWindow" />
+		<module value="ModuleRookieCeremony.swf" order="235" resourceOrder="235" cmdListenInit="RookieCeremonyViewCommand" viewCloseToUnload="RookieCeremonyWindow" />
+		<module value="ModuleCardBar.swf" order="402" resourceOrder="402" />
+		<module value="ModuleDragonBoat.swf" order="245" resourceOrder="245" cmdListenInit="DragonBoatViewCommand" viewCloseToUnload="DragonBoatWindow" />
+		<module value="ModuleCastle.swf" order="265" resourceOrder="265" cmdListenInit="CastleViewCommand" viewCloseToUnload="" />
+		<module value="ModulePrivilegeBar.swf" order="275" resourceOrder="17" cmdListenInit="LSViewCommand,LSProxyCommand" viewCloseToUnload="" />
+		<module value="ModuleActQT.swf" order="803" resourceOrder="803" cmdListenInit="ActQTCommand" viewCloseToUnload="" />
+		<module value="ModuleActRechargeRebate.swf" order="900" resourceOrder="900" cmdListenInit="ActRechargeRebateViewCommand" viewCloseToUnload="" />
+		<module value="ModuleCollectWord.swf" order="285" resourceOrder="285" cmdListenInit="CollectWordViewCommand" viewCloseToUnload="" />
+		<module value="ModuleLoginActivity.swf" order="403" resourceOrder="403" cmdListenInit="LoginActivityViewCommand" viewCloseToUnload="LoginActivityWindow"/>
+		<module value="ModuleUnionCompetition.swf" order="802" resourceOrder="802" cmdListenInit="UnionCompetitionViewCommand,UnionCompetitionProxyCommand" />
+		<module value="ModuleActNightclub.swf" order="804" resourceOrder="804" cmdListenInit="ActNightclubViewCommand" />
+		<module value="ModuleDailyVow.swf" order="404" resourceOrder="404" cmdListenInit="DailyVowViewCommand" viewCloseToUnload="DailyVowWindow" />
+		<module value="ModuleActFlipcard.swf" order="805" resourceOrder="805" cmdListenInit="ActFlipcardViewCommand" />
+		<module value="ModuleAwake.swf" order="295" resourceOrder="295,407" cmdListenInit="AwakeViewCommand" viewCloseToUnload="" />
+		<module value="ModuleActWishing.swf" order="806" resourceOrder="806" cmdListenInit="ActWishingViewCommand" />
+		<module value="ModuleFriend.swf" order="106" resourceOrder="21" cmdListenInit="FriendViewCommand" />
+		<module value="ModuleHeFuActivity.swf" order="807" resourceOrder="807" cmdListenInit="HeFuActivityCommand" viewCloseToUnload="HeFuActivityWindow" />
+		<module value="ModuleVideoActivity.swf" order="808" resourceOrder="808" cmdListenInit="VideoActivityCommand" viewCloseToUnload="VideoActivityWindow" />
+		<module value="ModuleDebris.swf" order="409" resourceOrder="409" cmdListenInit="DebrisViewCommand"  viewCloseToUnload="DebrisRecycleWindow"/>
+		<module value="ModuleHalloween.swf" order="410" resourceOrder="410" cmdListenInit="HalloweenViewCommand" viewCloseToUnload="HalloweenWindow"/>
+		<module value="ModuleLevelup.swf" order="910" resourceOrder="910" cmdListenInit="LevelupCommand"  viewCloseToUnload="LevelupWindow"/>
+		<module value="ModuleSecKill.swf" order="411" resourceOrder="411" cmdListenInit="SecKillViewCommand" viewCloseToUnload="SecKillWindow" />
+		<module value="ModuleBalance.swf" order="412"  cmdListenInit="BalanceViewCommand"/>
+		<module value="ModuleActFund.swf" order="1000"  resourceOrder="1000"  cmdListenInit="ActFundCommand"/>
+		<module value="ModuleAct14days.swf" order="1100"  resourceOrder="1100"  cmdListenInit="Act14daysCommand"/>
+		<module value="ModuleActRed.swf" order="1200"  resourceOrder="1200"  cmdListenInit="ActRedCommand"/>
+		<module value="ModuleBrain.swf" order="413" resourceOrder="413" cmdListenInit="BrainViewCommand" />
+		<module value="ModuleActXY.swf" order="1300" resourceOrder="1300" cmdListenInit="ActXYCommand" />
+		<module value="ModuleHole.swf" order="414" resourceOrder="414" cmdListenInit="HoleViewCommand" />
+		<module value="ModuleActqqgame.swf" order="1400" resourceOrder="1400" cmdListenInit="ActqqgameCommand" />
+		<module value="ModuleCardFruit.swf" order="1500" resourceOrder="1500" cmdListenInit="CardFruitViewCommand" />
+		<module value="ModuleNutritionExchange.swf" order="415" resourceOrder="415" cmdListenInit="NutritionExchangeViewCommand" viewCloseToUnload="NutritionFastExchangeWindow" />
+		<module value="ModuleLuckyStar.swf" order="416" resourceOrder="416,42" cmdListenInit="LuckyStarCommand" viewCloseToUnload="LuckyStarMainWindow" />
+		<module value="ModuleActPennyShop.swf" order="1600" resourceOrder="1600" cmdListenInit="ActPennyShopCommand" viewCloseToUnload="ActPennyShopWindow" />
+		<module value="ModuleTopKing.swf" order="1700" resourceOrder="1700" cmdListenInit="TopKingCommand"  viewCloseToUnload="TopKingWindow"/>
+		<module value="ModuleCardDNA.swf" order="1800" resourceOrder="1800" cmdListenInit="CardDNAViewCommand"/>
+		<module value="ModuleDummy.swf" order="1900" resourceOrder="1900" cmdListenInit="DummyViewCommand" viewCloseToUnload="DummyMainWindow"/>
+		<module value="ModuleActPlantCarnival.swf" order="2000" resourceOrder="2000" cmdListenInit="ActPlantCarnivalViewCommand"/>
+		<module value="ModuleActHitJar.swf" order="2100" resourceOrder="2100" cmdListenInit="ActHitJarViewCommand" viewCloseToUnload="ActHitJarMainWindow"/>
+		<module value="ModuleExpedition.swf" order="2200" resourceOrder="2200" cmdListenInit="ExpeditionViewCommand,ExpeditionProxyCommand" />
+		<module value="ModulePlantArmor.swf" order="2300" resourceOrder="2300" cmdListenInit="PlantArmorViewCommand" />	
+		<module value="ModuleEndlessFuben.swf" order="2400" resourceOrder="55,2400" cmdListenInit="EndlessFubenViewCommand"  viewCloseToUnload="EndlessFubenView" />
+		<module value="ModuleAct3years.swf" order="2500" resourceOrder="2500" cmdListenInit="Act3yearsViewCommand"  viewCloseToUnload="Act3yearsWindow" />
+		<module value="ModuleSuperArena.swf" order="2600" resourceOrder="2600" cmdListenInit="SuperArenaViewCommand"  viewCloseToUnload="SuperArenaView" />	
+		<module value="ModulePlantEvolution.swf" order="2700" resourceOrder="2700" cmdListenInit="PlantEvolutionViewCommand" />	
+	</System>
+	<Resource>
+		<skin value="pvz_skin_swf" order="0" />
+		<css value="pvz_css" order="0" />
+		<css value="asgui_css" order="0" />
+		<!-- <dict value="assets/dict/tw.xml" order="0"  /> -->
+		<resource value="swf/td/loading.swf" order="0"/>
+		<resource value="swf/resource.swf" order="0"/>
+		<resource value="swf/guide/guide_res.swf" order="0"/>
+		<resource value="swf/td/tdGameUIRes.swf" order="9"/>
+		<resource value="swf/td/td_effects.swf" order="10"/>
+		<resource value="swf/roleInfo/roleInfoUI.swf" order="11"/>
+		<resource value="swf/city/cityMap.swf" order="12"/>
+		<resource value="swf/ls/res.swf" order="13"/>
+		<resource value="swf/battleLineup/battleLineupUI.swf" order="16"/>
+		<resource value="swf/td/tdUIRes.swf" order="17"/>
+		<resource value="swf/quest/questUIRes.swf" order="18"/>
+		<resource value="swf/battle/ui/battleUI.swf" order="19"/>
+		<resource value="swf/fuben/fuben_res.swf" order="20"/>
+		<resource value="swf/friend/friend_res.swf" order="21"/>
+		<resource value="swf/td/tdBossRes.swf" order="23"/>
+		<resource value="swf/city/cityRes.swf" order="24"/>
+		<resource value="swf/card/card_res.swf" order="25"/>
+		<resource value="swf/recruitCard/recruitCardRes.swf" order="26"/>
+		<resource value="swf/cardMarket/battleCardMarketUI.swf" order="27"/>
+		<resource value="swf/lab/lab_res.swf" order="28"/>
+		<resource value="swf/chat/chatRes.swf" order="30"/>
+		<resource value="swf/bag/bag_res.swf" order="31"/>
+		<resource value="swf/mail/ui/mailUI.swf" order="32"/>
+		<resource value="swf/bag/bagUseEffect.swf" order="33"/>
+		<resource value="swf/map/res.swf" order="34"/>
+		<resource value="swf/union/union_res.swf" order="35"/>
+		<resource value="swf/arena/arenaUI.swf" order="36"/>
+		<resource value="swf/activity/dodgeAndCat.swf" order="37"/>
+		<resource value="swf/vip/vipUI.swf" order="38"/>
+		<resource value="swf/map/preview.swf" order="39"/>
+		<resource value="swf/dailyTD/res.swf" order="40"/>
+		<resource value="swf/worldBoss/worldBoss.swf" order="41"/>
+		<resource value="swf/shop/shopUI.swf" order="42"/>
+		<resource value="swf/exchange/exchangeUI.swf" order="43"/>
+		<resource value="swf/dailyActivity/dailyActivity.swf" order="44"/>
+		<resource value="swf/zombieIsland/zombieIslandsUI.swf" order="45"/>
+		<resource value="swf/treasure/treasureUI.swf" order="46"/>
+		<resource value="swf/nutrition/nutritionUseUI.swf" order="47"/>
+		<resource value="swf/dailyActivity/miniclientActivity.swf" order="49"/>
+		<resource value="swf/everyDayBuy/everyDayBuyUI.swf" order="50"/>
+		<resource value="swf/notice/noticeUI.swf" order="51"/>
+		<resource value="swf/singlesDay/singlesDay.swf" order="52"/>
+		<resource value="swf/endlessTD/endlessUI.swf" order="53"/>
+		<resource value="swf/shelling/shellingUI.swf" order="54"/>
+		<resource value="swf/rank/rankUI.swf" order="55"/>
+		<resource value="swf/thanksgiving/thanksgivingUI.swf" order="56"/>
+		<resource value="swf/offlineReward/offlineRewardUI.swf" order="57"/>
+		<resource value="swf/yellowDiamond/yellowDiamondUI.swf" order="59"/>
+		<resource value="swf/activityForTimes/activityForTimesUI.swf" order="58"/>
+		<resource value="swf/exped/expedUI.swf" order="60"/>
+		<resource value="swf/trialRoad/trialRoad_res.swf" order="61"/>
+		<resource value="swf/serverActivity/serverActivityUI.swf" order="62" />
+		<resource value="swf/commEmbattle/commEmbattleUI.swf" order="63"/>
+		<resource value="swf/rankArena/rankArena_res.swf" order="64" />
+		<resource value="swf/arenaEntrance/arenaEntrance_res.swf" order="65" />
+		<resource value="swf/actPinball/pinballUI.swf" order="66" />
+		<resource value="swf/yetiTD/yetiTD_res.swf" order="67" />
+		<resource value="swf/guide/guideUI.swf" order="68" />
+		<resource value="swf/garden/garden_res.swf" order="69" />
+		<resource value="swf/fuzion/fuzionUI.swf" order="70" />	
+		<resource value="swf/exped/expedUI.swf" order="71"/>
+		<resource value="swf/strengthen/strengthenUI.swf" order="72" />
+		<resource value="swf/wt/res.swf" order="100" />
+		<resource value="swf/unionFuben/unionFuben_UI.swf" order="101" />
+		<resource value="swf/unionFubenRank/unionFubenRankUI.swf" order="102" />
+		<resource value="swf/commIntr/commIntr_ui.swf" order="103" />
+		<resource value="swf/spring/springUI.swf" order="104" />
+		<resource value="swf/activityChallengeLimitTime/res.swf" order="105" />
+		<resource value="swf/slot/slotUI.swf" order="200" />
+		<resource value="swf/equipment/equipmentUI.swf" order="201" />
+		<resource value="swf/scratch/scratchUI.swf" order="202" />
+		<resource value="swf/welfareHall/welfareHallUI.swf" order="205" />
+		<resource value="swf/activityArenaDoubleBonus/res.swf" order="210" />
+		<resource value="swf/card/card_swap_res.swf" order="220" />
+		<resource value="swf/secondaryPassword/secondaryPasswordUI.swf" order="215" />
+		<resource value="swf/plantExplore/plantExploreUI.swf" order="801" />
+		<resource value="swf/entryIcon/entryIconUI.swf" order="114" />
+		<resource value="swf/tgp/TgpUI.swf" order="225" />
+		<resource value="swf/actDf51/actDf51.swf" order="802" />
+		<resource value="swf/firstRecharge/firstRechargeUI.swf" order="209" />
+		<resource value="swf/rookieCeremony/rookieCeremonyUI.swf" order="235" />
+		<resource value="swf/td/tdPrivilegeRes.swf" order="255"/>
+		<resource value="swf/castle/castleUI.swf" order="265" />
+		<resource value="swf/dragonBoat/dragonBoatUI.swf" order="245"/>
+		<resource value="swf/castle/castleUI.swf" order="265" />
+		<resource value="swf/actQT/actQT.swf" order="803" />
+		<resource value="swf/actRechargeRebate/res.swf" order="900" />
+		<resource value="swf/collectWord/collectWordUI.swf" order="285"/>
+		<resource value="swf/unionCompetition/unionCompetition.swf" order="802" />
+		<resource value="swf/actNightclub/res.swf" order="804" />
+		<resource value="swf/actFlipcard/res.swf" order="805" />
+		<resource value="swf/awake/awakeUI.swf" order="295" />
+		<resource value="swf/actWishing/res.swf" order="806" />
+<!-- winstonyang begin-->
+		<resource value="swf/childrenDay/childrenDayUI.swf" order="400" />
+		<resource value="swf/pcManager/pcManagerUI.swf" order="401" />
+		<resource value="swf/cardBar/cardBarUI.swf" order="402" />
+		<resource value="swf/loginActivity/loginActivityUI.swf" order="403"/>
+		<resource value="swf/dailyVow/dailyVowUI.swf" order="404"/>
+		<resource value="swf/garden/gardenUI.swf" order="405"/>
+		<resource value="swf/mine/mineUI.swf" order="406" />
+		<resource value="swf/plantTest/plantTestUI.swf" order="407"/>
+		<resource value="swf/temple/templeUI.swf" order="408" />
+		<resource value="swf/debris/debrisUI.swf" order="409"/>
+		<resource value="swf/halloween/halloweenUI.swf" order="410"/>
+		<resource value="swf/seckill/seckillUI.swf" order="411"/>
+		<resource value="swf/baptize/baptizeUI.swf" order="412"/>
+		<resource value="swf/brain/brainUI.swf" order="413"/>
+		<resource value="swf/hole/holeUI.swf" order="414"/>
+		<resource value="swf/nutritionExchange/nutritionExchangeUI.swf" order="415"/>
+		<resource value="swf/luckystar/luckystarUI.swf" order="416"/>
+		<resource value="swf/cardFruit/res.swf" order="1500"/>
+		<resource value="swf/actPennyShop/res.swf" order="1600"/>
+		<resource value="swf/topKing/res.swf" order="1700"/>
+		<resource value="swf/cardDNA/res.swf" order="1800"/>
+		<resource value="swf/dummy/res.swf" order="1900"/>
+		<resource value="swf/actPlantCarnival/res.swf" order="2000"/>
+		<resource value="swf/actHitJar/res.swf" order="2100"/>
+		<resource value="swf/expedition/res.swf" order="2200"/>
+		<resource value="swf/plantArmor/res.swf" order="2300"/>
+		<resource value="swf/endlessFuben/res.swf" order="2400"/>
+		<resource value="swf/act3years/res.swf" order="2500"/>
+		<resource value="swf/superArena/res.swf" order="2600"/>
+		<resource value="swf/plantEvolution/res.swf" order="2700"/>
+<!-- winstonyang end -->
+		<resource value="swf/heFuActivity/heFuActivityUI.swf" order="807" />
+		<resource value="swf/videoActivity/videoActivity.swf" order="808" />
+		<resource value="swf/actqqgame/res.swf" order="1400"/>
+<!-- clairli -->
+		<resource value="swf/talent/talentUI.swf" order="305" />		
+<!-- clairli -->
+		<resource value="swf/levelup/res.swf" order="910"/>	
+		<resource value="swf/actFund/res.swf" order="1000"/>
+		<resource value="swf/act14days/res.swf" order="1100"/>
+		<resource value="swf/actRed/res.swf" order="1200"/>
+		<resource value="swf/actXY/res.swf" order="1300"/>
+    </Resource>
+    <ConfigSections>
+    	<add name="name1" value="value1" />
+    	<add name="homesite" value="http://pvz.qq.com" />
+    </ConfigSections>
+</configuration>

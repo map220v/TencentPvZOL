@@ -1,0 +1,91 @@
+package PVZ.Cmd
+{
+   import com.tencent.protobuf.Message;
+   import com.tencent.protobuf.ReadUtils;
+   import com.tencent.protobuf.WireType;
+   import com.tencent.protobuf.WriteUtils;
+   import com.tencent.protobuf.WritingBuffer;
+   import com.tencent.protobuf.fieldDescriptors.FieldDescriptor$TYPE_MESSAGE;
+   import flash.errors.IOError;
+   import flash.utils.IDataInput;
+   
+   public final class Cmd_Lab_ProduceLab_SC extends Message
+   {
+      
+      public static const $MessageID:String = "PVZ.Cmd.Cmd_Lab_ProduceLab_SC";
+      
+      public static const CHANGELAB:FieldDescriptor$TYPE_MESSAGE = new FieldDescriptor$TYPE_MESSAGE("PVZ.Cmd.Cmd_Lab_ProduceLab_SC.changeLab","changeLab",1 << 3 | WireType.LENGTH_DELIMITED,Dto_LabItem);
+       
+      
+      private var changeLab$field:Dto_LabItem;
+      
+      public function Cmd_Lab_ProduceLab_SC()
+      {
+         super();
+      }
+      
+      override public function get $messageID() : String
+      {
+         return Cmd_Lab_ProduceLab_SC.$MessageID;
+      }
+      
+      public function clearChangeLab() : void
+      {
+         this.changeLab$field = null;
+      }
+      
+      public function get hasChangeLab() : Boolean
+      {
+         return this.changeLab$field != null;
+      }
+      
+      public function set changeLab(param1:Dto_LabItem) : void
+      {
+         this.changeLab$field = param1;
+      }
+      
+      public function get changeLab() : Dto_LabItem
+      {
+         return this.changeLab$field;
+      }
+      
+      override public final function writeToBuffer(param1:WritingBuffer) : void
+      {
+         var _loc2_:* = undefined;
+         if(this.hasChangeLab)
+         {
+            WriteUtils.writeTag(param1,WireType.LENGTH_DELIMITED,1);
+            WriteUtils.write$TYPE_MESSAGE(param1,this.changeLab$field);
+         }
+         for(_loc2_ in this)
+         {
+            super.writeUnknown(param1,_loc2_);
+         }
+      }
+      
+      override public final function readFromSlice(param1:IDataInput, param2:uint) : void
+      {
+         var _loc4_:uint = 0;
+         var _loc3_:uint = 0;
+         while(param1.bytesAvailable > param2)
+         {
+            _loc4_ = ReadUtils.read$TYPE_UINT32(param1);
+            switch(_loc4_ >> 3)
+            {
+               case 1:
+                  if(_loc3_ != 0)
+                  {
+                     throw new IOError("Bad data format: Cmd_Lab_ProduceLab_SC.changeLab cannot be set twice.");
+                  }
+                  _loc3_++;
+                  this.changeLab = new Dto_LabItem();
+                  ReadUtils.read$TYPE_MESSAGE(param1,this.changeLab);
+                  break;
+               default:
+                  super.readUnknown(param1,_loc4_);
+                  break;
+            }
+         }
+      }
+   }
+}

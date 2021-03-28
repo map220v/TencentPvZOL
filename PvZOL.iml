@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="PvZOL">
+    <configurations>
+      <configuration name="PvZOL" target-platform="Desktop" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL" runtime-loaded-modules="Main&#9;Game.swf&#9;true&#10;ModuleCity&#9;ModuleCity.swf&#9;true">
+        <dependencies>
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop package-file-name="PvZOL">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/assets" path-in-package="assets" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/bossweb" path-in-package="bossweb" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/conf" path-in-package="conf" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/image" path-in-package="image" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/js" path-in-package="js" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/sound" path-in-package="sound" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/swf" path-in-package="swf" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/webgame_login" path-in-package="webgame_login" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/asgui.xml" path-in-package="asgui.xml" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/clientDB.txt" path-in-package="clientDB.txt" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/config.xml" path-in-package="config.xml" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/fileVer.xml" path-in-package="fileVer.xml" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/init.xml" path-in-package="init.xml" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/Msgcheck.swf" path-in-package="Msgcheck.swf" />
+          </files-to-package>
+        </packaging-air-desktop>
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="flex_sdk_4.6.0.23201B" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="libs" level="project" />
+  </component>
+</module>
