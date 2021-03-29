@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="双发豌豆AI" needConf="1">
+	<node nodeID="ReqPlantCurAction" nodeName="双发豌豆正在攻击" >
+		<param pid="1" enumDes="等于" />
+		<param pid="4" enumDes="双发豌豆正在攻击" />
+	</node>
+	<node nodeID="SequenceNode" nodeName="双发豌豆攻击判断">
+		<node nodeID="ReqPlantDurationExpire" nodeName="植物是否到达行为周期时间" />
+		<node nodeID="ReqHasShootZombie" nodeName="攻击范围内是否有可射击僵尸目标" />
+		<node nodeID="ExePlantResetDuration" nodeName="重置周期计时时间" />
+		<node nodeID="ExePlantAttack" nodeName="执行攻击行为" >
+			<param pid="2" value="PlantPeaRepeatShooterAction_Shoot" enumDes="双发豌豆攻击行为"/>	
+		</node>
+	</node>
+	<node nodeID="ExePlantIdle" nodeName="执行空闲行为" >
+		<param pid="4" value="PPeaShooterAction_Idle" enumDes="双发豌豆待机行为" />
+	</node>
+</node>

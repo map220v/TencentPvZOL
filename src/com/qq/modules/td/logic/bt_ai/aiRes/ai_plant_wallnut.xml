@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="坚果AI">
+	<node nodeID="ReqPlantCurAction" nodeName="坚果正在执行空闲行为" >
+		<param pid="1" value="equal" />
+		<param pid="6" value="PWallnutAction_Idle" enumDes="坚果正在执行空闲行为"/>
+	</node>
+	<node nodeID="ExePlantIdle" nodeName="执行空闲行为" >
+		<param pid="2" value="PWallnutAction_Idle" enumDes="坚果待机行为"/>
+	</node>
+</node>

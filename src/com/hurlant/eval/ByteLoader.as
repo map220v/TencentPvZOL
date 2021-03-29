@@ -1,128 +1,141 @@
-package com.hurlant.eval
-{
-   import flash.display.Loader;
-   import flash.system.ApplicationDomain;
-   import flash.system.LoaderContext;
-   import flash.utils.ByteArray;
-   import flash.utils.Endian;
-   
-   public class ByteLoader
-   {
-      
-      private static var abc_header:Array = [63,18];
-      
-      private static var swf_start:Array = [70,87,83,9,255,255,255,255,120,0,3,232,0,0,11,184,0,0,12,1,0,68,17,8,0,0,0];
-      
-      private static var swf_end:Array = [64,0];
-       
-      
-      public function ByteLoader()
-      {
-         super();
-      }
-      
-      public static function getType(param1:ByteArray) : int
-      {
-         param1.endian = "littleEndian";
-         var _loc2_:uint = param1.readUnsignedInt();
-         switch(_loc2_)
-         {
-            case 46 << 16 | 14:
-            case 46 << 16 | 15:
-            case 46 << 16 | 16:
-               return 2;
-            case 67 | 87 << 8 | 83 << 16 | 9 << 24:
-            case 67 | 87 << 8 | 83 << 16 | 8 << 24:
-            case 67 | 87 << 8 | 83 << 16 | 7 << 24:
-            case 67 | 87 << 8 | 83 << 16 | 6 << 24:
-               return 5;
-            case 70 | 87 << 8 | 83 << 16 | 9 << 24:
-            case 70 | 87 << 8 | 83 << 16 | 8 << 24:
-            case 70 | 87 << 8 | 83 << 16 | 7 << 24:
-            case 70 | 87 << 8 | 83 << 16 | 6 << 24:
-            case 70 | 87 << 8 | 83 << 16 | 5 << 24:
-            case 70 | 87 << 8 | 83 << 16 | 4 << 24:
-               return 1;
-            default:
-               return 0;
-         }
-      }
-      
-      public static function wrapInSWF(param1:Array) : ByteArray
-      {
-         var _loc4_:ByteArray = null;
-         var _loc5_:int = 0;
-         var _loc2_:ByteArray = new ByteArray();
-         _loc2_.endian = Endian.LITTLE_ENDIAN;
-         var _loc3_:int = 0;
-         while(_loc3_ < swf_start.length)
-         {
-            _loc2_.writeByte(swf_start[_loc3_]);
-            _loc3_++;
-         }
-         _loc3_ = 0;
-         while(_loc3_ < param1.length)
-         {
-            _loc4_ = param1[_loc3_];
-            _loc5_ = 0;
-            while(_loc5_ < abc_header.length)
-            {
-               _loc2_.writeByte(abc_header[_loc5_]);
-               _loc5_++;
-            }
-            _loc2_.writeInt(_loc4_.length);
-            _loc2_.writeBytes(_loc4_,0,_loc4_.length);
-            _loc3_++;
-         }
-         _loc3_ = 0;
-         while(_loc3_ < swf_end.length)
-         {
-            _loc2_.writeByte(swf_end[_loc3_]);
-            _loc3_++;
-         }
-         _loc2_.position = 4;
-         _loc2_.writeInt(_loc2_.length);
-         _loc2_.position = 0;
-         return _loc2_;
-      }
-      
-      public static function isSWF(param1:ByteArray) : Boolean
-      {
-         var _loc2_:int = getType(param1);
-         return (_loc2_ & 1) == 1;
-      }
-      
-      public static function loadBytes(param1:*, param2:Boolean = false) : Boolean
-      {
-         var c:LoaderContext = null;
-         var l:Loader = null;
-         var bytes:* = param1;
-         var inplace:Boolean = param2;
-         if(bytes is Array || getType(bytes) == 2)
-         {
-            if(!(bytes is Array))
-            {
-               bytes = [bytes];
-            }
-            bytes = wrapInSWF(bytes);
-         }
-         try
-         {
-            c = null;
-            if(inplace)
-            {
-               c = new LoaderContext(false,ApplicationDomain.currentDomain,null);
-            }
-            l = new Loader();
-            l.loadBytes(bytes,c);
-            return true;
-         }
-         catch(e:*)
-         {
-            Debug.print(e);
-            return false;
-         }
-         return false;
-      }
-   }
+package com.hurlant.eval {
+	import flash.display.Loader;
+	import flash.system.ApplicationDomain;
+	import flash.system.LoaderContext;
+	import flash.utils.ByteArray;
+	import flash.utils.Endian;
+	
+	public class ByteLoader {
+		
+		private static var swf_start:Array = 
+		[
+			0x46, 0x57, 0x53, 0x09, 								// FWS, Version 9
+			0xff, 0xff, 0xff, 0xff, 								// File length
+			0x78, 0x00, 0x03, 0xe8, 0x00, 0x00, 0x0b, 0xb8, 0x00,	// size [Rect 0 0 8000 6000] 
+		 	0x00, 0x0c, 0x01, 0x00, 								// 16bit le frame rate 12, 16bit be frame count 1 
+		 	0x44, 0x11,												// Tag type=69 (FileAttributes), length=4  
+		 	0x08, 0x00, 0x00, 0x00
+		 ];
+
+		private static var abc_header:Array = 
+		[
+		 	0x3f, 0x12,												// Tag type=72 (DoABC), length=next.
+		 	//0xff, 0xff, 0xff, 0xff 								// ABC length, not included in the copy. 
+		];
+		 
+		private static var swf_end:Array =
+		// the commented out code tells the player to instance a class "test" as a Sprite.
+		[/*0x09, 0x13, 0x01, 0x00, 0x00, 0x00, 0x74, 0x65, 0x73, 0x74, 0x00, */ 0x40, 0x00]; // Tag type=1 (ShowFrame), length=0
+		 
+		
+		/**
+		 * Wraps the ABC bytecode inside the simplest possible SWF file, for
+		 * the purpose of allowing the player VM to load it.
+		 *  
+		 * @param bytes: an ABC file
+		 * @return a SWF file 
+		 * 
+		 */
+		public static function wrapInSWF(bytes:Array):ByteArray {
+			// wrap our ABC bytecodes in a SWF.
+			var out:ByteArray = new ByteArray;
+			out.endian = Endian.LITTLE_ENDIAN;
+			for (var i:int=0;i<swf_start.length;i++) {
+				out.writeByte(swf_start[i]);
+			}
+			for (i=0;i<bytes.length;i++) {
+				var abc:ByteArray = bytes[i];
+				for (var j:int=0;j<abc_header.length;j++) {
+					out.writeByte(abc_header[j]);
+				}
+				// set ABC length
+				out.writeInt(abc.length);
+				out.writeBytes(abc, 0, abc.length);
+			}
+			for (i=0;i<swf_end.length;i++) {
+				out.writeByte(swf_end[i]);
+			}
+			// set SWF length
+			out.position = 4;
+			out.writeInt(out.length);
+			// reset
+			out.position = 0;
+			return out;
+		}
+		/**
+		 * Load the bytecodes passed into the flash VM, using
+		 * the current application domain, or a child of it
+		 *
+		 * This probably always returns true, even when things fail horribly,
+		 * due to the Loader logic waiting to parse the bytecodes until the 
+		 * current script has finished running. 
+		 * 
+		 */
+		public static function loadBytes(bytes:*, inplace:Boolean=false):Boolean {
+			if (bytes is Array || (getType(bytes)==2)) {
+				if (!(bytes is Array)) {
+					bytes = [ bytes ];
+				}
+				bytes = wrapInSWF(bytes);
+			}
+			try {
+				var c:LoaderContext = null;
+				if (inplace) {
+					c = new LoaderContext(false, ApplicationDomain.currentDomain, null);
+					c.allowCodeImport = true;
+				}
+				var l:Loader = new Loader;
+				l.loadBytes(bytes, c);
+				return true;
+			} catch (e:*) {
+				Debug.print(e);
+			} finally {
+				//trace("done.");
+				// darn it. the running of the bytes doesn't happen until current scripts are done. no try/catch can work
+			}
+			return false;
+		}
+		public static function isSWF(data:ByteArray):Boolean {
+			var type:int = getType(data);
+			return (type&1)==1;
+		}
+		/**
+		 * getType.
+		 * ripped from abcdump.as.
+		 * 
+		 * This looks at the array header and decides what it is.
+		 * 
+		 * (getType&1)==1 => it's  SWF
+		 * (getType&2)==2 => it's  ABC
+		 * (getType&4)==4)=> it's compressed
+		 *  
+		 * @param data
+		 * @return 
+		 * 
+		 */
+		public static function getType(data:ByteArray):int {
+			data.endian = "littleEndian"
+			var version:uint = data.readUnsignedInt()
+			switch (version) {
+			case 46<<16|14:
+			case 46<<16|15:
+			case 46<<16|16:
+				return 2;
+			case 67|87<<8|83<<16|9<<24: // SWC9
+			case 67|87<<8|83<<16|8<<24: // SWC8
+			case 67|87<<8|83<<16|7<<24: // SWC7
+			case 67|87<<8|83<<16|6<<24: // SWC6
+				return 5;
+			case 70|87<<8|83<<16|9<<24: // SWC9
+			case 70|87<<8|83<<16|8<<24: // SWC8
+			case 70|87<<8|83<<16|7<<24: // SWC7
+			case 70|87<<8|83<<16|6<<24: // SWC6
+			case 70|87<<8|83<<16|5<<24: // SWC5
+			case 70|87<<8|83<<16|4<<24: // SWC4
+				return 1;
+			default:
+				return 0;
+			}
+		}
+	}
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="SequenceNode" nodeName="骆驼僵尸AI">
+	<node nodeID="ChioceNode" nodeName="僵尸行为判断">
+		<node nodeID="SequenceNode" nodeName="攻击行为判断">
+			<node nodeID="ReqAttackTarget" nodeName="攻击范围内是否有目标">
+				<param  pid="1" value="true" enumDes="是"/>
+			</node>
+			<node nodeID="ExeEat" nodeName="执行攻击行为" />
+		</node>
+		<node nodeID="ExeNomalWalk" nodeName="执行走路行为" />
+	</node>
+</node>

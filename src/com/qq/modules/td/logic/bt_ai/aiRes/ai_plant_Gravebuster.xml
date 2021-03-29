@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="SequenceNode" nodeName="墓碑吞噬者AI" needConf="1">
+	<node nodeID="ExePlantAttack" nodeName="执行攻击行为" >
+		<param pid="12" value="PGravebusterAction_Eat" enumDes="墓碑吞噬者正在吞噬"/>	
+	</node>
+	<node  nodeID="ExeFrozenAI" nodeClass="ExeFrozenAI" nodeName="冻结AI执行" />
+</node>

@@ -1,63 +1,58 @@
 package com.hurlant.eval
 {
-   import com.hurlant.test.ILogger;
-   
-   public class Debug
-   {
-      
-      static var nesting = 0;
-      
-      private static var _logger:ILogger = null;
-       
-      
-      public function Debug()
-      {
-         super();
-      }
-      
-      public static function set logger(param1:ILogger) : void
-      {
-         _logger = param1;
-      }
-      
-      static function arrows(param1:*) : String
-      {
-         var _loc2_:* = "";
-         var _loc3_:* = nesting;
-         while(_loc3_ > 0)
-         {
-            _loc2_ += param1;
-            _loc3_--;
-         }
-         return nesting + " " + _loc2_ + " ";
-      }
-      
-      public static function exit(param1:*, param2:* = "") : *
-      {
-         --nesting;
-      }
-      
-      public static function assert(param1:*) : *
-      {
-         if(!param1)
-         {
-            throw "Assert failed.";
-         }
-      }
-      
-      public static function enter(param1:*, param2:* = "") : *
-      {
-         nesting += 1;
-      }
-      
-      public static function print(... rest) : void
-      {
-         var _loc2_:String = rest.join(" - ");
-         if(_logger != null)
-         {
-            _logger.print(_loc2_);
-         }
-         trace(_loc2_);
-      }
-   }
+	import com.hurlant.test.ILogger;
+	
+	public class Debug
+	{
+
+		public static var nesting:int = 0;
+
+		static private var _logger:ILogger = null;
+		static public function set logger(value:ILogger):void {
+			_logger = value;
+		}
+		
+		public static function arrows (c:*): String 
+		{
+		    var str:String = "";
+		    for ( var n:int = nesting; n > 0; n = n - 1 ) {
+		        str = str + c;
+		    }
+		    return nesting + " " + str+" ";
+		}
+		
+		public static function enter (s:*,a:*=""):void
+		{
+		    nesting = nesting + 1;
+		    //print (arrows(">"), s, a);
+		}
+		
+		public static function exit (s:*,a:*=""):void
+		{
+		    //print (arrows("<"), s, a);
+		    nesting = nesting - 1;
+		}
+
+		public static function assert (bool:Boolean):void
+		{
+			if (!bool) {
+				throw ("Assert failed.");
+			}
+		}
+		
+		public static function print(...args):void {
+			var s:String = args.join(" - ");
+			if (_logger!=null) {
+				_logger.print(s);
+			} 
+			trace(s);
+		}
+
+/*		
+		Release function enter (s,a="") { nesting = nesting + 1 }
+		Release function exit (s,a="") { nesting = nesting - 1 }
+		Release function trace (s) { }
+*/
+
+	}
 }

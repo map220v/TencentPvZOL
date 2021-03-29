@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeTypeID="20" nodeID="ChioceNode" nodeName="转换器AI">
+	<node nodeTypeID="10" nodeID="SequenceNode" nodeName="周期行为判断">
+		<node nodeTypeID="20" nodeID="ChioceNode" nodeName="转换器行为判断">
+			<node nodeTypeID="10" nodeID="SequenceNode" nodeName="攻击范围内有目标">
+				<node nodeTypeID="40" nodeID="ReqHasUnswitchedZombieInRange" nodeName="当前格子内有目标"/>
+				<node nodeTypeID="30" nodeID="ExeSwitcherRun" nodeName="执行转换行为" />
+			</node>
+			<!--  <node nodeTypeID="30" nodeID="ExeSwitcherIdle" nodeName="执行转换器等待行为" />-->
+		</node>
+	</node>
+	<!--<node nodeTypeID="30" nodeID="ExeSwitcherIdle" nodeName="执行转换器等待行为" >
+	</node>-->
+</node>

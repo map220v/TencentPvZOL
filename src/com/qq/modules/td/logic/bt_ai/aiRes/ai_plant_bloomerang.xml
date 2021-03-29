@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeTypeID="20" nodeID="ChioceNode" nodeName="回旋镖植物AI">
+	<node nodeTypeID="40" nodeID="ReqPlantCurAction" nodeName="回旋镖植物正在攻击" >
+		<param paramType="enum" value="equal" />
+		<param paramType="enum" value="PPeaShooterAction_Shoot" />
+	</node>
+	<node nodeTypeID="10" nodeID="SequenceNode" nodeName="豌豆攻击判断">
+		<node nodeTypeID="40" nodeID="ReqPlantDurationExpire" nodeName="植物是否到达行为周期时间" />
+		<node nodeTypeID="40" nodeID="ReqHasShootZombie" nodeName="攻击范围内是否有可射击僵尸目标" />
+		<node nodeTypeID="30" nodeID="ExePlantResetDuration" nodeName="重置周期计时时间" />
+		<node nodeTypeID="30" nodeID="ExePlantAttack" nodeName="执行攻击行为" >
+			<param paramType="enum" value="PPeaShooterAction_Shoot" />
+		</node>
+	</node>
+	<node nodeTypeID="30" nodeID="ExePlantIdle" nodeName="执行空闲行为" >
+		<param paramType="enum" value="PPeaShooterAction_Idle" />
+	</node>
+</node>

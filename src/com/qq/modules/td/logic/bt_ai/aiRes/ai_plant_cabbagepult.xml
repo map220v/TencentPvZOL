@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="包心菜AI" needConf="1">
+	<node nodeID="ReqPlantCurAction" nodeName="包心菜正在攻击" >
+		<param pid="1" enumDes="等于" />
+		<param pid="7" value="PCabbagepulActionAttack" enumDes="包心菜正在执行攻击行为" />
+	</node>
+	<node nodeID="SequenceNode" nodeName="豌豆攻击判断">
+		<node nodeID="ReqPlantDurationExpire" nodeName="植物是否到达行为周期时间" />
+		<node nodeID="ChioceNode" nodeName="优先判断僵尸" >
+			<node nodeID="SequenceNode" nodeName="优先判断僵尸" >
+				<node nodeID="ReqHasShootZombie" nodeName="攻击范围内是否有可射击僵尸目标" >
+					<param pid="2" value="false" enumDes="不包含普通可攻击物件"/>
+					<param pid="1" value="true" enumDes="是否可攻击飞行单位"/>
+				</node>
+				<node nodeID="ExePlantResetDuration" nodeName="重置周期计时时间" />
+				<node nodeID="ExePlantAttack" nodeName="执行攻击行为" >
+					<param pid="9" value="PCabbagepulActionAttack" enumDes="包心菜攻击行为" />
+				</node>
+			</node>
+			<node nodeID="SequenceNode" nodeName="判断所有目标" >
+				<node nodeID="ReqHasShootZombie" nodeName="攻击范围内是否有可射击僵尸目标" >
+					<param pid="1" value="true" enumDes="包含普通可攻击物件"/>
+				</node>
+				<node nodeID="ExePlantResetDuration" nodeName="重置周期计时时间" />
+				<node nodeID="ExePlantAttack" nodeName="执行攻击行为" >
+					<param pid="9" value="PCabbagepulActionAttack" enumDes="包心菜攻击行为" />
+				</node>
+			</node>
+		</node>
+	</node>
+	<node nodeID="ExePlantIdle" nodeName="执行空闲行为" >
+		<param pid="1" value="PAction_Idle" enumDes="默认待机行为"/>
+	</node>
+</node>

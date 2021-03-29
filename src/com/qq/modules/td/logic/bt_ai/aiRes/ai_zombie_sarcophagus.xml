@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="木乃伊僵尸AI" needConf="1">
+	<node nodeID="SequenceNode" nodeName="检查爆炸属性">
+		<node nodeID="ReqCustomProp" nodeClass="ReqCustomProp" nodeName="检查是否爆炸过">
+			<param pid="1" value="hasExplode" enumDes="木乃伊僵尸是否爆炸过"/>
+			<param pid="2" value="false" enumDes="否"/>
+		</node>
+		<node nodeID="ReqArmorValid" nodeClass="ReqArmorValid" nodeName="僵尸的护甲无效">
+			<param  pid="2" value="false" enumDes="否"/>
+		</node>
+		<node nodeID="ExeCustomProp" nodeClass="ExeCustomProp" nodeName="设置爆炸属性" >
+			<param pid="1" value="hasExplode" enumDes="木乃伊僵尸是否爆炸过"/>
+			<param pid="1" value="true" enumDes="是"/>
+		</node>
+		<node nodeID="ExeDoAction" nodeClass="ExeDoAction" nodeName="执行动作">
+			<param pid="1" value="ZAction_Sarcophagus_Break" enumDes="木乃伊僵尸爆炸"/>
+		</node>
+		<node  nodeID="ExeFrozenAI" nodeClass="ExeFrozenAI" nodeName="冻结AI执行" />
+	</node>
+	<node nodeID="ChioceNode" nodeName="木乃伊僵尸行为判断">
+		<node nodeID="SequenceNode" nodeName="变身后行为判断">
+			<node nodeID="ReqCustomProp" nodeClass="ReqCustomProp" nodeName="检查是否爆炸过">
+				<param pid="1" value="hasExplode" enumDes="木乃伊僵尸是否爆炸过"/>
+				<param pid="1" value="true" enumDes="是"/>
+			</node>
+			<node nodeID="ChioceNode" nodeName="木乃伊僵尸状态二行为判断">
+				<node nodeID="SequenceNode" nodeName="攻击行为判断">
+					<node nodeID="ReqAttackTarget" nodeName="攻击范围内是否有目标">
+						<param  pid="1" value="true" enumDes="是"/>
+					</node>
+					<node nodeID="ExeEat" nodeName="执行攻击行为" >
+						<param pid="2" value="ZAction_Sarcophagus_SpecialEat" enumDes="木乃伊僵尸特殊吃"/>
+					</node>
+				</node>
+				<node nodeID="ExeNomalWalk" nodeName="执行走路行为" >
+					<param pid="2" value="ZAction_Sarcophagus_SpecialWalk" enumDes="木乃伊僵尸特殊移动"/>
+				</node>
+			</node>
+		</node>
+		<node nodeID="ChioceNode" nodeName="变身前行为判断">
+			<node nodeID="SequenceNode" nodeName="攻击行为判断">
+				<node nodeID="ReqAttackTarget" nodeName="攻击范围内是否有目标">
+					<param  pid="1" value="true" enumDes="是"/>
+				</node>
+				<node nodeID="ExeEat" nodeName="执行攻击行为" >
+					<param pid="1" value="ZAction_Eat" enumDes="普通僵尸吃"/>
+				</node>
+			</node>
+			<node nodeID="ExeNomalWalk" nodeName="执行走路行为" >
+				<param pid="1" value="ZAction_Walk" enumDes="普通僵尸移动"/>
+			</node>
+		</node>
+	</node>
+</node>
+
+

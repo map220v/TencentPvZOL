@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]行为节点  [40]条件节点 
+顺序节点（SequenceNode）：组合节点，顺序执行子节点，只要碰到一个子节点返回FALSE，则返回FALSE；否则返回TRUE。
+选择节点（ChioceNode）：组合节点，顺序执行子节点，只要碰到一个子节点返回TRUE，则返回TRUE；否则返回FALSE。
+-->
+<conf>
+<behaviourNode nodeTypeID="10" nodeTypeName="顺序节点">
+	<node  nodeID="SequenceNode" nodeClass="SequenceNode" nodeName="顺序节点" />
+</behaviourNode>
+<behaviourNode nodeTypeID="20" nodeTypeName="选择节点">
+	<node  nodeID="ChioceNode" nodeClass="ChioceNode" nodeName="选择节点" />
+</behaviourNode>
+<behaviourNode nodeTypeID="30" nodeTypeName="行为节点">
+	<node  nodeID="ExeSwitcherRun" nodeClass="ExeSwitcherRun" nodeName="执行转换行为" />
+	<node  nodeID="ExeFrozenAI" nodeClass="ExeFrozenAI" nodeName="冻结AI执行" />
+	<node  nodeID="ExeFadeOutPlant" nodeClass="ExeFadeOutPlant" nodeName="植物渐隐消失行为" />
+	<node  nodeID="ExeBalloonPop" nodeClass="ExeBalloonPop" nodeName="执行掉落行为" />
+	<node  nodeID="ExeFly" nodeClass="ExeFly" nodeName="执行飞行行为" />
+	<node  nodeID="ExeEat" nodeClass="ExeEat" nodeName="执行攻击行为" >
+		<params paramType="enum" defaultValue="ZAction_Eat">
+			<param pid="1" value="ZAction_Eat" enumDes="普通僵尸吃"/>
+			<param pid="2" value="ZAction_Sarcophagus_SpecialEat" enumDes="木乃伊僵尸特殊吃"/>
+		</params>	
+	</node>
+	<node  nodeID="ExeNomalWalk" nodeClass="ExeNomalWalk" nodeName="执行走路行为" >
+		<params paramType="enum" defaultValue="ZAction_Walk">
+			<param pid="1" value="ZAction_Walk" enumDes="普通僵尸移动"/>
+			<param pid="2" value="ZAction_Sarcophagus_SpecialWalk" enumDes="木乃伊僵尸特殊移动"/>
+		</params>	
+	</node>
+	<node  nodeID="ExeJumpSuccess" nodeClass="ExeJumpSuccess" nodeName="执行跳跃成功行为" />
+	<node  nodeID="ExeRun" nodeClass="ExeRun" nodeName="执行奔跑行为" />
+	<node  nodeID="ExeSmash" nodeClass="ExeSmash" nodeName="执行刚哥尔特攻击行为" />
+	<node  nodeID="ExeGasp" nodeClass="ExeGasp" nodeName="执行惊讶行为" />
+	<node  nodeID="ExePaperWalk" nodeClass="ExePaperWalk" nodeName="执行走路行为" />
+	<node  nodeID="ExeCharmZombie" nodeClass="ExeCharmZombie" nodeName="魅惑僵尸行为" />
+	<node  nodeID="ExePlantResetDuration" nodeClass="ExePlantResetDuration" nodeName="重置周期计时时间" />
+	<node  nodeID="ExeLuckygrassAttack" nodeClass="ExeLuckygrassAttack" nodeName="执行攻击行为" />
+	<node  nodeID="ExeMagnetIronArmor" nodeClass="ExeMagnetIronArmor" nodeName="执行吸取行为" />
+	<node  nodeID="ExeFirePlant" nodeClass="ExeFirePlant" nodeName="执行火烧植物行为" />
+	<node  nodeID="ExePlantIdle" nodeClass="ExePlantIdle" nodeName="执行空闲行为" >
+		<params paramType="enum" defaultValue="PAction_Idle">
+			<param pid="1" value="PAction_Idle" enumDes="默认待机行为"/>
+			<param pid="2" value="PWallnutAction_Idle" enumDes="坚果待机行为"/>
+			<param pid="3" value="PlantMotengActionIdle" enumDes="魔藤待机行为"/>
+			<param pid="4" value="PPeaShooterAction_Idle" enumDes="豌豆待机行为"/>
+			<param pid="5" value="PPotatomineAction_Armed" enumDes="土豆炸弹升起行为"/>
+			<param pid="6" value="PPotatomineAction_Idle" enumDes="土豆炸弹未升起行为"/>
+			<param pid="7" value="PPotatomineAction_ArmedIdle" enumDes="土豆地雷战斗待机"/>
+		</params>
+	</node>	
+	<node  nodeID="ExePlantAttack" nodeClass="ExePlantAttack" nodeName="执行攻击行为" >
+		<params paramType="enum" defaultValue="PPeaShooterAction_Shoot">
+			<param pid="1" value="PPeaShooterAction_Shoot" enumDes="豌豆攻击行为"/>
+			<param pid="2" value="PlantPeaRepeatShooterAction_Shoot" enumDes="双发豌豆攻击行为"/>
+			<param pid="3" value="PPotatomineAction_Mashed" enumDes="执行土豆爆炸行为"/>
+			<param pid="4" value="PSquashActionAttack" enumDes="倭瓜攻击行为"/>
+			<param pid="5" value="PMelonpultAction_Shoot" enumDes="魅惑菇攻击行为"/>
+			<param pid="6" value="PlantMotengActionShoot" enumDes="魔藤攻击行为"/>
+			<param pid="7" value="PCherryBombAction_Explode" enumDes="樱桃爆炸行为"/>
+			<param pid="8" value="FrostMushroomAttackAction" enumDes="冰冻菇攻击行为"/>
+			<param pid="9" value="PCabbagepulActionAttack" enumDes="包心菜攻击行为"/>
+			<param pid="10" value="PIceburgActionFrozen" enumDes="包心菜攻击行为"/>
+			<param pid="11" value="PBonkchoyActionAttack" enumDes="白菜战士攻击行为"/>	
+			<param pid="12" value="PGravebusterAction_Eat" enumDes="墓碑吞噬者正在吞噬"/>	
+			<param pid="13" value="PSmallWisteriaAction_Attack" enumDes="小魔滕正在攻击"/>	
+		</params>
+	</node>
+	<node  nodeID="ExePlantProtect" nodeClass="ExePlantProtect" nodeName="执行治疗行为" >
+		<params paramType="enum" defaultValue="PHealFlowerAction_Working">
+			<param pid="1" value="PHealFlowerAction_Working" enumDes="治疗花治疗行为"/>
+		</params>
+	</node>
+	<node  nodeID="ExeCoolDown" nodeClass="ExeCoolDown" nodeName="设置植物技能冷却" >
+		<params paramType="enum" defaultValue="true">
+			<param pid="1" value="true" enumDes="是"/>
+			<param pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node  nodeID="ExeCustomProp" nodeClass="ExeCustomProp" nodeName="设置状态属性" >
+		<params paramType="enum" defaultValue="propName">
+			<param pid="1" value="hasExplode" enumDes="木乃伊僵尸是否爆炸过"/>
+		</params>
+		<params paramType="enum" defaultValue="true">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ExeDoAction" nodeClass="ExeDoAction" nodeName="执行动作">
+		<params paramType="enum" defaultValue="ZAction_Idle">
+			<param  pid="1" value="ZAction_Sarcophagus_Break" enumDes="木乃伊僵尸爆炸"/>
+			<param  pid="2" value="ZAction_Tombraiser_Throw" enumDes="墓碑僵尸放置墓碑"/>
+			<param  pid="3" value="ZAction_BossSphinx_Sleep" enumDes="boss狮身人面像沉睡"/>
+			<param  pid="4" value="ZActionZombieFlipCard" enumDes="骆驼僵尸翻牌"/>
+		</params>
+	</node>
+	<node nodeID="ExeZombieResetDuration" nodeName="僵尸重置周期" />
+</behaviourNode>
+<behaviourNode nodeTypeID="40" nodeTypeName="条件节点">
+	<node nodeID="ReqNoPaper" nodeClass="ReqNoPaper" nodeName="报纸已经掉落" />
+	<node nodeID="ReqNotMaxHP" nodeClass="ReqNotMaxHP" nodeName="不是满血" />
+	<node nodeID="ReqNextLaunchTimeOut" nodeClass="ReqNextLaunchTimeOut" nodeName="植物到达下次触发时间" />
+	<node nodeID="ReqHasIronArmor" nodeClass="ReqHasIronArmor" nodeName="攻击范围内有铁护甲僵尸" />
+	<node nodeID="ReqHasUnswitchedZombieInRange" nodeClass="ReqHasUnswitchedZombieInRange" nodeName="当前格子内有目标"/>
+	<node nodeID="ReqDisapperTimeout" nodeClass="ReqDisapperTimeout" nodeName="植物到达消失时间" />
+	<node nodeID="ReqPlantDurationExpire" nodeClass="ReqPlantDurationExpire" nodeName="植物到达行为周期时间" />
+	<node nodeID="ReqExplororFireAttackTarget" nodeClass="ReqExplororFireAttackTarget" nodeName="探险者僵尸攻击范围内有目标"/>
+	<node nodeID="ReqHasFire" nodeClass="ReqHasFire" nodeName="僵尸身上带有火"/>
+	<node nodeID="ReqNotState" nodeClass="ReqNotState" nodeName="当前不是该状态" >
+		<params paramType="enum" defaultValue="PAction_Idle">
+			<param pid="1" value="PAction_Idle" enumDes="默认待机状态"/>
+			<param pid="2" value="PWallnutAction_Idle" enumDes="坚果待机状态"/>
+		</params>
+	</node>
+	<node nodeID="ReqHasShootZombie" nodeClass="ReqHasShootZombie" nodeName="攻击范围内是否有可射击僵尸目标" >
+		<params paramType="enum" defaultValue="false">
+			<param pid="1" value="true" enumDes="包含普通可攻击物件"/>
+			<param pid="2" value="false" enumDes="不包含普通可攻击物件"/>
+		</params>
+		<params paramType="enum" defaultValue="false">
+			<param pid="1" value="true" enumDes="可攻击飞行单位"/>
+			<param pid="2" value="false" enumDes="不可攻击飞行单位"/>
+		</params>
+	</node>
+	<node nodeID="ReqPlantCurAction" nodeClass="ReqPlantCurAction" nodeName="植物当前行为判断" >
+		<params paramType="enum" defaultValue="equal">
+			<param pid="1" value="equal" enumDes="等于"/>
+			<param pid="2" value="notEqual" enumDes="不等于"/>
+		</params>
+		<params paramType="enum" defaultValue="PAction_Idle">
+			<param  pid="1" value="PAction_Idle" enumDes="默认待机状态"/>
+			<param  pid="2" value="PlantMotengActionShoot" enumDes="土豆炸弹未升起"/>
+			<param  pid="3" value="PPeaShooterAction_Shoot" enumDes="豌豆正在攻击"/>
+			<param  pid="4" value="PlantPeaRepeatShooterAction_Shoot" enumDes="双发豌豆正在攻击"/>
+			<param  pid="5" value="PlantSunFlowerAction_Product" enumDes="太阳花正在生产阳光"/>
+			<param  pid="6" value="PWallnutAction_Idle" enumDes="坚果正在执行空闲行为"/>
+			<param  pid="7" value="PCabbagepulActionAttack" enumDes="包心菜正在执行攻击行为"/>
+			<param  pid="8" value="PBonkchoyActionAttack" enumDes="白菜战士正在执行攻击行为"/>
+			<param  pid="9" value="PSmallWisteriaAction_Attack" enumDes="小魔藤正在攻击"/>
+			<param  pid="10" value="PPotatomineAction_Armed" enumDes="土豆升起动画"/>
+		</params>
+	</node>
+	<node nodeID="ReqAttackTarget" nodeClass="ReqAttackTarget" nodeName="攻击范围内是否有目标">
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqCoolDown" nodeClass="ReqCoolDown" nodeName="植物技能已经冷却" >
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqHasZombieInAttackRange" nodeClass="ReqHasZombieInAttackRange" nodeName="攻击范围内有可攻击僵尸目标" >
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+		<params paramType="enum" defaultValue="true" ebynDes="是否包含普通物件">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqAttackZombieCanJump" nodeClass="ReqAttackZombieCanJump" nodeName="僵尸目标不能跳跃" >
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqIsFlying" nodeClass="ReqIsFlying" nodeName="是否在飞行" >
+		<params paramType="enum" defaultValue="true">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqSelfJump" nodeClass="ReqSelfJump" nodeName="自己能跳">
+		<params paramType="enum" defaultValue="true">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqAttackTargetCatalog" nodeClass="ReqAttackTargetCatalog" nodeName="攻击范围内目标是植物">
+		<params paramType="enum" defaultValue="plant">
+			<param  pid="1" value="plant" />
+			<param  pid="2" value="zombie" />
+		</params>
+	</node>
+	<node nodeID="ReqArmorValid" nodeClass="ReqArmorValid" nodeName="僵尸的护甲是否有效">
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqCustomProp" nodeClass="ReqCustomProp" nodeName="检查状态属性">
+		<params paramType="enum" defaultValue="propName">
+			<param pid="1" value="hasExplode" enumDes="木乃伊僵尸是否爆炸过"/>
+		</params>
+		<params paramType="enum" defaultValue="true">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqZombieDurationExpire" nodeName="是否僵尸技能CD冷却" >
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqMeetTombCondition" nodeName="是否有放置墓碑的位置">
+		<params paramType="enum" defaultValue="false">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqHasNoOtherZombieBuildTombInSameRoad" nodeName="是否在同一条路上有僵尸放置墓碑">
+		<params paramType="enum" defaultValue="true">
+			<param  pid="1" value="true" enumDes="是"/>
+			<param  pid="2" value="false" enumDes="否"/>
+		</params>
+	</node>
+	<node nodeID="ReqZombieCurAction" nodeClass="ReqZombieCurAction" nodeName="僵尸当前动作判断" >
+		<params paramType="enum" defaultValue="equal">
+			<param pid="1" value="equal" enumDes="等于"/>
+			<param pid="2" value="notEqual" enumDes="不等于"/>
+		</params>
+		<params paramType="enum" defaultValue="ZAction_Idle">
+			<param  pid="1" value="ZAction_Idle" enumDes="默认待机状态"/>
+			<param  pid="2" value="ZAction_Tombraiser_Throw" enumDes="墓碑僵尸在放置墓碑"/>
+		</params>
+	</node>
+</behaviourNode>
+</conf>
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="节奏大师打击器">
+	<node nodeID="ExeDoAction" nodeClass="ExeDoAction" nodeName="执行动作">
+		<param  pid="3" value="TDMusicGameBoxerActionIdle" enumDes="节奏大师打击器运行"/>
+	</node>
+	<node nodeID="ExeFrozenAI" nodeName="冻结AI执行" />
+</node>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="冰莴苣AI">
+	<node nodeID="SequenceNode" nodeName="攻击范围内有目标">
+		<node nodeID="ReqIceburgHasTargetInAttackRange" nodeName="冰莴苣攻击范围内有目标"/>
+		<node nodeID="ExePlantAttack" nodeName="执行冰莴苣爆炸行为" >
+			<param pid="10" value="PIceburgActionFrozen" enumDes="执行冰莴苣爆炸行为"/>
+		</node>
+		<node nodeID="ExeFrozenAI" nodeName="冻结AI执行" />
+	</node>
+	<node nodeID="ExePlantIdle" nodeName="执行空闲行为" >
+		<param pid="2" value="PAction_Idle" enumDes="冰莴苣待机行为"/>
+	</node>
+</node>

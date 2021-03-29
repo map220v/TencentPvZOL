@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="SequenceNode" nodeName="墓碑僵尸AI">
+	<node nodeID="ChioceNode" nodeName="墓碑僵尸行为判断">
+		<node nodeID="ReqZombieCurAction" nodeName="僵尸当前动作判断" >
+			<param pid="1" value="equal" enumDes="等于"/>
+			<param  pid="2" value="ZAction_Tombraiser_Throw" enumDes="墓碑僵尸在放置墓碑"/>
+		</node>
+		<node nodeID="SequenceNode" nodeName="丢骨头行为判断">
+			<node nodeID="ReqZombieDurationExpire" nodeName="是否僵尸技能CD冷却" >
+				<param  pid="1" value="true" enumDes="是"/>
+			</node>
+			<node nodeID="ReqMeetTombCondition" nodeName="是否有放置墓碑的位置">
+				<param  pid="1" value="true" enumDes="是"/>
+			</node>
+			<node nodeID="ExeZombieResetDuration" nodeName="僵尸重置周期" />
+			<node nodeID="ExeDoAction" nodeClass="ExeDoAction" nodeName="执行动作">
+				<param  pid="2" value="ZAction_Tombraiser_Throw" enumDes="墓碑僵尸放置墓碑"/>
+			</node>
+		</node>	
+		<node nodeID="SequenceNode" nodeName="攻击行为判断">
+			<node nodeID="ReqAttackTarget" nodeName="攻击范围内是否有目标">
+				<param  pid="1" value="true" enumDes="是"/>
+			</node>
+			<node nodeID="ExeEat" nodeName="执行攻击行为" />
+		</node>	
+		<node nodeID="ExeNomalWalk" nodeName="执行走路行为" />
+	</node>
+</node>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="SequenceNode" nodeName="第一关bossAI">
+	<node nodeID="ExeDoAction" nodeClass="ExeDoAction" nodeName="执行动作">
+		<param  pid="3" value="ZAction_BossSphinx_Sleep" enumDes="第一关boss运行"/>
+	</node>
+	<node nodeID="ExeFrozenAI" nodeName="冻结AI执行" />
+</node>

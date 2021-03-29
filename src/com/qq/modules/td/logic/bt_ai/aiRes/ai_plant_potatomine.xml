@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="ChioceNode" nodeName="土豆地雷AI" needConf="1">
+	<node nodeID="SequenceNode" nodeName="周期行为判断">
+		<node nodeID="ReqCoolDown" nodeName="植物技能已经冷却" >
+			<param  pid="1" value="true" enumDes="是"/>
+		</node>
+		<node nodeID="ChioceNode" nodeName="土豆行为判断">
+			<node nodeID="SequenceNode" nodeName="攻击范围内有目标">
+				<node nodeID="ReqHasZombieInAttackRange" nodeName="攻击范围内有目标">
+					<param pid="2" value="false" enumDes="包含正在死亡的"/>
+					<param pid="2" value="false" enumDes="不包含普通物件"/>
+				</node>
+				<node nodeID="ExePlantAttack" nodeName="执行土豆爆炸行为" >
+					<param pid="3" value="PPotatomineAction_Mashed" enumDes="执行土豆爆炸行为"/>
+				</node>
+				<node nodeID="ExeFrozenAI" nodeName="冻结AI执行" />
+			</node>
+			<node nodeID="ExePlantIdle" nodeName="执行土豆攻击待击空闲行为" >
+				<param pid="7" value="PPotatomineAction_ArmedIdle" enumDes="土豆炸弹战斗待机行为"/>
+			</node>
+		</node>
+	</node>
+	<node nodeID="SequenceNode" nodeName="周期行为判断">
+		<node nodeID="ExePlantIdle" nodeName="执行土豆空闲行为" >
+			<param pid="6" value="PPotatomineAction_Idle" enumDes="土豆炸弹未升起行为"/>
+		</node>
+		<node nodeID="ReqPlantDurationExpire" nodeName="植物是否到达行为周期时间" />
+		<node nodeID="ExeCoolDown" nodeName="植物执行冷却" >
+			<param  pid="1" value="true" enumDes="是"/>
+		</node>
+		<node nodeID="ExePlantIdle" nodeName="执行土豆攻击待击空闲行为" >
+				<param pid="5" value="PPotatomineAction_Armed" enumDes="土豆炸弹升起行为"/>
+		</node>
+	</node>
+	
+</node>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+behaviourNode：[10]顺序节点  [20]选择节点  [30]执行节点  [40]条件节点 
+-->
+<node nodeID="SequenceNode" nodeName="翻牌骆驼僵尸AI">
+	<node nodeID="ExeDoAction" nodeClass="ExeDoAction" nodeName="执行动作">
+		<param  pid="4" value="ZActionZombieFlipCard" enumDes="骆驼僵尸翻牌"/>
+	</node>
+	<node nodeID="ExeFrozenAI" nodeName="冻结AI执行" />
+</node>
