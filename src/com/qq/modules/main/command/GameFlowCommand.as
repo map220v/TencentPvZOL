@@ -165,12 +165,11 @@ import org.as3commons.logging.api.getLogger;
          var tdTestParam:TDStartParam = new TDStartParam();
 
          var peashooterTest:Dto_PlantInfo = new Dto_PlantInfo();
-         peashooterTest.plantId = 1;
+         peashooterTest.plantId = 1200;
          peashooterTest.isNew = true;
-         peashooterTest.avatarId = 1;
-         peashooterTest.strengthLevel = 100;
+         peashooterTest.avatarId = 0;
 
-         tdTestParam.initNormalData(1,10,1,0,Vector.<int>([]),false, Vector.<Dto_PlantInfo>([peashooterTest]), null);
+         tdTestParam.initNormalData(1,1,1,0,Vector.<int>([]),false, Vector.<Dto_PlantInfo>([peashooterTest]), null);
 
          SceneCenter.getInstance().switchScene(SceneName.TD,[tdTestParam]);
          //TEST//

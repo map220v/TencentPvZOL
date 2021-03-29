@@ -55,7 +55,7 @@ package com.qq.utils.data
       {
          ++this._counter;
          var _loc1_:PDataKey = new PDataKey(this._counter,this.generateOffsetNum());
-         getLogger().info("产生新key" + _loc1_.toString());
+         getLogger().info("Generating new key" + _loc1_.toString());
          this.addKey(_loc1_);
       }
       

@@ -638,7 +638,7 @@ package com.qq.modules.td.model
       {
          if(this.isPause)
          {
-            getLogger("TD").debug("游戏已经在暂停中");
+            getLogger("TD").debug("The game is already paused");
             return;
          }
          GameGloble.stage.removeEventListener(Event.ENTER_FRAME,this.onUpdateTime);

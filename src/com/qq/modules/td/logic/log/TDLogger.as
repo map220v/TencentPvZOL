@@ -142,7 +142,7 @@ package com.qq.modules.td.logic.log
          {
             _loc1_[1] = 0;
          }
-         getLogger("TDLog").info("重置日志");
+         getLogger("TDLog").info("Reset Log");
          TDLogCmd.initTDLog(TDStageInfo.getInstance().mapFileMD5,TDStageInfo.getInstance().tdGameType);
       }
       

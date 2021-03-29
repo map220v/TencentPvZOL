@@ -170,7 +170,8 @@ package com.qq.modules.td.command.game
          var _loc3_:Vector.<String> = new Vector.<String>();
          _loc4_ = new Vector.<int>();
          var _loc5_:Vector.<Object> = new Vector.<Object>();
-         var _loc6_:Array = (_loc6_ = TDGameInfo.getInstance().normalCardsData.slotCardData).concat(TDGameInfo.getInstance().friendCardsData.slotCardData);
+         var _loc6_:Array = TDGameInfo.getInstance().normalCardsData.slotCardData
+         _loc6_ = _loc6_.concat(TDGameInfo.getInstance().friendCardsData.slotCardData);
          var _loc7_:Array = new Array();
          for each(_loc8_ in _loc6_)
          {

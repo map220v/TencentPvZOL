@@ -259,7 +259,7 @@ package com.qq.modules.td.view.loading
       {
          GameFlowCmd.finishLoadBaseModule();
          this.view.removeEventListener(Event.ENTER_FRAME,this.enterFrameHandler);
-         getLogger("TD").debug("塔防模块加载完成");
+         getLogger("TD").debug("Tower Defense module loaded.");
          if(this._tdStartParam.gameType == TDStartParam.Endless && !this._tdStartParam.isInitial)
          {
             CommandDispatcher.send(CommandName.TD_StartWithNoClean);

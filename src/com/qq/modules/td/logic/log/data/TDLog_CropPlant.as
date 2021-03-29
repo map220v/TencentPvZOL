@@ -11,7 +11,7 @@ package com.qq.modules.td.logic.log.data
       public function TDLog_CropPlant()
       {
          super();
-         _formatStr = "{0}种植{1},x：{2},y:{3}";
+         _formatStr = "{0}Planting {1},x：{2},y:{3}";
       }
       
       override public function toString(param1:Array) : String
@@ -25,7 +25,7 @@ package com.qq.modules.td.logic.log.data
          var _loc4_:* = StringUtil.substitute(_formatStr,getTimeStr(param1),_loc3_,param1[3],param1[4]);
          if(param1[5] == 1)
          {
-            _loc4_ += "，是友情植物";
+            _loc4_ += "，Friendly Plant";
          }
          return _loc4_;
       }

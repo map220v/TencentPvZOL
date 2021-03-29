@@ -9,7 +9,7 @@ package com.qq.modules.td.logic.log.data
       public function TDLog_InitData()
       {
          super();
-         _formatStr = "{0}游戏初始化，地图MD5：{1} 关卡类型：{2}";
+         _formatStr = "{0}Game initialization，Level MD5：{1} Level Type：{2}";
       }
       
       override public function toString(param1:Array) : String
