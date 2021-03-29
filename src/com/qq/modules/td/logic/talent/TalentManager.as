@@ -292,7 +292,8 @@ package com.qq.modules.td.logic.talent
       
       public function getAttackArea(param1:int, param2:Rectangle, param3:Int64 = null) : Array
       {
-         param1 = (_loc4_ = TDDataFactory.instance.getPlantInfoByID(param1)).baseInfo.prePlantType == 0 ? int(_loc4_.baseInfo.id) : int(_loc4_.baseInfo.prePlantType);
+         var _loc4_ = TDDataFactory.instance.getPlantInfoByID(param1)
+         param1 = _loc4_.baseInfo.prePlantType == 0 ? int(_loc4_.baseInfo.id) : int(_loc4_.baseInfo.prePlantType);
          var _loc5_:ITalentEffect;
          if(_loc5_ = this.getFactory(param3).getEffectByType(TalentFactory.EFF_ATTACK_AREA_DOUBLE,param1))
          {

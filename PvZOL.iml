@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="PvZOL">
     <configurations>
-      <configuration name="PvZOL" target-platform="Desktop" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL" runtime-loaded-modules="Main&#9;Game.swf&#9;true&#10;ModuleCity&#9;ModuleCity.swf&#9;true">
+      <configuration name="PvZOL" target-platform="Desktop" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL" runtime-loaded-modules="Main&#9;Game.swf&#9;true&#10;ModuleLS&#9;ModuleLS.swf&#9;true&#10;ModuleTD&#9;ModuleTD.swf&#9;true">
         <dependencies>
           <sdk name="flex_sdk_4.6.0.23201B" />
         </dependencies>
@@ -22,6 +22,7 @@
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/config.xml" path-in-package="config.xml" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/fileVer.xml" path-in-package="fileVer.xml" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/init.xml" path-in-package="init.xml" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/ModuleFont.swf" path-in-package="ModuleFont.swf" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/Msgcheck.swf" path-in-package="Msgcheck.swf" />
           </files-to-package>
         </packaging-air-desktop>
@@ -34,6 +35,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/GameRes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="flex_sdk_4.6.0.23201B" jdkType="Flex SDK Type (new)" />

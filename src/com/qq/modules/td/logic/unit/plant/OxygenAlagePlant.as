@@ -270,7 +270,7 @@ package com.qq.modules.td.logic.unit.plant
          {
             return this._indicateVec.shift();
          }
-         return new AssetManager.GetClass("TD_TileIndicateMC")() as MovieClip;
+         return AssetManager.GetClass("TD_TileIndicateMC") as MovieClip;
       }
    }
 }

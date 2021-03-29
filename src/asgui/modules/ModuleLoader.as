@@ -135,7 +135,7 @@ package asgui.modules
                   this.byteLoader.data = decoder.Decode(_loc6_);
                }
             }
-            this.loader.loadBytes(this.byteLoader.data,!!this.firstDecoded ? null : _loc5_);
+            this.loader.loadBytes(this.byteLoader.data,/*this.firstDecoded ? null :*/ _loc5_);//TODO:is it was correct?
             this.loader.contentLoaderInfo.addEventListener(Event.COMPLETE,this.DecodeCompletedHandler,false,0,true);
             this.firstDecoded = true;
          }

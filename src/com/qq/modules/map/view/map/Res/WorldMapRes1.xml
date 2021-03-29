@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="36" height="36" tilewidth="128" tileheight="64">
+ <properties>
+  <property name="area_id" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="草地系列256~128" tilewidth="128" tileheight="64">
+  <image source="cd.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="17" name="森林系列256~256" tilewidth="128" tileheight="128">
+  <image source="sl.png" width="1024" height="256"/>
+ </tileset>
+ <tileset firstgid="33" name="草皮系列256~128" tilewidth="128" tileheight="64">
+  <image source="cp.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="49" name="土地系列256~128" tilewidth="128" tileheight="64">
+  <image source="td.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="65" name="水塘系列256~128" tilewidth="128" tileheight="64">
+  <image source="st.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="81" name="灌木系列256~128" tilewidth="128" tileheight="64">
+  <image source="gm.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="97" name="森林系列256~256" tilewidth="128" tileheight="128">
+  <image source="sl.png" width="1024" height="256"/>
+ </tileset>
+ <tileset firstgid="113" name="xz" tilewidth="128" tileheight="128">
+  <image source="xz.png" width="1024" height="256"/>
+  <tile id="8">
+   <properties>
+    <property name="offsetX" value="-1"/>
+    <property name="offsetY" value="-1"/>
+    <property name="type" value="2"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="offsetX" value="-1"/>
+    <property name="offsetY" value="-1"/>
+    <property name="type" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="草地" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJzVWMsOwyAMo7du62P//7XLJVIVmSyBpNCDLwOBaycO2lJKWR6Ck7ATvkn7vdgIL8I7ab8XB+FDWJP2PxlcC4ysmvDWDiOrJkbxkXp7NY/mI8/znsm9wvD0zFUL1qCXj3bPP503cGcGH5R3J+B3Fx+Udwfw8ur1Cn6z1AD6zsx5hO6T3yT5Zs4jdF+LP1HazJD5d+je6tVs7wCUmZY17ZyeGkAZZVnTzumpgdn4oMysrWlZZeHj8d/KvVb7lrnv0TsKVg3v4sMaoqz1+B8NS9a2zCqvV1yvI7JW6j2iPjS9R/VPbS5oWRZ5d80Tqw5R/4egHmnho/Wa9u6X+1GPID6WN2/NQ+3db/EczYXsHJkRP8mHEa0=
+  </data>
+ </layer>
+ <layer name="草皮" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJztWNFuwzAI9K9sa9K12db+/9fNaDvphsABJ27zsJMstSoBfDYHaSkxLHV91PUZtB+FabB9FqfB/rOYk/ZHy38kjrjX97puz06CcK7ra4DfLPfCy72uS10v5fkcQf9e67qW7TqYrVMLom2LyiWjd9qWc9qzVjiO5Rdn/Ygznp3PDKmBt/JTB5NhG6lZz3dPP1rrvfoOePC47+V9hJ5G95KBcD6X8bPAP/aBnFVLE1BbkfOcyrY7zn0ImuDZRWP03nHZt2iT9B/uQxYPYsd9M3r3szWCOMJPa27QGga+tE5G+6JnhzjRdxXRMN1HW7rm/bZ2X6NaGdl/xBf3sCOAz38PHbZ8WNzBrsVZ7yymZ4LWDMPxM/HYb+Y5a4YBevk/kd/WTG5xDd1CjVk5aA1F3/Yg9pdfv5n/JvAc9qDzRUxogs7VO5NMzXFMiaPfK6x+ovNEXuhN+kysubFVB7zPpfzdp+5Z0E3kyZ/5XalHf7y6ivDLeeqc+bu+V2t3DeAcmF9d/5kZZQu8M9ZcrfWM3ln+GxQUKHM=
+  </data>
+ </layer>
+ <layer name="泥土" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJztlusOwjAIhXmlujk18/L+byXEkWHTukGZ04QvOX+WbB4O0AoQeHFD3fc2AS8fCdWhzjt7IQ6ox6QL2DPiulLDN3I/JGtG8jstOY+oAXVF9aiT4l2ZSQfvOSew5zVOPo7K9/JsqaYhe9aaV4sfyqWDup+t9lfuZP7bJXH/ZB+9oJ7KXGo9Kskyo2vIdynvW01yjrSz+gma/x7mWnlH1/RNO0M8G5YdZY81b/Rcu2ucfcuOls6BHuZzRQPX2TJzXme+F7J3W+zTEr/yX4WxzIWVWu2e54eGb9YeBEtY76Ot8LiPPPG4j4IgCP6dJ8tKKvo=
+  </data>
+ </layer>
+ <layer name="水塘" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJztl90KwCAIRnu1sf//vf/TTFlBV5Gh5MID362YRjtzri1uyA55ajfiOSArZKvdiOeCnJCFsebo+GbeM9TQNvPBfTOfazfCAO56EqxP3T/OtoW5GoZhpMC3V4vXIPj2xh7RJcJF7vmDk8TfKs5egmfmOoa0k4T6uV4n7STBMzmhur20q1B3ijOheDfVhUrdvsS5pWdLBc9OvcvazqDFZTn+wYz/Yvs3cnkBr0QWkg==
+  </data>
+ </layer>
+ <layer name="layer_deco" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJy9WGtP4zAQ3L8IfXIcUKCUtgmh///TZXQ76mS6aYNOupEsp/Z6vd6X120jYt63Wd9+xRCnvrVxia4Yq/DVt30x/ty3Rd+a5NXkXuiPfVvJvk3B50u+G/sNftu+vRX0TSHLJvtl/NXBMdtBGuUin2PUetnmORTv8q1zTfLGnp8yvo6zPUhztL6R/SmT2gT6e00+ON+zydDlPDGXM4L/QubapJ0lX5cF/TLP+Zb8Yat7kY8yA095xms+5Oc+pBzKh3s0MbQRfSlEBkdlu8rXmxjqRXXPccfCZActzvyaMmOfTdI+ZP8dQ32oPzuO1nbJcxWXsdZJT99W/m2OV2A8fsSlTyuwnudVu3Fv+MSiWEf+rdBu8vfY+as5xNwuhnY5yLfGCrHJ/lHG6Esh/Xfuh7kXoV3K9/eIrE8iM32lK2RxeoXnuUOOrU3uVX6rnfhd6XKb45D9QWh+F7TPMTwjaLvsIdPS5o4xzDeKKuYZU53RQR8vRgtZYTO/p4DKNxgjmxF5xqC8PuJ81jBe+5RFx6Crk8jIGOf94vfVKX8jRqbcq6BnbtnLml32ndCNATLijJ4f74zHNVBHmpuZAzD+aPTvcb57NAau5TraG/fTxw15GKu8mzXH6R2h2Msaoouh7jxeqxghGBs+FnHWC3m3uT/vavpBm2dxP+HeX8X4NVT5j9ja75PsTTC3eJ1xH8PabW9rPHYV7hus71Q/OhdxzkHYV2uXVubnuX6WssGftQ7kesRilW8j12m+G7uPGG9vMV5n6Pgpf6PWey9oq9qU8Dumim3aEnzuZHxd0MKPqMMqruiHgOtP9e1rHJATdwHsMS9k+Cl4buhe/U1rMR1XPat8sD/OUdUlFejzfmby/7RxrYMc0LvqlG8dfV8QVY52+BrmEq8nmZvVfrw/dkKrbzGe7yXlVL+KuPRDzTOeB3Vub2Nau2kPqB7nIoPWHcBr/AzYAzHjtgOoL+5N3dHP+CYCNM/dspXyH4t3+Ib62UnGuU7fO/xGQ6yt81x3BQ+3n4M6r+5/f1sw37AW9LfaKs53xxT4nXALYzUK9aPvNdZX7jNT7TUV7v+ssf1dAlsytuDT1+7KWYy/MaaCvqLnpR9X78b7GK8NH+LfoHHl7wrwho28vp/6f1OFKbrTutX3ZZxDH9Vd+lPcikECtnE90CZ8z4+9s/4n/gBxa+Sc
+  </data>
+ </layer>
+ <objectgroup name="对象层 1" width="36" height="36">
+  <object gid="122" x="384" y="384"/>
+  <object gid="122" x="768" y="384"/>
+  <object gid="122" x="768" y="768"/>
+  <object gid="122" x="1152" y="768"/>
+  <object gid="122" x="384" y="768"/>
+  <object gid="122" x="768" y="1152"/>
+  <object gid="122" x="384" y="1152"/>
+  <object gid="122" x="384" y="1536"/>
+  <object gid="122" x="384" y="1920"/>
+  <object gid="122" x="768" y="1920"/>
+  <object gid="122" x="768" y="2304"/>
+  <object gid="122" x="1152" y="1920"/>
+  <object gid="122" x="768" y="1536"/>
+  <object gid="122" x="1152" y="2304"/>
+  <object gid="122" x="1536" y="2304"/>
+  <object gid="122" x="1536" y="1920"/>
+  <object gid="122" x="1920" y="2304"/>
+  <object gid="122" x="1536" y="1536"/>
+  <object gid="122" x="1152" y="1536"/>
+  <object gid="122" x="1152" y="1152"/>
+  <object gid="122" x="1536" y="1152"/>
+  <object gid="122" x="1920" y="1536"/>
+  <object gid="122" x="1920" y="1920"/>
+  <object gid="122" x="2304" y="2304"/>
+  <object gid="122" x="2304" y="1920"/>
+  <object gid="122" x="2304" y="1536"/>
+  <object gid="122" x="384" y="2304"/>
+  <object gid="122" x="1152" y="384"/>
+  <object gid="122" x="1536" y="768"/>
+  <object gid="122" x="1920" y="1152"/>
+  <object gid="122" x="1536" y="384"/>
+  <object gid="122" x="1920" y="768"/>
+  <object gid="122" x="1920" y="384"/>
+  <object gid="122" x="2304" y="768"/>
+  <object gid="122" x="2304" y="1152"/>
+  <object gid="122" x="2304" y="384"/>
+  <object gid="121" x="192" y="1728"/>
+  <object gid="121" x="192" y="192"/>
+  <object gid="121" x="576" y="192"/>
+  <object gid="121" x="576" y="576"/>
+  <object gid="121" x="192" y="576"/>
+  <object gid="121" x="576" y="960"/>
+  <object gid="121" x="192" y="960"/>
+  <object gid="121" x="576" y="1344"/>
+  <object gid="121" x="192" y="1344"/>
+  <object gid="121" x="576" y="1728"/>
+  <object gid="121" x="576" y="2112"/>
+  <object gid="121" x="192" y="2112"/>
+  <object gid="121" x="960" y="192"/>
+  <object gid="121" x="960" y="576"/>
+  <object gid="121" x="960" y="960"/>
+  <object gid="121" x="960" y="1344"/>
+  <object gid="121" x="960" y="1728"/>
+  <object gid="121" x="960" y="2112"/>
+  <object gid="121" x="1344" y="2112"/>
+  <object gid="121" x="1344" y="1728"/>
+  <object gid="121" x="1344" y="1344"/>
+  <object gid="121" x="1344" y="960"/>
+  <object gid="121" x="1344" y="576"/>
+  <object gid="121" x="1344" y="192"/>
+  <object gid="121" x="1728" y="192"/>
+  <object gid="121" x="1728" y="576"/>
+  <object gid="121" x="1728" y="960"/>
+  <object gid="121" x="1728" y="1344"/>
+  <object gid="121" x="1728" y="1728"/>
+  <object gid="121" x="1728" y="2112"/>
+  <object gid="121" x="2112" y="2112"/>
+  <object gid="121" x="2112" y="1728"/>
+  <object gid="121" x="2112" y="1344"/>
+  <object gid="121" x="2112" y="960"/>
+  <object gid="121" x="2112" y="576"/>
+  <object gid="121" x="2112" y="192"/>
+ </objectgroup>
+</map>

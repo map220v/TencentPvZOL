@@ -181,11 +181,11 @@ package asgui.managers
                if(this.byteLoader.data.length != 0)
                {
                   this.byteLoader.data.position = 0;
-                  _loc3_ = new LoaderContext(false,!!this.useCurrentDommain ? ApplicationDomain.currentDomain : null);
-                  if(_loc3_.hasOwnProperty("allowCodeImport"))
-                  {
+                  _loc3_ = new LoaderContext(false,this.useCurrentDommain ? ApplicationDomain.currentDomain : null);
+                  //if(_loc3_.hasOwnProperty("allowCodeImport"))
+                  //{
                      _loc3_["allowCodeImport"] = true;
-                  }
+                  //}
                   _loc2_.contentLoaderInfo.addEventListener(Event.COMPLETE,this.loaderCompleteHandler);
                   _loc2_.loadBytes(this.byteLoader.data,_loc3_);
                   this.loaderInLoading.push(_loc2_);

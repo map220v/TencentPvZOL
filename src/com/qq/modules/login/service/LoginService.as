@@ -47,9 +47,14 @@ package com.qq.modules.login.service
    import PVZ.Cmd.Cmd_TD_RequestTDInfo_SC;
    import PVZ.Cmd.Cmd_VipInfo_SC;
    import PVZ.Cmd.Cmd_Vip_SyncVipInfo_SC;
-   import PVZ.Cmd.Dto_FormationInfo;
+import PVZ.Cmd.Dto_CardBaseInfo;
+import PVZ.Cmd.Dto_CardFullInfo;
+import PVZ.Cmd.Dto_FormationInfo;
    import PVZ.Cmd.E_AasAdultType;
-   import com.qq.CommandName;
+import PVZ.Cmd.E_BuildingTypes;
+import PVZ.Cmd.E_City_BuildingType;
+
+import com.qq.CommandName;
    import com.qq.GameGloble;
    import com.qq.SceneCenter;
    import com.qq.TDPrivilegeInfo;
@@ -84,7 +89,10 @@ package com.qq.modules.login.service
    import com.qq.utils.DateUtils;
    import com.qq.utils.IconUtil;
    import com.qq.utils.external.QExternalUtil;
-   import flash.events.Event;
+import com.tencent.protobuf.Int64;
+import com.tencent.protobuf.UInt64;
+
+import flash.events.Event;
    import org.as3commons.logging.api.getLogger;
    import org.robotlegs.mvcs.Actor;
    import tencent.io.service.events.SocketServiceEvent;
@@ -179,8 +187,8 @@ package com.qq.modules.login.service
          this.actorModel.currEnergy = _loc2_.energy;
          CommandDispatcher.send(CommandName.ChangeEnergy);
       }
-      
-      private function serverDataHandler(param1:SocketServiceEvent) : void
+
+      public function serverDataHandler(param1:SocketServiceEvent) : void //changed private to public
       {
          var _loc2_:Cmd_SyncFightPower_SC = null;
          var _loc3_:Cmd_TD_RequestTDInfo_SC = null;

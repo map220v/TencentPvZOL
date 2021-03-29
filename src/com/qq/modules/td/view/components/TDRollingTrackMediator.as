@@ -153,7 +153,7 @@ package com.qq.modules.td.view.components
                _loc12_.sortOn("RollingData_Weights",Array.NUMERIC | Array.DESCENDING);
                if((_loc14_ = _loc12_.pop()) != null)
                {
-                  --_loc14_[RollingData_Total];
+                  _loc14_[RollingData_Total] -= 1;//TODO: i hope it's correct
                   _loc14_[RollingData_LastAddTime] = _loc7_;
                   _loc14_[RollingData_Weights] += 5000;
                   if(_loc14_[RollingData_Total] <= 0)

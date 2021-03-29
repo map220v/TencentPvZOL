@@ -449,7 +449,7 @@ package com.qq.modules.main.model
       
       public function get minHealth() : int
       {
-         var _loc4_:CardItemVO = null;
+         /*var _loc4_:CardItemVO = null;
          var _loc1_:int = this.battleCardList.length;
          var _loc2_:int = 100;
          var _loc3_:int = 0;
@@ -458,8 +458,8 @@ package com.qq.modules.main.model
             _loc4_ = this.battleCardList[_loc3_];
             _loc2_ = Math.min(_loc4_.health,_loc2_);
             _loc3_++;
-         }
-         return _loc2_;
+         }*/
+         return 1000;//_loc2_;
       }
       
       public function getAttackBattleTeam() : Vector.<BattleCardFormationVO>

@@ -4,7 +4,8 @@ package com.qq.modules.main.logic.initData
    import com.qq.GameGloble;
    import com.qq.display.QAlert;
    import com.qq.modules.main.logic.initData.basic.BasicInitDataTask;
-   import com.qq.modules.main.server.ErrorHanderManager;
+import com.qq.modules.main.model.test.TestActorSetup;
+import com.qq.modules.main.server.ErrorHanderManager;
    import com.qq.modules.main.server.PvzSocketService;
    import com.qq.utils.GameDataReport;
    import org.as3commons.logging.api.getLogger;
@@ -22,7 +23,8 @@ package com.qq.modules.main.logic.initData
       {
          super.start();
          getLogger("loading").debug("Loading Player Info");
-         var _loc1_:PvzSocketService = GameGloble.injector.getInstance(PvzSocketService);
+         TestActorSetup.getInstance().createTestActor();
+         /*var _loc1_:PvzSocketService = GameGloble.injector.getInstance(PvzSocketService);
          if(ExternalVars.UIN.data != 0 && (ExternalVars.SKEY != null && ExternalVars.SKEY.length > 0))
          {
             GameDataReport.getInstance().report(GameDataReport.Data_Start_Connect_Server);
@@ -31,7 +33,7 @@ package com.qq.modules.main.logic.initData
          else
          {
             QAlert.Show("Login Failed","",Alert.OK,null,ErrorHanderManager.gotoHome);
-         }
+         }*/
       }
    }
 }

@@ -196,11 +196,11 @@ class BigWaveInfo
 {
     
    
-   private var flagMc:MovieClip;
+   public var flagMc:MovieClip;//changed private to public...
    
-   private var delay:int;
+   public var delay:int;//changed private to public...
    
-   private var waveIndex:int;
+   public var waveIndex:int;//changed private to public...
    
    function BigWaveInfo()
    {
@@ -209,7 +209,7 @@ class BigWaveInfo
       this.flagMc.gotoAndStop("normal");
    }
    
-   private function dispose() : void
+   public function dispose() : void//changed private to public...
    {
       UtilsManager.removeFromContainer(this.flagMc);
       this.flagMc = null;

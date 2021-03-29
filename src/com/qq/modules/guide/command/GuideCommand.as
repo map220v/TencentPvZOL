@@ -468,7 +468,8 @@ package com.qq.modules.guide.command
             _loc7_ = _loc4_.buttonName;
             _loc8_ = int(_loc4_.operateType);
             _loc9_ = QDisplayUtil.CodeToDisplay(_loc7_,false);
-            if(!(_loc10_ = GameGloble.actorModel.checkIfOpenDaySatisfied(_loc4_.openDays,_loc6_)))
+            _loc10_= GameGloble.actorModel.checkIfOpenDaySatisfied(_loc4_.openDays,_loc6_);
+            if(!_loc10_)
             {
                continue;
             }

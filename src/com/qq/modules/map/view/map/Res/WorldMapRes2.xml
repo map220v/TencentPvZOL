@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="isometric" width="36" height="36" tilewidth="128" tileheight="64">
+ <properties>
+  <property name="area_id" value="1"/>
+ </properties>
+ <tileset firstgid="1" name="草地系列256~128" tilewidth="128" tileheight="64">
+  <image source="cd.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="17" name="土石系列256~128" tilewidth="128" tileheight="64">
+  <image source="ts.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="33" name="泥塘系列256~128" tilewidth="128" tileheight="64">
+  <image source="nt.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="49" name="岩石系列256~256" tilewidth="128" tileheight="128">
+  <image source="ys.png" width="1024" height="256"/>
+ </tileset>
+ <tileset firstgid="65" name="矿石系列256~128" tilewidth="128" tileheight="64">
+  <image source="ks.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="81" name="森林系列256~256" tilewidth="128" tileheight="128">
+  <image source="sl2.png" width="1024" height="256"/>
+ </tileset>
+ <tileset firstgid="97" name="枯草皮系列256~128 - 副本" tilewidth="128" tileheight="64">
+  <image source="kcp.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="113" name="泥土系列256~128" tilewidth="128" tileheight="64">
+  <image source="nt2.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="129" name="灌木系列256~128" tilewidth="128" tileheight="64">
+  <image source="gm2.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="145" name="巨石系列256~256" tilewidth="128" tileheight="128">
+  <image source="js.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="153" name="泥土1系列256~128" tilewidth="128" tileheight="64">
+  <image source="nt3.png" width="1024" height="128"/>
+ </tileset>
+ <tileset firstgid="169" name="xz" tilewidth="128" tileheight="128">
+  <image source="xz.png" width="1024" height="256"/>
+  <tile id="8">
+   <properties>
+    <property name="offsetX" value="-1"/>
+    <property name="offsetY" value="-1"/>
+    <property name="type" value="2"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="offsetX" value="-1"/>
+    <property name="offsetY" value="-1"/>
+    <property name="type" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="土地" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJzt1TsOACEIBFCubGelHN1ssiY2Nn5wIFO8aGExQdAkIonokvp7nYPoFAXI4BnrRzsyQIYV3z+oADki1NLqvsYVQZ3sPdrtPT10xtLLPJFmvQBksKYAGW5afc96L0TqbyIPGhasPUU=
+  </data>
+ </layer>
+ <layer name="黑土" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJylWAFOAzEM6/9/cION7bhtPJNVOgvj2WkHkSqxa5s6TpqkXFprl30cH+Pc5uX+GF+PcXuMd9Izo28z63WsdMaM3Pbz+p5D0NflI+x1NvB42/WuAdNS4Oq6j3SG40b3O44Sxo7tanDdw3dwtQUsyY5PseFAfzM2/F5pP/sl4QWuLqfChjt9Z53sa8bLvuOzlE+eTwK/6Fqnj8/v+Bfar7zz3Cv3EXbqWub7uK/5ojPgA6xxtnPszmAZ4QQ/uNvwi8sdlR5g6Zyd2vPdQd5wd53ngElxgK//2s4xihhQgT1Ly7kLe9n2dF6VL9kHM3ZpTONevxKbfR384/xUxZ8K1gPHuXlOlIeUBx3eZF/KV7h7t4Fe6ON7nvJg2ttF8ygk1Z9KNIf+pQ/QOjXjx4Slqttd1EZnc4pxlwscBviD8zTXb73HHGvXNo6TV4RrDevY2k/OUn/x3Kg/YJnptRgDc8WcKz9Vb5V8i1hQ3A6j6wP4t/KjdZGxudjt9UVjHDZqT9Gaj+HqfmwyV3Hp9jAm5+vUm6c8p+drfgD+xexRPp3dqe+qalt6Lzj8WnMZO58Lbl3ecbzDXq1BDou7G269zqn/nW7Nea6HcTlBfXBuv3vkldaqP1L8V+8L2IV80fPviearfMhna3/kOIW9zIXi0viaqSUjcTj5m8YW81bltEpm3njJL+pH8Iaawfdmpl7oWuwfxR9E35SaI/TOVO9cd4fZRvC8tOf4Y77Qn+k+V1dH9cUN5bmyRft+5jyd4eqL9jCv1IOqv2Pdrp4mbvg97vKdvtddrXH6+f8arp6O3uxre36HV7WG9VT5zL25k75R/a1q1IyM3pgVfh3fRxoCIQ==
+  </data>
+ </layer>
+ <layer name="枯草皮" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJzVWItuwzAI9K92S9M129J+Yj9ttubTTtTG4DiNhoQU5WHOwAFOCPvJZ9TvHdb9iHqLOu2wthfHPeo16hr+cB0ll6jvWU8Z1+kATCkuc/iN/xthgq4vxoO4nDOmr4xrydd75KgmkhdT4d5/kVbOv5ITyVYr561+Pg/Ag/xfjDbBG01az7GOhilhae1vzu/U4jcpz1i07z1iqbWX8FxbpJ3S/ufgjzfXtjU859WZ7iFm2MON8Nds9/AGtc1aR7AH7hXAJ7G0eGXJS4twD0ta4o6HV+zzHmFbmm8R61ZeY3/I0944W2yVJH3D+SZzphXnEt4tNX4O9dyxxDn5E3hRkzxzj+Se3Msk3mv1D2BGjbpm/LjnFc0ezzWWNSTfR89hPTMM+IAYcy6MqCkWjvA7zAf265Yc99SgZNOy7955ETm5tQbVvvP2UXlmQY/3nFvgrxEzNPf1RVyX1oYP2BcjZscSplVcl7DAd+B3T4/Q8M/CDs9kJSzsw1pMo72HF6PkLPfokn9k7bOcRTXftTjKuVjLS89Z1FITtvRmXt9xRnpoWCSPvb15lNT6sPd8Nkq0PnzUf4BeX/wAoCeQvQ==
+  </data>
+ </layer>
+ <layer name="土石" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJzNWAluAjEM9BcKSLRAW///lcSCEcOSw+t4aUeKWBHWmfiYOIhsDy3jc0Pb3w774GCfpzJ2E5xU2ns6l7Ev42dg41jGL/3e807PVut9m7vc1xpB5eabDD7eNQ+dOfPN193Wh/hj1rM5A8QMz549qjzyDs9/CfOp+fEkr3WgcqslTz15oQNb5keLLXLO4g2fIv42H83F2nqjmDEn9g/7zstH5eHTGbAvwAk82WcjLlzfUQ2EnZ281sHSv7pYg2sT2od9RTXH6wfm3dNuxHhWA5lLTZN4/zXevdpYC48mejQNv7kEeTBU/Of2CBma79WGtTHY6jyK4iDv42TrqLRj2JvLhq1lOtzTgEh8o1yMx6z2ZQFaw9o30yMDGrSh8nxWoQ+cjQ3H3svNcpjPX+jwTA1hbT6L1/QVyNOsfEVvs5ec82YWy7OvlY9a+W4rnIlTqy+FHzM4jfLrKM9ndi0XuK4z+/ooVHLumHyniubokouHj71T8yPu4LM9I+e8R+9aPduST1SrIv9P1NZae1dpIcsObGXo27t6hv+IK5w1Hmg=
+  </data>
+ </layer>
+ <layer name="泥潭" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJztmOEOgjAMhPcuiEbB6Ps/nb1gE0IoWXFlN/VL+g+W7Y72FlLycZK6z+rifD+aXuos1dXeyJtR6pmmPTGg/pX2TXVnAHt5pHzd8fyQ+ewe5j2To3uUR2tYfWL5Ga2VBTRZ0wP9dZW6OdaKnA1HereF54y1PLX2uMfTSFg8BSy51hqldWvBB6ZMBtYMz0HPwnIevdexzCidmQwzCujMBKV6pVZOWfxzymbpeclvINJ/7/qfzLSa639TNvwSLdw7joRND80olpzSjEJF/Id6ARKmENU=
+  </data>
+ </layer>
+ <layer name="layer_deco" width="36" height="36">
+  <data encoding="base64" compression="zlib">
+   eJyVWItuWkcQPb/kOLwcuNw4No0apVKjqLZUG/iVVC1J06qSgQ/uPWKO5rAsj4y0Wnbv7Oy8Z5Y1gFE31jZvurHtxgSXQRP4L3H+TTdu7PvsyLl5N1o781LQmMR6G+tz8FSsN0FrHDwOu/GhG7904yfjrY215NjE3bp3G9+mtr88w1PPZBSI3iT4auKujwXOJO7qGf/SyxZpI9Hq4TJbDYr1U5ybI3XNu+4LOXRvE3vE7SP19FK56xJ79YLmCGmrQcykOY173yH1/r4bb5E6kQ6bwGlwHv498W1itDUrHprYk/6ncaYxnE3g/IaMiRqsYv7nAp7fIHXNO0dGe4t9v3IbNdj3M+l4U9CX7hy+G38C+ekyZt0r3xR93cdvtJX8bhrf5kgbe2y/xs736JfU4ZeKLr5X9gRtyCF93WBfd4z/uyNnZV/hwviaBc8Lwydvfx+hJTzRecR+7ljE+q2dGdpv5ij6+TqGzgHnfaUf95WgnCV9P2On43kFtwTmxlmckz4XSD8o73foBd5HZE7k+uf4Lb91XdToEtqYledHQfM5aNB/Xhn+AId+vQj8mZ35jJ3O5sHHVeA2didsz+mrpiyRtUJQ81/B8Mi+6JNPySleVVPllz2kPV/HXj9oUEbVU+e5j8M6oPsWxV5pSwflffI0tX3ly7HxKNx14PN7i53eEfwtsa87yv4YuGXMXxXrT9jVCOVf2eEx+JAP0L4zZM68QdY2yvBsNLfIXO98rUw23yfI98j7AOmXPaSfO1BuxvkH7NeQBum7bgPPbZ8KWuqZVjgPQ+zXD6fvvuE8yxf9e4vUd2Nn7uOcvhGuY67xJ7x1ccb5fbB1aX+CdO99m4Drb0j93VbO10C8HIvVH4VvxqOgFoveLy9jln7pL5TH8yWhlvMFwyP3XAqsmcoNqo+yuXq0cfB2KbRxfoXDfsRhgHrNUy9yhYwb+bP661oPyj31neW+91HHQDjtCRz1kOJBsf015GFMv499vTm+FjS8ty7zTHnXBllb2Xd6Hte+cpHHKX/fIWNGPDeo626C1K36qRqUOQTI/sNrsnox2Y/5uEXGnOrLC+o2mdp+TUeS9S5oKm/rjGrVAw5BehCueNT7q8wxDyEbaz71z3j0elLy5XpUnqGsjGv6x3Vx5qqQUf2hfKus3YTf49sf2MmumlHmAr0r/L1Lv5Heb5G+qPxOeAoZp3HPCNl/AIf9j+5VjL5CHRYhH2fZX+/gTdCp1QmCfGqAfd8j0KdWwZ/ekED2VT3UadKWS2Secv9U7/AYv4/ZHEi7T+2eMTIf3SLfUyPDLYH1gbZ0myuX8Mx1zOT5r278eoInvZ3Fex8Zd+pFyAv7K9qA+ruvUjqMUY8RfmOM/InDHoA49O9x/HbbtcjeQHvy+eUJuZwn9VPqnUqgLv/Drh+dIuPb/2vx/KjczPkJp2uBQHWsVpeOven0v4zk1ZvZ88aP/D8mUN70/zZO1WCB3nyyB8//DwCdCX4=
+  </data>
+ </layer>
+ <objectgroup name="对象层 1" width="36" height="36">
+  <object gid="178" x="384" y="384"/>
+  <object gid="178" x="768" y="384"/>
+  <object gid="178" x="768" y="768"/>
+  <object gid="178" x="1152" y="768"/>
+  <object gid="178" x="384" y="768"/>
+  <object gid="178" x="768" y="1152"/>
+  <object gid="178" x="384" y="1152"/>
+  <object gid="178" x="384" y="1536"/>
+  <object gid="178" x="384" y="1920"/>
+  <object gid="178" x="768" y="1920"/>
+  <object gid="178" x="768" y="2304"/>
+  <object gid="178" x="1152" y="1920"/>
+  <object gid="178" x="768" y="1536"/>
+  <object gid="178" x="1152" y="2304"/>
+  <object gid="178" x="1536" y="2304"/>
+  <object gid="178" x="1536" y="1920"/>
+  <object gid="178" x="1920" y="2304"/>
+  <object gid="178" x="1536" y="1536"/>
+  <object gid="178" x="1152" y="1536"/>
+  <object gid="178" x="1152" y="1152"/>
+  <object gid="178" x="1536" y="1152"/>
+  <object gid="178" x="1920" y="1536"/>
+  <object gid="178" x="1920" y="1920"/>
+  <object gid="178" x="2304" y="2304"/>
+  <object gid="178" x="2304" y="1920"/>
+  <object gid="178" x="2304" y="1536"/>
+  <object gid="178" x="384" y="2304"/>
+  <object gid="178" x="1152" y="384"/>
+  <object gid="178" x="1536" y="768"/>
+  <object gid="178" x="1920" y="1152"/>
+  <object gid="178" x="1536" y="384"/>
+  <object gid="178" x="1920" y="768"/>
+  <object gid="178" x="1920" y="384"/>
+  <object gid="178" x="2304" y="768"/>
+  <object gid="178" x="2304" y="1152"/>
+  <object gid="178" x="2304" y="384"/>
+  <object gid="177" x="192" y="1728"/>
+  <object gid="177" x="192" y="192"/>
+  <object gid="177" x="576" y="192"/>
+  <object gid="177" x="576" y="576"/>
+  <object gid="177" x="192" y="576"/>
+  <object gid="177" x="576" y="960"/>
+  <object gid="177" x="192" y="960"/>
+  <object gid="177" x="576" y="1344"/>
+  <object gid="177" x="192" y="1344"/>
+  <object gid="177" x="576" y="1728"/>
+  <object gid="177" x="576" y="2112"/>
+  <object gid="177" x="192" y="2112"/>
+  <object gid="177" x="960" y="192"/>
+  <object gid="177" x="960" y="576"/>
+  <object gid="177" x="960" y="960"/>
+  <object gid="177" x="960" y="1344"/>
+  <object gid="177" x="960" y="1728"/>
+  <object gid="177" x="960" y="2112"/>
+  <object gid="177" x="1344" y="2112"/>
+  <object gid="177" x="1344" y="1728"/>
+  <object gid="177" x="1344" y="1344"/>
+  <object gid="177" x="1344" y="960"/>
+  <object gid="177" x="1344" y="576"/>
+  <object gid="177" x="1344" y="192"/>
+  <object gid="177" x="1728" y="192"/>
+  <object gid="177" x="1728" y="576"/>
+  <object gid="177" x="1728" y="960"/>
+  <object gid="177" x="1728" y="1344"/>
+  <object gid="177" x="1728" y="1728"/>
+  <object gid="177" x="1728" y="2112"/>
+  <object gid="177" x="2112" y="2112"/>
+  <object gid="177" x="2112" y="1728"/>
+  <object gid="177" x="2112" y="1344"/>
+  <object gid="177" x="2112" y="960"/>
+  <object gid="177" x="2112" y="576"/>
+  <object gid="177" x="2112" y="192"/>
+ </objectgroup>
+</map>

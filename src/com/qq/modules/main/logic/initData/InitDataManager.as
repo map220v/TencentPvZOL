@@ -152,8 +152,8 @@ import flash.events.Event;
          var _loc4_:BasicInitDataTask = null;
          var _loc1_:int = this.getFinishedTaskNum();
          var _loc2_:int = this._loadqueue.length;
-         if (_loc1_ == 13){//Temp hack
-            _loc1_ = 24;
+         if (_loc1_ == 14){//Temp hack
+            _loc1_ = 25;
          }
          if(_loc1_ >= _loc2_)
          {

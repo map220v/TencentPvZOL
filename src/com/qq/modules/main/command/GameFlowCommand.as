@@ -93,7 +93,7 @@ import org.as3commons.logging.api.getLogger;
       {
          InitDataManager.getInstance().addTask(new InitClientDBDataTask(false));
          InitDataManager.getInstance().addTask(new InitFontTask(false));
-         //InitDataManager.getInstance().addTask(new InitPlayerInfoTask(false));
+         InitDataManager.getInstance().addTask(new InitPlayerInfoTask(false));
          InitDataManager.getInstance().addTask(new InitPlayerCardInfo());
          InitDataManager.getInstance().addTask(new InitPlayerGuideInfoTask());
          InitDataManager.getInstance().addTask(new InitBagInfoTask());
@@ -153,13 +153,27 @@ import org.as3commons.logging.api.getLogger;
             this.gotoGuideTD();
          }
          else if(GuideUIData.getInstance().isLock("3"))
-         {
-            this.gotoLevelSelect();
-         }
-         else
          {*/
+      //      this.gotoLevelSelect();
+         /*}
+         else
+         {
             this.gotoCity();
-         //}
+         }*/
+
+         //TEST//
+         var tdTestParam:TDStartParam = new TDStartParam();
+
+         var peashooterTest:Dto_PlantInfo = new Dto_PlantInfo();
+         peashooterTest.plantId = 1;
+         peashooterTest.isNew = true;
+         peashooterTest.avatarId = 1;
+         peashooterTest.strengthLevel = 100;
+
+         tdTestParam.initNormalData(1,10,1,0,Vector.<int>([]),false, Vector.<Dto_PlantInfo>([peashooterTest]), null);
+
+         SceneCenter.getInstance().switchScene(SceneName.TD,[tdTestParam]);
+         //TEST//
       }
       
       public function gotoCity() : void
@@ -246,10 +260,10 @@ import org.as3commons.logging.api.getLogger;
          SceneCenter.getInstance().switchScene(SceneName.EndlessTD);
       }
       
-      public function gotoTD(param1:int, param2:int, param3:int, param4:int = 0) : void
+      public function gotoTD(stageId:int, levelId:int, subLevelId:int, challengeLevelId:int = 0) : void
       {
-         LoginServerCmd.requestTDInfo(param1,param2,param3,param4);
-         LoginServerCmd.requestPrivilegeAndUnlockPlantInfo(param1,param2,param3,param4);
+         LoginServerCmd.requestTDInfo(stageId,levelId,subLevelId,challengeLevelId);
+         LoginServerCmd.requestPrivilegeAndUnlockPlantInfo(stageId,levelId,subLevelId,challengeLevelId);
       }
       
       public function startTD(param1:int, param2:int, param3:int, param4:int, param5:Vector.<int>, param6:Boolean = false, param7:Array = null, param8:Object = null) : void

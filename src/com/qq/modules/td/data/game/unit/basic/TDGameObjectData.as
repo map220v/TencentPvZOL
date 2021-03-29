@@ -276,9 +276,7 @@ package com.qq.modules.td.data.game.unit.basic
                   {
                      (_loc6_ = GroupManager.getInstance().getGroupFromID(this.groupId) as CamelGroup).addBuff(param1);
                   }
-                  addr74:
             }
-            §§goto(addr74);
          }
          else if((_loc7_ = this.getBuffByID(param1)) != null)
          {

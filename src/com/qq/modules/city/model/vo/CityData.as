@@ -41,10 +41,10 @@ package com.qq.modules.city.model.vo
          var _loc1_:Array = GuideTemplateFactory.instance.getOpenButtonListByCheckPanelName("NewCityToolBar");
          for each(_loc2_ in _loc1_)
          {
-            /*if(!GameGloble.actorModel.checkIfOpenDaySatisfied(_loc2_.openDays,_loc2_.openLv))
+            if(!GameGloble.actorModel.checkIfOpenDaySatisfied(_loc2_.openDays,_loc2_.openLv))
             {
                continue;
-            }*/
+            }
             switch(_loc2_.id)
             {
                case CityButtonConstant.ID_BUTTON_QUEST:

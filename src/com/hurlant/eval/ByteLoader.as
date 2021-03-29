@@ -122,6 +122,7 @@ package com.hurlant.eval
             Debug.print(e);
             return false;
          }
+         return false;
       }
    }
 }
