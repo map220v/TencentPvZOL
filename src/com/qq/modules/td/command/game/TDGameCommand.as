@@ -183,7 +183,7 @@ package com.qq.modules.td.command.game
          };
          CommandDispatcher.send(CommandName.TD_PauseTDGame);
          Alert.okLabel = FontHKHB.TXT_BackGame;
-         QAlert.Show("游戏暂停","",Alert.YES,null,closeHandler,FontHKHB.TXT_BackGame);
+         QAlert.Show("Game is paused.","",Alert.YES,null,closeHandler,FontHKHB.TXT_BackGame);
          TDSoundCmd.playerPauseGame();
       }
       

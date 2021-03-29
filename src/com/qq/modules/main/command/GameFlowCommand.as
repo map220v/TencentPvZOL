@@ -21,7 +21,6 @@ package com.qq.modules.main.command
    import com.qq.modules.entryIcon.model.templates.EntryIconTemplateFactory;
    import com.qq.modules.entryIcon.model.templates.SystemIconTemplate;
    import com.qq.modules.fuben.FubenGlobals;
-   import com.qq.modules.guide.model.GuideUIData;
    import com.qq.modules.levelselect.model.LSProxy;
    import com.qq.modules.login.command.LoginServerCmd;
    import com.qq.modules.login.service.LoginService;
@@ -55,7 +54,8 @@ package com.qq.modules.main.command
    import com.qq.modules.main.server.PvzSocketService;
    import com.qq.modules.mapinfo.model.MapInfoProxy;
    import com.qq.modules.notice.command.NoticeCmd;
-   import com.qq.modules.td.model.TDStartParam;
+import com.qq.modules.td.command.game.TDGameFlowCmd;
+import com.qq.modules.td.model.TDStartParam;
    import com.qq.modules.td.view.components.TDPrivilegeWindow;
    import com.qq.templates.font.FontNormal;
    import com.qq.utils.GameDataReport;
@@ -154,7 +154,7 @@ import org.as3commons.logging.api.getLogger;
          }
          else if(GuideUIData.getInstance().isLock("3"))
          {*/
-      //      this.gotoLevelSelect();
+         //   this.gotoLevelSelect();
          /*}
          else
          {

@@ -109,7 +109,8 @@ package com.qq.modules.td.model
          this._dailyExtraSun.set(param6);
          this.dailyToyCar = param7;
          var _loc8_:DailyTDInfoTemplateCE = LSLevelTemplateFactory.instance.getDailyTDInfo(this.dailyMapID);
-         var _loc9_:* = (_loc9_ = "dailyTDMap/" + _loc8_.mapUrl) + ".bl";
+         var _loc9_:String = "dailyTDMap/" + _loc8_.mapUrl
+         _loc9_ = _loc9_ + ".bl";
          this.mapUrl = UrlManager.getInstance().getUrl(UrlManager.Url_TDMapFile,_loc9_);
       }
       
@@ -128,7 +129,8 @@ package com.qq.modules.td.model
          this._isInitial = param1;
          this._endlessMapInfo = param2;
          this.gameType = Endless;
-         var _loc7_:* = (_loc7_ = "endlessTDMap/" + param2.level + "-" + param2.mapID) + ".bl";
+         var _loc7_:String = "endlessTDMap/" + param2.level + "-" + param2.mapID
+         _loc7_ = _loc7_ + ".bl";
          this.mapUrl = UrlManager.getInstance().getUrl(UrlManager.Url_TDMapFile,_loc7_);
          this.plantList = param3;
          this.talentIdList = param4;
@@ -153,7 +155,8 @@ package com.qq.modules.td.model
          this._yetiModeID = param1;
          this._wishID = param2;
          var _loc6_:YetiTDMapTemplateCE = YetiTDTemplateFactory.instance.getMapTemplate(param3);
-         var _loc7_:* = (_loc7_ = "yetiTDMap/" + _loc6_.mapPath) + ".bl";
+         var _loc7_:String = "yetiTDMap/" + _loc6_.mapPath
+         _loc7_ = _loc7_ + ".bl";
          this.mapUrl = UrlManager.getInstance().getUrl(UrlManager.Url_TDMapFile,_loc7_);
          this.plantList = param4;
          this.talentIdList = param5;

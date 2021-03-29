@@ -1086,7 +1086,7 @@ package com.qq.modules.td.logic.unit.basic
          {
             this._runningPropList = new Array();
          }
-         return this._runningPropList.hasOwnProperty(param1);
+         return this._runningPropList.hasOwnProperty(param1);//TODO:Fix it
       }
       
       public function setRunningPropList(param1:Array) : void

@@ -131,40 +131,42 @@ package com.qq.modules.td.logic.action.zombie.basic
       
       protected function move(param1:Number) : void
       {
-         var _loc2_:Point = null;
-         var _loc3_:Number = NaN;
-         var _loc4_:int = 0;
-         while(param1 > 0)
+         var _loc_2:Point = null;
+         var _loc_3:Number = NaN;
+         var _loc_4:int = 0;
+         while (param1 > 0)
          {
-            if(this.target == null)
+
+            if (this.target == null)
             {
                this.target = this.getNextWalkTarget();
             }
-            _loc2_ = new Point(_zombie.x,_zombie.y);
-            if(this.target)
+            _loc_2 = new Point(_zombie.x, _zombie.y);
+            if (this.target)
             {
-               _loc3_ = Point.distance(this.target,_loc2_);
-               if(_loc3_ == 0 && this.endPoint && this.endPoint.equals(_loc2_))
+               _loc_3 = Point.distance(this.target, _loc_2);
+               if (_loc_3 == 0 && this.endPoint && this.endPoint.equals(_loc_2))
                {
                   break;
                }
             }
-            if(_loc3_ > param1)
+            if (_loc_3 <= param1)
             {
-               _loc2_ = Point.interpolate(this.target,_loc2_,param1 / _loc3_);
-               if(int(_zombie.y) != int(_loc2_.y))
-               {
-                  _loc4_ = TDGameInfo.getInstance().getRoadIndex(_loc2_.y);
-                  _zombie.zombieData.roadIndex = _loc4_;
-               }
+               _zombie.setLocation(this.target.x, this.target.y);
+               param1 = param1 - _loc_3;
+               this.target = this.getNextWalkTarget();
+               continue;
             }
-            continue;
-            _zombie.setLocation(_loc2_.x,_loc2_.y);
-            _zombie.setLocation(this.target.x,this.target.y);
-            param1 -= _loc3_;
-            this.target = this.getNextWalkTarget();
+            _loc_2 = Point.interpolate(this.target, _loc_2, param1 / _loc_3);
+            if (int(_zombie.y) != int(_loc_2.y))
+            {
+               _loc_4 = TDGameInfo.getInstance().getRoadIndex(_loc_2.y);
+               _zombie.zombieData.roadIndex = _loc_4;
+            }
+            _zombie.setLocation(_loc_2.x, _loc_2.y);
             break;
          }
+         return;
       }
       
       protected function updateMoveTimeScale() : void

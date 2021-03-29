@@ -673,7 +673,7 @@ package com.qq.modules.td.model
       {
          if(!this.isPause)
          {
-            getLogger("TD").debug("游戏不在暂停中");
+            getLogger("TD").debug("The game is already resumed");
             return;
          }
          if(this._lastUpdateTime != -1)
