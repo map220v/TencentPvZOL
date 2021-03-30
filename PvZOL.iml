@@ -2,30 +2,52 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="PvZOL">
     <configurations>
-      <configuration name="PvZOL" target-platform="Desktop" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL" runtime-loaded-modules="Main&#9;Game.swf&#9;true&#10;ModuleLS&#9;ModuleLS.swf&#9;true&#10;ModuleTD&#9;ModuleTD.swf&#9;true">
-        <dependencies>
+      <configuration name="PvZOL" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry module-name="PvZOL" build-configuration-name="Game">
+              <dependency linkage="Loaded" />
+            </entry>
+          </entries>
           <sdk name="flex_sdk_4.6.0.23201B" />
         </dependencies>
         <compiler-options />
-        <packaging-air-desktop package-file-name="PvZOL">
-          <files-to-package>
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/assets" path-in-package="assets" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/bossweb" path-in-package="bossweb" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/conf" path-in-package="conf" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/image" path-in-package="image" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/js" path-in-package="js" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/sound" path-in-package="sound" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/swf" path-in-package="swf" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/webgame_login" path-in-package="webgame_login" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/asgui.xml" path-in-package="asgui.xml" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/clientDB.txt" path-in-package="clientDB.txt" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/config.xml" path-in-package="config.xml" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/fileVer.xml" path-in-package="fileVer.xml" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/init.xml" path-in-package="init.xml" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/ModuleFont.swf" path-in-package="ModuleFont.swf" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/GameRes/Msgcheck.swf" path-in-package="Msgcheck.swf" />
-          </files-to-package>
-        </packaging-air-desktop>
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="Game" pure-as="true" output-type="RuntimeLoadedModule" main-class="Main" output-file="Game.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry module-name="PvZOL" build-configuration-name="ModuleLS">
+              <dependency linkage="Loaded" />
+            </entry>
+            <entry module-name="PvZOL" build-configuration-name="ModuleTD">
+              <dependency linkage="Loaded" />
+            </entry>
+          </entries>
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="ModuleLS" pure-as="true" output-type="RuntimeLoadedModule" main-class="ModuleLS" output-file="ModuleLS.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="ModuleTD" pure-as="true" output-type="RuntimeLoadedModule" main-class="ModuleTD" output-file="ModuleTD.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
         <packaging-android />
         <packaging-ios />
       </configuration>

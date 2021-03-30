@@ -117,10 +117,25 @@ package com.qq.net
       
       public function sendIdle() : void
       {
-         var _loc1_:Cmd_Idle_CS = new Cmd_Idle_CS();
+         /*var _loc1_:Cmd_Idle_CS = new Cmd_Idle_CS();
          this._lastSeqID = ++PvzSocketService.seqId;
          _loc1_.seqID = this._lastSeqID.toString();
-         this._service.sendMessage(_loc1_);
+         this._service.sendMessage(_loc1_);*/
+
+         var testData:SocketServiceEvent = new SocketServiceEvent(Cmd_Idle_SC.$MessageID);
+         var testMessage:Cmd_Idle_SC = new Cmd_Idle_SC();
+
+         testMessage.seqID = this._lastSeqID.toString();
+         var date:uint = new Date().time;
+         testMessage.serverTime = date;
+
+         testData.socketDataCmdName = Cmd_Idle_SC.$MessageID;
+
+         testData.socketData = testMessage;
+         testData.retCode = 0;
+
+         this.serverDataHandler(testData)
+
          this.resetResponseTimer();
          this.startResponseTimer();
       }

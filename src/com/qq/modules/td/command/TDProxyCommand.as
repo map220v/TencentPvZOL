@@ -6,7 +6,8 @@ package com.qq.modules.td.command
    import PVZ.Cmd.Cmd_DailyTD_StartTDGame_CS;
    import PVZ.Cmd.Cmd_DailyTD_UseSkill_CS;
    import PVZ.Cmd.Cmd_Friend_GetList_CS;
-   import PVZ.Cmd.Cmd_NoEndTD_BuyCart_CS;
+import PVZ.Cmd.Cmd_Init_SC;
+import PVZ.Cmd.Cmd_NoEndTD_BuyCart_CS;
    import PVZ.Cmd.Cmd_NoEndTD_BuyEnergyBean_CS;
    import PVZ.Cmd.Cmd_NoEndTD_BuySun_CS;
    import PVZ.Cmd.Cmd_NoEndTD_UseSkill_CS;
@@ -19,17 +20,20 @@ package com.qq.modules.td.command
    import PVZ.Cmd.Cmd_TD_BuySun_CS;
    import PVZ.Cmd.Cmd_TD_ReportLevelResult_CS;
    import PVZ.Cmd.Cmd_TD_StartTDGame_CS;
-   import PVZ.Cmd.Cmd_TD_UnlockPrivilegePlant_CS;
+import PVZ.Cmd.Cmd_TD_StartTDGame_SC;
+import PVZ.Cmd.Cmd_TD_UnlockPrivilegePlant_CS;
    import PVZ.Cmd.Cmd_TD_UseSkill_CS;
    import PVZ.Cmd.FriendModuleType;
    import com.qq.GameGloble;
    import com.qq.constant.ls.LSConstant;
    import com.qq.modules.levelselect.model.LSProxy;
    import com.qq.modules.levelselect.model.vo.LSLevelInfoVO;
-   import com.qq.modules.main.command.CommonCmd;
+import com.qq.modules.login.service.LoginService;
+import com.qq.modules.main.command.CommonCmd;
    import com.qq.modules.main.command.GameFlowCmd;
    import com.qq.modules.main.server.PvzSocketService;
-   import com.qq.modules.td.logic.TDDebugManager;
+import com.qq.modules.td.command.game.TDGameFlowCmd;
+import com.qq.modules.td.logic.TDDebugManager;
    import com.qq.modules.td.logic.log.TDLogger;
    import com.qq.modules.td.model.TDGameInfo;
    import com.qq.modules.td.model.TDStageInfo;
@@ -39,8 +43,10 @@ package com.qq.modules.td.command
    import com.tencent.protobuf.Int64;
    import flash.utils.ByteArray;
    import org.robotlegs.extend.command.StrongRobotlegCommand;
-   
-   public class TDProxyCommand extends StrongRobotlegCommand
+
+import tencent.io.service.events.SocketServiceEvent;
+
+public class TDProxyCommand extends StrongRobotlegCommand
    {
        
       
@@ -82,7 +88,9 @@ package com.qq.modules.td.command
          {
             _loc6_.friendRoleId = new Int64(0,0);
          }
-         this.server.sendMessage(_loc6_);
+         //this.server.sendMessage(_loc6_);
+         TDGameFlowCmd.finishLoadAllTDData();
+         //
          if(param4 > 0)
          {
             if(_loc7_ = this.lsProxy.getChallengeLevelInfo(param2,param3,param4))

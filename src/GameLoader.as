@@ -96,12 +96,12 @@ package
       
       private var _curPercent:int;
 
-      private var loaderContext: LoaderContext = new LoaderContext();
+      //private var loaderContext: LoaderContext = new LoaderContext();
       
       public function GameLoader()
       {
-         loaderContext.allowLoadBytesCodeExecution = true;
-         loaderContext.allowCodeImport = true;
+         //loaderContext.allowLoadBytesCodeExecution = true;
+         //loaderContext.allowCodeImport = true;
 
          var _loc1_:String = null;
          this._params = new Array();
@@ -110,7 +110,7 @@ package
          super();
          stage.align = StageAlign.TOP_LEFT;
          stage.scaleMode = StageScaleMode.NO_SCALE;
-         //Security.allowDomain("*");
+         Security.allowDomain("*");
          this._screenW = stage.stageWidth;
          this._screenH = stage.stageHeight;
          this._bgColor = 0;
@@ -525,7 +525,7 @@ package
             _loc3_ = _loc2_.data;
             _loc3_.position = 0;
             (_loc4_ = new Loader()).contentLoaderInfo.addEventListener(Event.COMPLETE,this.onFinishLoadMsgCheckFile);
-            _loc4_.loadBytes(_loc3_, loaderContext);
+            _loc4_.loadBytes(_loc3_/*, loaderContext*/);
          }
       }
       
@@ -542,7 +542,7 @@ package
             _loc3_.data.position = 0;
             (_loc4_ = _loc3_.data).position = 0;
             (_loc5_ = new Loader()).contentLoaderInfo.addEventListener(Event.COMPLETE,this.onFinishLoadMainFile);
-            _loc5_.loadBytes(_loc4_,loaderContext);
+            _loc5_.loadBytes(_loc4_/*,loaderContext*/);
             LoaderManager.impl.ClearCache();
          }
          this._loadFileUrlList = null;

@@ -60,7 +60,6 @@ package com.qq.modules.td.command.game
          CommandDispatcher.send(CommandName.TD_CleanGameSence);
          CommandDispatcher.send(CommandName.TDGameEvent_RestartGame);
          CommandDispatcher.send(CommandName.TD_InitTDGame,{"noGuide":1});
-         CommandDispatcher.send(CommandName.TD_StartTDGame);//This should resume game after Restart
       }
       
       public function gotoGuide() : void

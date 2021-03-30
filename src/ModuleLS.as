@@ -95,7 +95,7 @@ package
          {
             (param1.currentTarget as IEventDispatcher).removeEventListener(Event.CLOSE,this.onComplete);
          }
-         getLogger().debug("选关模块注册完成，请求关卡信息");
+         getLogger().debug("Registration of the level selection module is completed, and the level information is requested.");
       }
    }
 }
