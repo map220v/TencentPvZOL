@@ -369,8 +369,8 @@ package com.qq
             _loc5_ = param1[3];
          }
          ModuleLSCmd.startLS(_loc2_,_loc3_,_loc4_,_loc5_);
-         //ModuleRoleInfoCmd.start(RoleInfoPanelID.Bar_Exp | RoleInfoPanelID.Bar_Vip | RoleInfoPanelID.Bar_GoldDiamond | RoleInfoPanelID.Bar_GiftDiamondBar | RoleInfoPanelID.Bar_Coin);
-         //ModuleTDPrivilegeCmd.start();
+         ModuleRoleInfoCmd.start(RoleInfoPanelID.Bar_Exp | RoleInfoPanelID.Bar_Vip | RoleInfoPanelID.Bar_GoldDiamond | RoleInfoPanelID.Bar_GiftDiamondBar | RoleInfoPanelID.Bar_Coin);
+         ModuleTDPrivilegeCmd.start();
          GuideViewCmd.changeContext(GuideContext.TD_SELECT);
          LoginServerCmd.requestPrivilegeAndUnlockPlantInfo(1,1,1);
       }

@@ -1,157 +1,204 @@
+/*
+ * Copyright (c) 2009, 2010 the original author or authors
+ *
+ * Permission is hereby granted to use, modify, and distribute this file
+ * in accordance with the terms of the license agreement accompanying it.
+ */
+
 package org.robotlegs.base
 {
-   import flash.display.DisplayObject;
-   import flash.display.DisplayObjectContainer;
-   import flash.events.Event;
-   import flash.utils.Dictionary;
-   import flash.utils.getQualifiedClassName;
-   import org.robotlegs.core.IInjector;
-   import org.robotlegs.core.IViewMap;
-   
-   public class ViewMap extends ViewMapBase implements IViewMap
-   {
-       
-      
-      protected var mappedPackages:Array;
-      
-      protected var mappedTypes:Dictionary;
-      
-      protected var injectedViews:Dictionary;
-      
-      public function ViewMap(param1:DisplayObjectContainer, param2:IInjector)
-      {
-         super(param1,param2);
-         this.mappedPackages = new Array();
-         this.mappedTypes = new Dictionary(false);
-         this.injectedViews = new Dictionary(true);
-      }
-      
-      public function mapPackage(param1:String) : void
-      {
-         if(this.mappedPackages.indexOf(param1) == -1)
-         {
-            this.mappedPackages.push(param1);
-            ++viewListenerCount;
-            if(viewListenerCount == 1)
-            {
-               this.addListeners();
-            }
-         }
-      }
-      
-      public function unmapPackage(param1:String) : void
-      {
-         var _loc2_:int = this.mappedPackages.indexOf(param1);
-         if(_loc2_ > -1)
-         {
-            this.mappedPackages.splice(_loc2_,1);
-            --viewListenerCount;
-            if(viewListenerCount == 0)
-            {
-               this.removeListeners();
-            }
-         }
-      }
-      
-      public function mapType(param1:Class) : void
-      {
-         if(this.mappedTypes[param1])
-         {
-            return;
-         }
-         this.mappedTypes[param1] = param1;
-         ++viewListenerCount;
-         if(viewListenerCount == 1)
-         {
-            this.addListeners();
-         }
-         if(contextView && contextView is param1)
-         {
-            this.injectInto(contextView);
-         }
-      }
-      
-      public function unmapType(param1:Class) : void
-      {
-         var _loc2_:Class = this.mappedTypes[param1];
-         delete this.mappedTypes[param1];
-         if(_loc2_)
-         {
-            --viewListenerCount;
-            if(viewListenerCount == 0)
-            {
-               this.removeListeners();
-            }
-         }
-      }
-      
-      public function hasType(param1:Class) : Boolean
-      {
-         return this.mappedTypes[param1] != null;
-      }
-      
-      public function hasPackage(param1:String) : Boolean
-      {
-         return this.mappedPackages.indexOf(param1) > -1;
-      }
-      
-      override protected function addListeners() : void
-      {
-         if(contextView && enabled)
-         {
-            contextView.addEventListener(Event.ADDED_TO_STAGE,this.onViewAdded,useCapture,0,true);
-         }
-      }
-      
-      override protected function removeListeners() : void
-      {
-         if(contextView)
-         {
-            contextView.removeEventListener(Event.ADDED_TO_STAGE,this.onViewAdded,useCapture);
-         }
-      }
-      
-      override protected function onViewAdded(param1:Event) : void
-      {
-         var _loc3_:Class = null;
-         var _loc4_:int = 0;
-         var _loc5_:String = null;
-         var _loc6_:int = 0;
-         var _loc7_:String = null;
-         var _loc2_:DisplayObject = DisplayObject(param1.target);
-         if(this.injectedViews[_loc2_])
-         {
-            return;
-         }
-         for each(_loc3_ in this.mappedTypes)
-         {
-            if(_loc2_ is _loc3_)
-            {
-               this.injectInto(_loc2_);
-               return;
-            }
-         }
-         if((_loc4_ = this.mappedPackages.length) > 0)
-         {
-            _loc5_ = getQualifiedClassName(_loc2_);
-            _loc6_ = 0;
-            while(_loc6_ < _loc4_)
-            {
-               _loc7_ = this.mappedPackages[_loc6_];
-               if(_loc5_.indexOf(_loc7_) == 0)
-               {
-                  this.injectInto(_loc2_);
-                  return;
-               }
-               _loc6_++;
-            }
-         }
-      }
-      
-      protected function injectInto(param1:DisplayObject) : void
-      {
-         injector.injectInto(param1);
-         this.injectedViews[param1] = true;
-      }
-   }
+	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
+	import flash.events.Event;
+	import flash.utils.Dictionary;
+	import flash.utils.getQualifiedClassName;
+
+	import org.robotlegs.core.IInjector;
+	import org.robotlegs.core.IViewMap;
+
+	/**
+	 * An abstract <code>IViewMap</code> implementation
+	 */
+	public class ViewMap extends ViewMapBase implements IViewMap
+	{
+		/**
+		 * @private
+		 */
+		protected var mappedPackages:Array;
+
+		/**
+		 * @private
+		 */
+		protected var mappedTypes:Dictionary;
+
+		/**
+		 * @private
+		 */
+		protected var injectedViews:Dictionary;
+
+		//---------------------------------------------------------------------
+		// Constructor
+		//---------------------------------------------------------------------
+
+		/**
+		 * Creates a new <code>ViewMap</code> object
+		 *
+		 * @param contextView The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+		 * @param injector An <code>IInjector</code> to use for this context
+		 */
+		public function ViewMap(contextView:DisplayObjectContainer, injector:IInjector)
+		{
+			super(contextView, injector);
+
+			// mappings - if you can do it with fewer dictionaries you get a prize
+			this.mappedPackages = new Array();
+			this.mappedTypes = new Dictionary(false);
+			this.injectedViews = new Dictionary(true);
+		}
+
+		//---------------------------------------------------------------------
+		// API
+		//---------------------------------------------------------------------
+
+		/**
+		 * @inheritDoc
+		 */
+		public function mapPackage(packageName:String):void
+		{
+			if (mappedPackages.indexOf(packageName) == -1)
+			{
+				mappedPackages.push(packageName);
+				viewListenerCount++;
+				if (viewListenerCount == 1)
+					addListeners();
+			}
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function unmapPackage(packageName:String):void
+		{
+			var index:int = mappedPackages.indexOf(packageName);
+			if (index > -1)
+			{
+				mappedPackages.splice(index, 1);
+				viewListenerCount--;
+				if (viewListenerCount == 0)
+					removeListeners();
+			}
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function mapType(type:Class):void
+		{
+			if (mappedTypes[type])
+				return;
+
+			mappedTypes[type] = type;
+
+			viewListenerCount++;
+			if (viewListenerCount == 1)
+				addListeners();
+
+			// This was a bad idea - causes unexpected eager instantiation of object graph 
+			if (contextView && (contextView is type))
+				injectInto(contextView);
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function unmapType(type:Class):void
+		{
+			var mapping:Class = mappedTypes[type];
+			delete mappedTypes[type];
+			if (mapping)
+			{
+				viewListenerCount--;
+				if (viewListenerCount == 0)
+					removeListeners();
+			}
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function hasType(type:Class):Boolean
+		{
+			return (mappedTypes[type] != null);
+		}
+
+		/**
+		 * @inheritDoc
+		 */
+		public function hasPackage(packageName:String):Boolean
+		{
+			return mappedPackages.indexOf(packageName) > -1;
+		}
+
+		//---------------------------------------------------------------------
+		// Internal
+		//---------------------------------------------------------------------
+
+		/**
+		 * @private
+		 */
+		protected override function addListeners():void
+		{
+			if (contextView && enabled)
+				contextView.addEventListener(Event.ADDED_TO_STAGE, onViewAdded, useCapture, 0, true);
+		}
+
+		/**
+		 * @private
+		 */
+		protected override function removeListeners():void
+		{
+			if (contextView)
+				contextView.removeEventListener(Event.ADDED_TO_STAGE, onViewAdded, useCapture);
+		}
+
+		/**
+		 * @private
+		 */
+		protected override function onViewAdded(e:Event):void
+		{
+			var target:DisplayObject = DisplayObject(e.target);
+			if (injectedViews[target])
+				return;
+
+			for each (var type:Class in mappedTypes)
+			{
+				if (target is type)
+				{
+					injectInto(target);
+					return;
+				}
+			}
+
+			var len:int = mappedPackages.length;
+			if (len > 0)
+			{
+				var className:String = getQualifiedClassName(target);
+				for (var i:int = 0; i < len; i++)
+				{
+					var packageName:String = mappedPackages[i];
+					if (className.indexOf(packageName) == 0)
+					{
+						injectInto(target);
+						return;
+					}
+				}
+			}
+		}
+
+		protected function injectInto(target:DisplayObject):void
+		{
+			injector.injectInto(target);
+			injectedViews[target] = true;
+		}
+	}
 }

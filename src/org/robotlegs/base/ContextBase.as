@@ -1,54 +1,98 @@
+/*
+ * Copyright (c) 2009 the original author or authors
+ * 
+ * Permission is hereby granted to use, modify, and distribute this file 
+ * in accordance with the terms of the license agreement accompanying it.
+ */
+
 package org.robotlegs.base
 {
-   import flash.events.Event;
-   import flash.events.EventDispatcher;
-   import flash.events.IEventDispatcher;
-   import org.robotlegs.core.IContext;
-   
-   public class ContextBase implements IContext, IEventDispatcher
-   {
-       
-      
-      protected var _eventDispatcher:IEventDispatcher;
-      
-      public function ContextBase()
-      {
-         super();
-         this._eventDispatcher = new EventDispatcher(this);
-      }
-      
-      public function get eventDispatcher() : IEventDispatcher
-      {
-         return this._eventDispatcher;
-      }
-      
-      public function addEventListener(param1:String, param2:Function, param3:Boolean = false, param4:int = 0, param5:Boolean = false) : void
-      {
-         this.eventDispatcher.addEventListener(param1,param2,param3,param4);
-      }
-      
-      public function dispatchEvent(param1:Event) : Boolean
-      {
-         if(this.eventDispatcher.hasEventListener(param1.type))
-         {
-            return this.eventDispatcher.dispatchEvent(param1);
-         }
-         return false;
-      }
-      
-      public function hasEventListener(param1:String) : Boolean
-      {
-         return this.eventDispatcher.hasEventListener(param1);
-      }
-      
-      public function removeEventListener(param1:String, param2:Function, param3:Boolean = false) : void
-      {
-         this.eventDispatcher.removeEventListener(param1,param2,param3);
-      }
-      
-      public function willTrigger(param1:String) : Boolean
-      {
-         return this.eventDispatcher.willTrigger(param1);
-      }
-   }
+	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.events.IEventDispatcher;
+	
+	import org.robotlegs.core.IContext;
+	
+	/**
+	 * An abstract <code>IContext</code> implementation
+	 */
+	public class ContextBase implements IContext, IEventDispatcher
+	{
+		/**
+		 * @private
+		 */
+		protected var _eventDispatcher:IEventDispatcher;
+		
+		//---------------------------------------------------------------------
+		//  Constructor
+		//---------------------------------------------------------------------
+		
+		/**
+		 * Abstract Context Implementation
+		 *
+		 * <p>Extend this class to create a Framework or Application context</p>
+		 */
+		public function ContextBase()
+		{
+			_eventDispatcher = new EventDispatcher(this);
+		}
+		
+		//---------------------------------------------------------------------
+		//  API
+		//---------------------------------------------------------------------
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function get eventDispatcher():IEventDispatcher
+		{
+			return _eventDispatcher;
+		}
+		
+		//---------------------------------------------------------------------
+		//  EventDispatcher Boilerplate
+		//---------------------------------------------------------------------
+		
+		/**
+		 * @private
+		 */
+		public function addEventListener(type:String, listener:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void
+		{
+			eventDispatcher.addEventListener(type, listener, useCapture, priority);
+		}
+		
+		/**
+		 * @private
+		 */
+		public function dispatchEvent(event:Event):Boolean
+		{
+ 		    if(eventDispatcher.hasEventListener(event.type))
+ 		        return eventDispatcher.dispatchEvent(event);
+ 		 	return false;
+		}
+		
+		/**
+		 * @private
+		 */
+		public function hasEventListener(type:String):Boolean
+		{
+			return eventDispatcher.hasEventListener(type);
+		}
+		
+		/**
+		 * @private
+		 */
+		public function removeEventListener(type:String, listener:Function, useCapture:Boolean = false):void
+		{
+			eventDispatcher.removeEventListener(type, listener, useCapture);
+		}
+		
+		/**
+		 * @private
+		 */
+		public function willTrigger(type:String):Boolean
+		{
+			return eventDispatcher.willTrigger(type);
+		}
+	}
 }

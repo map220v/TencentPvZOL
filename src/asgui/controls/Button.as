@@ -271,7 +271,7 @@ package asgui.controls
       {
          if(this.m_lightMc == null)
          {
-            this.m_lightMc = new MovieClip();//AssetManager.GetClass("btn_light_effect")() as MovieClip;
+            this.m_lightMc = AssetManager.GetClass("btn_light_effect") as MovieClip;
             this.m_lightMc.mouseChildren = this.m_lightMc.mouseEnabled = false;
             this.m_lightMc.stop();
          }

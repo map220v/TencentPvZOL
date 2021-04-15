@@ -106,10 +106,11 @@ package asgui.blit.bone
          }
          if(_loc4_ == _loc6_.length)
          {
-            /*(_loc5_ = BlitBoneManager.impl.getBlitFactory(this.type).CreateBlitClip({
+            _loc7_ = BlitBoneManager.impl.getBlitFactory(this.type).CreateBlitClip({
                "smoothing":true,
                "mcInit":param3
-            })).dataProvider = param2.blits[param1];*/
+            })
+            _loc7_.dataProvider = param2.blits[param1];
             _loc7_.name = param1;
             _loc6_.push(_loc7_);
             return _loc7_;

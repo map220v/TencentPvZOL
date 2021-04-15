@@ -1,275 +1,348 @@
+/*
+ * Copyright (c) 2009, 2010 the original author or authors
+ * 
+ * Permission is hereby granted to use, modify, and distribute this file 
+ * in accordance with the terms of the license agreement accompanying it.
+ */
+
 package org.robotlegs.base
 {
-   import flash.display.DisplayObject;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.utils.Dictionary;
-   import flash.utils.getQualifiedClassName;
-   import org.robotlegs.core.IInjector;
-   import org.robotlegs.core.IMediator;
-   import org.robotlegs.core.IMediatorMap;
-   import org.robotlegs.core.IReflector;
-   
-   public class MediatorMap extends ViewMapBase implements IMediatorMap
-   {
-      
-      protected static const enterFrameDispatcher:Sprite = new Sprite();
-       
-      
-      protected var mediatorByView:Dictionary;
-      
-      protected var mappingConfigByView:Dictionary;
-      
-      protected var mappingConfigByViewClassName:Dictionary;
-      
-      protected var mediatorsMarkedForRemoval:Dictionary;
-      
-      protected var hasMediatorsMarkedForRemoval:Boolean;
-      
-      protected var reflector:IReflector;
-      
-      public function MediatorMap(param1:DisplayObjectContainer, param2:IInjector, param3:IReflector)
-      {
-         super(param1,param2);
-         this.reflector = param3;
-         this.mediatorByView = new Dictionary(true);
-         this.mappingConfigByView = new Dictionary(true);
-         this.mappingConfigByViewClassName = new Dictionary(false);
-         this.mediatorsMarkedForRemoval = new Dictionary(false);
-      }
-      
-      public function mapView(param1:*, param2:Class, param3:* = null, param4:Boolean = true, param5:Boolean = true) : void
-      {
-         var _loc6_:String = this.reflector.getFQCN(param1);
-         if(this.mappingConfigByViewClassName[_loc6_] != null)
-         {
-            throw new ContextError(ContextError.E_MEDIATORMAP_OVR + " - " + param2);
-         }
-         if(this.reflector.classExtendsOrImplements(param2,IMediator) == false)
-         {
-            throw new ContextError(ContextError.E_MEDIATORMAP_NOIMPL + " - " + param2);
-         }
-         var _loc7_:MappingConfig;
-         (_loc7_ = new MappingConfig()).mediatorClass = param2;
-         _loc7_.autoCreate = param4;
-         _loc7_.autoRemove = param5;
-         if(param3)
-         {
-            if(param3 is Array)
-            {
-               _loc7_.typedViewClasses = (param3 as Array).concat();
-            }
-            else if(param3 is Class)
-            {
-               _loc7_.typedViewClasses = [param3];
-            }
-         }
-         else if(param1 is Class)
-         {
-            _loc7_.typedViewClasses = [param1];
-         }
-         this.mappingConfigByViewClassName[_loc6_] = _loc7_;
-         if(param4 || param5)
-         {
-            ++viewListenerCount;
-            if(viewListenerCount == 1)
-            {
-               this.addListeners();
-            }
-         }
-         if(param4 && contextView && _loc6_ == getQualifiedClassName(contextView))
-         {
-            this.createMediatorUsing(contextView,_loc6_,_loc7_);
-         }
-      }
-      
-      public function unmapView(param1:*) : void
-      {
-         var _loc2_:String = this.reflector.getFQCN(param1);
-         var _loc3_:MappingConfig = this.mappingConfigByViewClassName[_loc2_];
-         if(_loc3_ && (_loc3_.autoCreate || _loc3_.autoRemove))
-         {
-            --viewListenerCount;
-            if(viewListenerCount == 0)
-            {
-               this.removeListeners();
-            }
-         }
-         this.mappingConfigByViewClassName[_loc2_] = null;
-      }
-      
-      public function createMediator(param1:Object) : IMediator
-      {
-         return this.createMediatorUsing(param1);
-      }
-      
-      public function registerMediator(param1:Object, param2:IMediator) : void
-      {
-         var _loc3_:Class = this.reflector.getClass(param2);
-         injector.hasMapping(_loc3_) && injector.unmap(_loc3_);
-         injector.mapValue(_loc3_,param2);
-         this.mediatorByView[param1] = param2;
-         this.mappingConfigByView[param1] = this.mappingConfigByViewClassName[getQualifiedClassName(param1)];
-         param2.setViewComponent(param1);
-         param2.preRegister();
-      }
-      
-      public function removeMediator(param1:IMediator) : IMediator
-      {
-         var _loc2_:Object = null;
-         var _loc3_:Class = null;
-         if(param1)
-         {
-            _loc2_ = param1.getViewComponent();
-            _loc3_ = this.reflector.getClass(param1);
-            delete this.mediatorByView[_loc2_];
-            delete this.mappingConfigByView[_loc2_];
-            param1.preRemove();
-            param1.setViewComponent(null);
-            injector.hasMapping(_loc3_) && injector.unmap(_loc3_);
-         }
-         return param1;
-      }
-      
-      public function removeMediatorByView(param1:Object) : IMediator
-      {
-         return this.removeMediator(this.retrieveMediator(param1));
-      }
-      
-      public function retrieveMediator(param1:Object) : IMediator
-      {
-         return this.mediatorByView[param1];
-      }
-      
-      public function hasMapping(param1:*) : Boolean
-      {
-         var _loc2_:String = this.reflector.getFQCN(param1);
-         return this.mappingConfigByViewClassName[_loc2_] != null;
-      }
-      
-      public function hasMediatorForView(param1:Object) : Boolean
-      {
-         return this.mediatorByView[param1] != null;
-      }
-      
-      public function hasMediator(param1:IMediator) : Boolean
-      {
-         var _loc2_:IMediator = null;
-         for each(_loc2_ in this.mediatorByView)
-         {
-            if(_loc2_ == param1)
-            {
-               return true;
-            }
-         }
-         return false;
-      }
-      
-      override protected function addListeners() : void
-      {
-         if(contextView && enabled)
-         {
-            contextView.addEventListener(Event.ADDED_TO_STAGE,this.onViewAdded,useCapture,0,true);
-            contextView.addEventListener(Event.REMOVED_FROM_STAGE,this.onViewRemoved,useCapture,0,true);
-         }
-      }
-      
-      override protected function removeListeners() : void
-      {
-         if(contextView)
-         {
-            contextView.removeEventListener(Event.ADDED_TO_STAGE,this.onViewAdded,useCapture);
-            contextView.removeEventListener(Event.REMOVED_FROM_STAGE,this.onViewRemoved,useCapture);
-         }
-      }
-      
-      override protected function onViewAdded(param1:Event) : void
-      {
-         if(this.mediatorsMarkedForRemoval[param1.target])
-         {
-            delete this.mediatorsMarkedForRemoval[param1.target];
-            return;
-         }
-         var _loc2_:String = getQualifiedClassName(param1.target);
-         var _loc3_:MappingConfig = this.mappingConfigByViewClassName[_loc2_];
-         if(_loc3_ && _loc3_.autoCreate)
-         {
-            this.createMediatorUsing(param1.target,_loc2_,_loc3_);
-         }
-      }
-      
-      protected function createMediatorUsing(param1:Object, param2:String = "", param3:MappingConfig = null) : IMediator
-      {
-         var _loc5_:Class = null;
-         var _loc6_:Class = null;
-         var _loc4_:IMediator;
-         if((_loc4_ = this.mediatorByView[param1]) == null)
-         {
-            param2 = param2 || getQualifiedClassName(param1);
-            param3 = param3 || this.mappingConfigByViewClassName[param2];
-            if(param3)
-            {
-               for each(_loc5_ in param3.typedViewClasses)
-               {
-                  injector.mapValue(_loc5_,param1);
-               }
-               _loc4_ = injector.instantiate(param3.mediatorClass);
-               for each(_loc6_ in param3.typedViewClasses)
-               {
-                  injector.unmap(_loc6_);
-               }
-               this.registerMediator(param1,_loc4_);
-            }
-         }
-         return _loc4_;
-      }
-      
-      protected function onViewRemoved(param1:Event) : void
-      {
-         var _loc2_:MappingConfig = this.mappingConfigByView[param1.target];
-         if(_loc2_ && _loc2_.autoRemove)
-         {
-            this.mediatorsMarkedForRemoval[param1.target] = param1.target;
-            if(!this.hasMediatorsMarkedForRemoval)
-            {
-               this.hasMediatorsMarkedForRemoval = true;
-               enterFrameDispatcher.addEventListener(Event.ENTER_FRAME,this.removeMediatorLater);
-            }
-         }
-      }
-      
-      protected function removeMediatorLater(param1:Event) : void
-      {
-         var _loc2_:DisplayObject = null;
-         enterFrameDispatcher.removeEventListener(Event.ENTER_FRAME,this.removeMediatorLater);
-         for each(_loc2_ in this.mediatorsMarkedForRemoval)
-         {
-            if(!_loc2_.stage)
-            {
-               this.removeMediatorByView(_loc2_);
-            }
-            delete this.mediatorsMarkedForRemoval[_loc2_];
-         }
-         this.hasMediatorsMarkedForRemoval = false;
-      }
-   }
+	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.utils.Dictionary;
+	import flash.utils.getQualifiedClassName;
+	
+	import org.robotlegs.core.IInjector;
+	import org.robotlegs.core.IMediator;
+	import org.robotlegs.core.IMediatorMap;
+	import org.robotlegs.core.IReflector;
+	
+	/**
+	 * An abstract <code>IMediatorMap</code> implementation
+	 */
+	public class MediatorMap extends ViewMapBase implements IMediatorMap
+	{
+		/**
+		 * @private
+		 */
+		protected static const enterFrameDispatcher:Sprite = new Sprite();
+		
+		/**
+		 * @private
+		 */
+		protected var mediatorByView:Dictionary;
+		
+		/**
+		 * @private
+		 */
+		protected var mappingConfigByView:Dictionary;
+		
+		/**
+		 * @private
+		 */
+		protected var mappingConfigByViewClassName:Dictionary;
+		
+		/**
+		 * @private
+		 */
+		protected var mediatorsMarkedForRemoval:Dictionary;
+		
+		/**
+		 * @private
+		 */
+		protected var hasMediatorsMarkedForRemoval:Boolean;
+		
+		/**
+		 * @private
+		 */
+		protected var reflector:IReflector;
+		
+		
+		//---------------------------------------------------------------------
+		//  Constructor
+		//---------------------------------------------------------------------
+		
+		/**
+		 * Creates a new <code>MediatorMap</code> object
+		 *
+		 * @param contextView The root view node of the context. The map will listen for ADDED_TO_STAGE events on this node
+		 * @param injector An <code>IInjector</code> to use for this context
+		 * @param reflector An <code>IReflector</code> to use for this context
+		 */
+		public function MediatorMap(contextView:DisplayObjectContainer, injector:IInjector, reflector:IReflector)
+		{
+			super(contextView, injector);
+			
+			this.reflector = reflector;
+			
+			// mappings - if you can do it with fewer dictionaries you get a prize
+			this.mediatorByView = new Dictionary(true);
+			this.mappingConfigByView = new Dictionary(true);
+			this.mappingConfigByViewClassName = new Dictionary(false);
+			this.mediatorsMarkedForRemoval = new Dictionary(false);
+		}
+		
+		//---------------------------------------------------------------------
+		//  API
+		//---------------------------------------------------------------------
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function mapView(viewClassOrName:*, mediatorClass:Class, injectViewAs:* = null, autoCreate:Boolean = true, autoRemove:Boolean = true):void
+		{
+			var viewClassName:String = reflector.getFQCN(viewClassOrName);
+			
+			if (mappingConfigByViewClassName[viewClassName] != null)
+				throw new ContextError(ContextError.E_MEDIATORMAP_OVR + ' - ' + mediatorClass);
+			
+			if (reflector.classExtendsOrImplements(mediatorClass, IMediator) == false)
+				throw new ContextError(ContextError.E_MEDIATORMAP_NOIMPL + ' - ' + mediatorClass);
+			
+			var config:MappingConfig = new MappingConfig();
+			config.mediatorClass = mediatorClass;
+			config.autoCreate = autoCreate;
+			config.autoRemove = autoRemove;
+			if (injectViewAs)
+			{
+				if (injectViewAs is Array)
+				{
+					config.typedViewClasses = (injectViewAs as Array).concat();
+				}
+				else if (injectViewAs is Class)
+				{
+					config.typedViewClasses = [injectViewAs];
+				}
+			}
+			else if (viewClassOrName is Class)
+			{
+				config.typedViewClasses = [viewClassOrName];
+			}
+			mappingConfigByViewClassName[viewClassName] = config;
+			
+			if (autoCreate || autoRemove)
+			{
+				viewListenerCount++;
+				if (viewListenerCount == 1)
+					addListeners();
+			}
+			
+			// This was a bad idea - causes unexpected eager instantiation of object graph 
+			if (autoCreate && contextView && (viewClassName == getQualifiedClassName(contextView) ))
+				createMediatorUsing(contextView, viewClassName, config);
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function unmapView(viewClassOrName:*):void
+		{
+			var viewClassName:String = reflector.getFQCN(viewClassOrName);
+			var config:MappingConfig = mappingConfigByViewClassName[viewClassName];
+			if (config && (config.autoCreate || config.autoRemove))
+			{
+				viewListenerCount--;
+				if (viewListenerCount == 0)
+					removeListeners();
+			}
+			delete mappingConfigByViewClassName[viewClassName];
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function createMediator(viewComponent:Object):IMediator
+		{
+			return createMediatorUsing(viewComponent);
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function registerMediator(viewComponent:Object, mediator:IMediator):void
+		{
+			var mediatorClass:Class = reflector.getClass(mediator);
+			injector.hasMapping(mediatorClass) && injector.unmap(mediatorClass);
+			injector.mapValue(mediatorClass, mediator);
+			mediatorByView[viewComponent] = mediator;
+			mappingConfigByView[viewComponent] = mappingConfigByViewClassName[getQualifiedClassName(viewComponent)];
+			mediator.setViewComponent(viewComponent);
+			mediator.preRegister();
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function removeMediator(mediator:IMediator):IMediator
+		{
+			if (mediator)
+			{
+				var viewComponent:Object = mediator.getViewComponent();
+				var mediatorClass:Class = reflector.getClass(mediator);
+				delete mediatorByView[viewComponent];
+				delete mappingConfigByView[viewComponent];
+				mediator.preRemove();
+				mediator.setViewComponent(null);
+				injector.hasMapping(mediatorClass) && injector.unmap(mediatorClass);
+			}
+			return mediator;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function removeMediatorByView(viewComponent:Object):IMediator
+		{
+			return removeMediator(retrieveMediator(viewComponent));
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function retrieveMediator(viewComponent:Object):IMediator
+		{
+			return mediatorByView[viewComponent];
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function hasMapping(viewClassOrName:*):Boolean
+		{
+			var viewClassName:String = reflector.getFQCN(viewClassOrName);
+			return (mappingConfigByViewClassName[viewClassName] != null);
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function hasMediatorForView(viewComponent:Object):Boolean
+		{
+			return mediatorByView[viewComponent] != null;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function hasMediator(mediator:IMediator):Boolean
+		{
+			for each (var med:IMediator in mediatorByView)
+				if (med == mediator)
+					return true;
+			return false;
+		}
+		
+		//---------------------------------------------------------------------
+		//  Internal
+		//---------------------------------------------------------------------
+		
+		/**
+		 * @private
+		 */		
+		protected override function addListeners():void
+		{
+			if (contextView && enabled)
+			{
+				contextView.addEventListener(Event.ADDED_TO_STAGE, onViewAdded, useCapture, 0, true);
+				contextView.addEventListener(Event.REMOVED_FROM_STAGE, onViewRemoved, useCapture, 0, true);
+			}
+		}
+		
+		/**
+		 * @private
+		 */		
+		protected override function removeListeners():void
+		{
+			if (contextView)
+			{
+				contextView.removeEventListener(Event.ADDED_TO_STAGE, onViewAdded, useCapture);
+				contextView.removeEventListener(Event.REMOVED_FROM_STAGE, onViewRemoved, useCapture);
+			}
+		}
+		
+		/**
+		 * @private
+		 */		
+		protected override function onViewAdded(e:Event):void
+		{
+			if (mediatorsMarkedForRemoval[e.target])
+			{
+				delete mediatorsMarkedForRemoval[e.target];
+				return;
+			}
+			var viewClassName:String = getQualifiedClassName(e.target);
+			var config:MappingConfig = mappingConfigByViewClassName[viewClassName];
+			if (config && config.autoCreate)
+				createMediatorUsing(e.target, viewClassName, config);
+		}
+		
+		/**
+		 * @private
+		 */		
+		protected function createMediatorUsing(viewComponent:Object, viewClassName:String = '', config:MappingConfig = null):IMediator
+		{
+			var mediator:IMediator = mediatorByView[viewComponent];
+			if (mediator == null)
+			{
+				viewClassName ||= getQualifiedClassName(viewComponent);
+				config ||= mappingConfigByViewClassName[viewClassName];
+				if (config)
+				{
+					for each (var claxx:Class in config.typedViewClasses) 
+					{
+						injector.mapValue(claxx, viewComponent);
+					}
+					mediator = injector.instantiate(config.mediatorClass);
+					for each (var clazz:Class in config.typedViewClasses) 
+					{
+						injector.unmap(clazz);
+					}
+					registerMediator(viewComponent, mediator);
+				}
+			}
+			return mediator;			
+		}		
+		
+		/**
+		 * Flex framework work-around part #5
+		 */
+		protected function onViewRemoved(e:Event):void
+		{
+			var config:MappingConfig = mappingConfigByView[e.target];
+			if (config && config.autoRemove)
+			{
+				mediatorsMarkedForRemoval[e.target] = e.target;
+				if (!hasMediatorsMarkedForRemoval)
+				{
+					hasMediatorsMarkedForRemoval = true;
+					enterFrameDispatcher.addEventListener(Event.ENTER_FRAME, removeMediatorLater);
+				}
+			}
+		}
+		
+		/**
+		 * Flex framework work-around part #6
+		 */
+		protected function removeMediatorLater(event:Event):void
+		{
+			enterFrameDispatcher.removeEventListener(Event.ENTER_FRAME, removeMediatorLater);
+			for each (var view:DisplayObject in mediatorsMarkedForRemoval)
+			{
+				if (!view.stage)
+					removeMediatorByView(view);
+				delete mediatorsMarkedForRemoval[view];
+			}
+			hasMediatorsMarkedForRemoval = false;
+		}
+	}
 }
 
 class MappingConfig
 {
-    
-   
-   public var mediatorClass:Class;
-   
-   public var typedViewClasses:Array;
-   
-   public var autoCreate:Boolean;
-   
-   public var autoRemove:Boolean;
-   
-   function MappingConfig()
-   {
-      super();
-   }
+	public var mediatorClass:Class;
+	public var typedViewClasses:Array;
+	public var autoCreate:Boolean;
+	public var autoRemove:Boolean;
 }

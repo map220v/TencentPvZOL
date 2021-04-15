@@ -84,22 +84,28 @@ package com.qq.sound
       
       private function addSoundCounter(param1:String) : void
       {
-         if(this._soundCounter[param1] == null)
+         if (this._soundCounter[param1] == null)
          {
             this._soundCounter[param1] = 0;
          }
-         //++this._soundCounter[param1];
+         var _loc_2:Dictionary = this._soundCounter;
+         var _loc_3:String = param1;
+         var _loc_4:int = _loc_2[param1] + 1;
+         _loc_2[_loc_3] = _loc_4;
       }
       
       public function removeSoundCounter(param1:String) : void
       {
-         if(this._soundCounter[param1] == null)
+         if (this._soundCounter[param1] == null)
          {
             this._soundCounter[param1] = 0;
          }
-         if(this._soundCounter[param1] > 0)
+         if (this._soundCounter[param1] > 0)
          {
-            //--this._soundCounter[param1];
+            var _loc_2:Dictionary = this._soundCounter;
+            var _loc_3:String = param1;
+            var _loc_4:int = _loc_2[param1] - 1;
+            _loc_2[_loc_3] = _loc_4;
          }
       }
       
