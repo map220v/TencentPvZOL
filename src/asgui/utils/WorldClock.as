@@ -128,7 +128,8 @@ package asgui.utils
          }
          if(param1 < 0)
          {
-            param1 = (_loc5_ = getTimer() * 0.001) - this._time;
+            _loc5_ = getTimer() * 0.001
+            param1 = _loc5_ - this._time;
             this._time = _loc5_;
          }
          param1 *= this._timeScale;
@@ -141,7 +142,8 @@ package asgui.utils
          var _loc4_:int = 0;
          while(_loc4_ < _loc2_)
          {
-            if(_loc6_ = this.animatableList[_loc4_])
+            _loc6_ = this.animatableList[_loc4_]
+            if(_loc6_)
             {
                if(_loc3_ != _loc4_)
                {
@@ -158,8 +160,7 @@ package asgui.utils
             _loc2_ = this.animatableList.length;
             while(_loc4_ < _loc2_)
             {
-               var _loc7_:*;
-               this.animatableList[_loc7_ = _loc3_++] = this.animatableList[_loc4_++];
+               this.animatableList[++_loc3_] = this.animatableList[_loc4_++];
             }
             this.animatableList.length = _loc3_;
          }

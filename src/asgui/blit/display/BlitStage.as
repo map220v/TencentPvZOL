@@ -182,7 +182,8 @@ package asgui.blit.display
             else if(_loc3_ && _loc3_.isPlaying && _loc3_.totalFrames > 0)
             {
                _loc4_ = _loc3_.frameCount + _loc3_.frameRateScale;
-               if((_loc5_ = int(_loc4_) - int(_loc3_.frameCount)) > 1)
+               _loc5_ = int(_loc4_) - int(_loc3_.frameCount)
+               if(_loc5_ > 1)
                {
                   while(_loc5_ > _loc3_.totalFrames)
                   {

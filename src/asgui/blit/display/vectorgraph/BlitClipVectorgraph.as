@@ -178,14 +178,16 @@ package asgui.blit.display.vectorgraph
             }
             if(this.dataProvider.hasContent)
             {
-               if((_loc4_ = this.dataProvider.GetAtEventFrames()) != null && _loc4_.length > 0)
+               _loc4_ = this.dataProvider.GetAtEventFrames()
+               if(_loc4_ != null && _loc4_.length > 0)
                {
                   _loc2_ = 0;
                   while(_loc2_ < _loc4_.length)
                   {
                      if(_loc4_[_loc2_].frame == this.currentFrame || this.currentFrame > _loc4_[_loc2_].frame && this.lastFrame < _loc4_[_loc2_].frame)
                      {
-                        (_loc5_ = new FrameEvent(FrameEvent.MOVEMENT_FRAME_EVENT)).frameLabel = _loc4_[_loc2_].name.replace("@","");
+                        _loc5_ = new FrameEvent(FrameEvent.MOVEMENT_FRAME_EVENT)
+                        _loc5_.frameLabel = _loc4_[_loc2_].name.replace("@","");
                         this.dispatchEvent(_loc5_);
                      }
                      _loc2_++;

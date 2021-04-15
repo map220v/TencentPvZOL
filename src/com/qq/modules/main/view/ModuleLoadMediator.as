@@ -84,7 +84,7 @@ package com.qq.modules.main.view
             return;
          }
          this._isRunning = true;
-         getLogger("Load").info("开始模块加载");
+         getLogger("Load").info("Module Loading Started");
          UtilsManager.bringToTop(this.view);
          this.setProgress(0);
          this.view.addEventListener(Event.ENTER_FRAME,this.onProgressLoad);

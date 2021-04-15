@@ -9,7 +9,7 @@ package com.qq.modules.td.logic.log.data
       public function TDLog_StartData()
       {
          super();
-         _formatStr = "{0}游戏开始数据，战力:{1},阳光：{2},叶子:{3},地图产生的叶子总数:{4}";
+         _formatStr = "{0}Game start data，Combat power:{1},Sun：{2},Plant Food:{3},Total amount of plant food produced by map:{4}";
       }
       
       override public function toString(param1:Array) : String

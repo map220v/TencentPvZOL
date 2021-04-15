@@ -222,7 +222,7 @@ package com.qq.modules.td.logic.process
          }
          else
          {
-            getLogger("TD").info(TDGameInfo.getInstance().getCurGameTime() + ":出现单位" + param1.enemyInfo.type);
+            getLogger("TD").info(TDGameInfo.getInstance().getCurGameTime() + ":Spawning unit " + param1.enemyInfo.type);
             ++this._curEnemyIndex;
             if(param1.enemyInfo.hasWind)
             {

@@ -1,4 +1,178 @@
-xœíYMoE>;RþÃ°—¶R\®c'¶+Ú¨"© Ü¦Þ3b?,ï:ŽoT¤¸¦RIÕRA–R*¤Z*Ð*òg2ëä”¿À;³v¼ˆÙîNê6BÔ§ÙÙçy?žyçÝÙuùÒ†i u½éÛª(™‹iéVÍÖˆU¯(×V®&‹Ê¥êìLù½d’~õœv·ö·½›ÏÐÂìL‚hþÜò\™¸±¼´@èÑÝí½€I›úD¿ëw³3É$³gèëºˆVQÀ#§‚w2BEñîti÷®÷ä©·û“ðDÙqq]wØp4æÜŒ‚\ÂîÀÐîÔp³¢”òi°¤éN­¢ø¾½^ïp  :X_é4tæµÊr"Ú8ƒ9†¢ç˜åÃí'Ãþ®÷à÷£¿ïÝ7Ã‡ÒþÏÇ{ßZ¤¾æÒþcïá£ã½;<«G,â"§bªDÍ&Ö2ÌT”|vtù!Þ`©ÂÕjK7ü›£hê¶¡ÑÛ?ÒoŽ6ïÑ—7½ïs&Þø áOny´Ù;ñÔª£v±aÃºå@že±Àü4í6—ªf-+((›—ðÔhÞ¼ˆW”áåNÉËKñJ"^Œü&<U¨gj²(~å+‡jÂ¿é¶ë «e2ö˜À'« _ÃpNî¯b‚it[[P4¯m¼{¼ðT¾;°iø1?<ÝÒÍÎ8ß•Iû)aåÉ,–SÌJõµ­BkØ¹
-EÎª/ÜrŽ[F¸æ^ÖWí¦¾äO²f·WHãŠ©]t`ø1KúS ÁÜùs‡ûO½­gÃ{ŒL»Ïéàkº¹;¼;€yðÇÖÁÞ#Úû…ÞïÓþlºõÂÜ§·~£ƒ—ç.pWï¯ºzsäieéÚòØÍGzûsÛ¼A¸XîJU&g?Ï(øAg'è\qÏÿKÐ¸ŽT)t.=/k:9Ë…RzK¡¨…hã¥ q©4%²TU Ž±ðjd‚ó"pñ"cZV_Õ+ÔÐ.¬Î«6/³jBpŒm’IËì]!1lKâ"Ë@X¤1ê.¹†Ù´hoÉö§Óv¶0´8ª01ƒuXlˆÅìbn1¿ƒ–‰MŠûFH§
-/ œì¬4a_“ðŸá)ºNå5¨¥„,oo±ßT…¼º#â\&uv,czW‘Ô±‰ƒ*ˆ;s:¤5‡ C:›Œm¹Häl‡jòh˜Š&S@Ëiwq‚.Ä8TO<q€9xôq´(^ú)<æÕ`ŽÑ’…aÇ825‘:aNE’ªý:
-ž4+þí¿óF)þÕˆKJ|LbWmÜ\%º¡!˜mº×™Éû¦]gUCŸÏœøÏ„5)ÀÀ8«¦Ç/ó.1ôQŒõ&v%õ?¹á+Ì$Š#Vâì>Ëñ…:óPÿ#:½+(&Ôx¾«©8R%ø“`Üüù“ƒÿ'QýÀ{U
+<?xml version="1.0" encoding="UTF-8"?>
+<!--å…³å¡ä¿¡æ¯ :
+	id:å…³å¡ID
+	mapID:åœ°å›¾åºå·
+	name:å…³å¡åç§°
+-->
+<level id="0" mapID="10" name="æ‰åŽæ¨ªæº¢">
+	<stages>
+		<stage id="1" time="day" toycar="9400" desc="å…³å¡æè¿°" gameType="0"><!--idå…³å¡ID,descå…³å¡æè¿°,timeè¡¨ç¤ºæ—¶é—´ï¼ˆdayç™½å¤©ï¼Œnightå¤œæ™šï¼‰-->
+			<init sun="50" coinInit="420" coinMax="100" fuelInit="0"><!--goldåˆå§‹é‡‘å¸æ•°,maxHpåˆå§‹è¡€é‡-->
+			<units>
+			<unit catalog="3" type="8600" row="1" column="6" />
+			<unit catalog="3" type="8600" row="2" column="5" />
+			<unit catalog="3" type="8700" row="2" column="8" />
+			<unit catalog="3" type="8700" row="3" column="8" />
+			<unit catalog="3" type="8700" row="4" column="8" />
+			<unit catalog="3" type="8900" row="4" column="5" />
+			<unit catalog="3" type="8900" row="5" column="6" />
+			</units>
+		    </init>	
+			<slots num="5">
+			</slots>  
+			<skills>
+			</skills>
+			<limits banplant="" />
+			<waves>	
+<wave delay="20000">
+    <enemy type="810" delay="1000" road="3"/>
+</wave>
+<wave delay="20000">
+    <enemy type="810" delay="1000" road="5" hasFuel="1"/>
+</wave>
+<wave delay="30000" actBeforeDelay="ShowTipCmd.showPlantWaveTip('è¿ªæ–¯ç§‘3000å³å°†å‡ºçŽ°ï¼Œä»–ä¼šå¬å”¤å¤§é‡å–·æ°”åƒµå°¸')" actAfterDelay="TDUICmd.showNewZombieTip(890)">>
+    <enemy type="810" delay="1000" road="1"/>
+    <enemy type="810" delay="100" road="2"/>
+    <enemy type="820" delay="3800" road="4" hasFuel="1"/>
+    <enemy type="810" delay="100" road="5"/>
+    <enemy type="810" delay="100" road="3"/>
+    <enemy type="870" delay="3800" road="1"/>
+    <enemy type="810" delay="100" road="2"/>
+    <enemy type="810" delay="100" road="3"/>
+    <enemy type="890" delay="3800" road="1"/>
+    <enemy type="810" delay="100" road="2"/>
+    <enemy type="810" delay="5600" road="1"/>
+    <enemy type="890" delay="10" road="2"/>
+    <enemy type="810" delay="10" road="3"/>
+    <enemy type="890" delay="50" road="4"/>
+    <enemy type="890" delay="50" road="5"/>
+    <enemy type="810" delay="50" road="1"/>
+    <enemy type="870" delay="50" road="2"/>
+    <enemy type="810" delay="50" road="4"/>
+    <enemy type="870" delay="50" road="5"/>
+</wave>
+<wave delay="35000">
+    <enemy type="870" delay="3600" road="1"/>
+    <enemy type="870" delay="10" road="2"/>
+    <enemy type="870" delay="10" road="3"/>
+    <enemy type="870" delay="10" road="4" hasFuel="1"/>
+    <enemy type="870" delay="10" road="5"/>
+    <enemy type="890" delay="5600" road="2"/>
+    <enemy type="890" delay="10" road="3"/>
+    <enemy type="890" delay="10" road="4"/>
+    <enemy type="820" delay="100" road="1"/>
+    <enemy type="810" delay="100" road="5" hasFuel="1"/>
+    <enemy type="810" delay="100" road="1"/>
+    <enemy type="820" delay="100" road="5"/>
+    <enemy type="870" delay="5650" road="1;2;3;4;5"/>
+    <enemy type="870" delay="10" road="1;2;3;4;5"/>
+    <enemy type="890" delay="10" road="1;2;3;4;5"/>
+    <enemy type="890" delay="10" road="1;2;3;4;5"/>
+    <enemy type="870" delay="10" road="1;2;3;4;5"/>
+    <enemy type="820" delay="5800" road="1;2;3;4;5"/>
+    <enemy type="810" delay="10" road="1;2;3;4;5"/>
+    <enemy type="820" delay="10" road="1;2;3;4;5"/>
+    <enemy type="810" delay="10" road="1;2;3;4;5" hasFuel="1"/>
+    <enemy type="820" delay="10" road="1;2;3;4;5"/>
+    <enemy type="870" delay="1800" road="1;2;3;4;5"/>
+    <enemy type="890" delay="10" road="1;2;3;4;5"/>
+    <enemy type="890" delay="10" road="1;2;3;4;5"/>
+    <enemy type="890" delay="10" road="1;2;3;4;5"/>
+    <enemy type="870" delay="10" road="1;2;3;4;5"/>
+
+</wave>
+<wave delay="35000" isBigWave="1"> 
+    <enemy type="870" delay="3800" road="1" />
+    <enemy type="860" delay="10" road="2" />
+    <enemy type="870" delay="10" road="3" />
+    <enemy type="890" delay="10" road="4" />
+    <enemy type="870" delay="10" road="2" />
+    <enemy type="870" delay="10" road="4" />
+    <enemy type="870" delay="10" road="1" />
+    <enemy type="870" delay="10" road="5" />
+    <enemy type="870" delay="10" road="3" />
+    <enemy type="870" delay="10" road="3" />
+    <enemy type="870" delay="10" road="2" />
+    <enemy type="870" delay="10" road="5" />
+    <enemy type="880" delay="6000" road="1"/>
+    <enemy type="890" delay="50" road="2"/>
+    <enemy type="890" delay="1650" road="2"/>
+    <enemy type="890" delay="100" road="3"/>
+    <enemy type="880" delay="10" road="4"/>
+    <enemy type="870" delay="10" road="5"/>
+    <enemy type="850" delay="5000" road="1"/>
+    <enemy type="880" delay="100" road="4"/>
+    <enemy type="890" delay="1650" road="4"/>
+    <enemy type="890" delay="50" road="3"/>
+    <enemy type="880" delay="10" road="4"/>
+    <enemy type="890" delay="1000" road="4"/>
+    <enemy type="870" delay="10" road="5"/>
+</wave>
+			</waves>
+		</stage>
+	</stages>
+
+	<warfield startY="109" endY="609" >
+		<road startX="1060" endX="250">
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			
+		</road>
+		<road startX="1060" endX="250">	
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>
+		<road startX="1060" endX="250">
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>
+		<road startX="1060" endX="250">	
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>			
+		<road startX="1060" endX="250">
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>				
+	</warfield>
+</level>

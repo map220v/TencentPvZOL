@@ -26,8 +26,8 @@ package
    import flash.utils.ByteArray;
    import flash.utils.Timer;
 
-   //[SWF(width="1440", height="900", backgroundColor="0", frameRate="30")]
-   [SWF(width="960", height="640", backgroundColor="0", frameRate="30")] //For ModuleTD
+   [SWF(width="1440", height="900", backgroundColor="0", frameRate="30")]
+   //[SWF(width="960", height="640", backgroundColor="0", frameRate="30")] //For ModuleTD
    public class GameLoader extends Sprite implements IGameLoader
    {
       

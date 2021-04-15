@@ -49,7 +49,7 @@ package com.qq.modules.guide.view
          }
          if(param1)
          {
-            getLogger().info("引导::step:" + param1.name);
+            getLogger().info("Guide::step:" + param1.name);
             if(param1.nextEventType != null)
             {
                if(param1.nextEventTarget != null)
@@ -72,7 +72,7 @@ package com.qq.modules.guide.view
             }
             return;
          }
-         getLogger().info("引导::退出");
+         getLogger().info("Guide::Exit");
          GuideCmd.exitGuide();
          if(view)
          {

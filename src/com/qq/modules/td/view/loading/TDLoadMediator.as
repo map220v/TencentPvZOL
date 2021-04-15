@@ -159,7 +159,7 @@ package com.qq.modules.td.view.loading
       private function onFinishloadXml(param1:Event) : void
       {
          (param1.currentTarget as IEventDispatcher).removeEventListener(Event.COMPLETE,this.onFinishloadXml);
-         this.xmlLoadOk(param1.currentTarget as LoaderCollection,false);
+         this.xmlLoadOk(param1.currentTarget as LoaderCollection,true);
       }
       
       private function xmlLoadOk(param1:LoaderCollection, param2:Boolean) : void

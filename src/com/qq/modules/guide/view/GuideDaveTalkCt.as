@@ -48,7 +48,7 @@ package com.qq.modules.guide.view
          this.objChild = [null,0];
          this.obj = param1;
          this.id = "guide_" + ++idCounter;
-         getLogger().info("引导::开始:" + param1.title);
+         getLogger().info("Guide::Begin:" + param1.title);
          super(param2);
       }
       

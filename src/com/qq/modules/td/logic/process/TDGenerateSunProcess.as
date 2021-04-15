@@ -93,7 +93,7 @@ package com.qq.modules.td.logic.process
       private function getNextGenerateDelay() : int
       {
          var _loc1_:int = (Math.min(this._param950.get(),this._param425.get() + this.generatedSunNum * this._param10.get()) + DMath.randNum(0,this._param275.get())) * this._param10.get();
-         getLogger("TD").debug("下次产生阳光时间" + time + _loc1_);
+         getLogger("TD").debug("Next sun spawned time:" + time + _loc1_);
          return _loc1_;
       }
       

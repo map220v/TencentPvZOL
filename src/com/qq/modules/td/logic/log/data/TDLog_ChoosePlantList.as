@@ -11,7 +11,7 @@ package com.qq.modules.td.logic.log.data
       public function TDLog_ChoosePlantList()
       {
          super();
-         _formatStr = "{0}:玩家选择了植物：{1}";
+         _formatStr = "{0}:Player choose plants：{1}";
       }
       
       override public function toString(param1:Array) : String

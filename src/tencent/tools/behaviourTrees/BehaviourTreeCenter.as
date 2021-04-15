@@ -102,7 +102,7 @@ package tencent.tools.behaviourTrees
          var _loc2_:BaseNode = this.AITreeDic[param1];
          if(_loc2_)
          {
-            getLogger().debug("移除AI: " + param1);
+            getLogger().debug("Removing AI: " + param1);
             _loc2_.dispose();
             this.AITreeDic[param1] = null;
             delete this.AITreeDic[param1];
