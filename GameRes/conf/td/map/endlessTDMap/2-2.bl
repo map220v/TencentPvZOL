@@ -1,5 +1,93 @@
-xœíVÍnÓ@>;RÞaÙsƒëþ	¢Ø½Tˆ¸	ŽK¼5+Öv;mr£ÔV4¨*”CP¥.Dª
-}ÖiN}fví¶=TŠø4?ßÌ|3;«um¾J²Â›‰ˆ#—:×')áQ=öE¸ôîÒ­Ê:ï•Kµk•ŠzòQuû?ŽûÙÚR-—,áWmq´5ªjw ^W‡=ÕûÆˆ…<©çÝáþ \ªT0Ÿä+\á»*êP—NQ‚x—f›]Õ}–¼ÏßR@[µ$eOPÌeêP’
-ðYÄ¸SgM°ÎLBNŸ'u—šÒY¯wr< $€ìKÇ¢¶$ü¢	Ä_DO`æ“þÁpï0Ûþ<Úþtz´e†;ßÔÞ»Ó£­HSµ·›í¼:=ÚÔMY@ND"%If9$ê±ˆÁâÒ™©\½ÃÚ@.·¸4NÇ°	bé«7jÿéhý…úº–½L„¬}»aŒ'ýÇ£õ^Q‰ÀWkAxâYV¹D~ùj¶ñ!¶° 7Ï2Ã6‘qš¨]´±ÚÚì	)¯ð]Ô¤¡yÀ¢†dtB‰»VÙ
-˜u®À‰HÖÁ¹@ó¸<âa‡¤ú<G™8 Í˜ùz%ìß°ÓÆNçX«t½7¶^½NöÙ>¡¶ÊšË‚KŸ€µ™ÞÇ¬7ñø Î¡hâ±ŠÜCÈœ¾*>ÈS³º!¬—
-ÉsšA“%	µÿ‡™0Žè2Ã²ÆOxœŽËjìTÿ’9ý_(TqÇ½Säª=ycW[ê|h–~Šg@¿!úÿÄû	M×³ö
+<?xml version="1.0" encoding="UTF-8"?>
+<!--å…³å¡ä¿¡æ¯ :
+	id:å…³å¡ID
+	mapID:åœ°å›¾åºå·
+	name:å…³å¡åç§°
+-->
+<level id="0" mapID="2" name="æ‰åŽæ¨ªæº¢">
+	<stages>
+		<stage id="1" time="day" toycar="1400" desc="å…³å¡æè¿°" gameType="0"><!--idå…³å¡ID,descå…³å¡æè¿°,timeè¡¨ç¤ºæ—¶é—´ï¼ˆdayç™½å¤©ï¼Œnightå¤œæ™šï¼‰-->
+			<init sun="50" coinInit="420" coinMax="100" fuelInit="1"><!--goldåˆå§‹é‡‘å¸æ•°,maxHpåˆå§‹è¡€é‡-->
+			    <units>		
+                </units>
+		      </init>	
+		  
+			<slots num="5">
+
+			</slots>  
+			<skills>
+			</skills>
+			<limits banplant="" />
+			<waves>	
+			<wave delay="5000">
+<enemy type="110" delay="1000" road="2" />
+<enemy type="130" delay="1000" road="3" />
+</wave>
+			</waves>
+		</stage>
+	</stages>
+
+	<warfield startY="109" endY="609" >
+		<road startX="1060" endX="250">
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			
+		</road>
+		<road startX="1060" endX="250">	
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>
+		<road startX="1060" endX="250">
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>
+		<road startX="1060" endX="250">	
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+		</road>			
+		<road startX="1060" endX="250">
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass"/>
+			<tile type="grass" />
+			<tile type="grass" />
+			<tile type="grass" />
+			<tile type="grass" />			
+			<tile type="grass" />
+			<tile type="grass" />
+			<tile type="grass" />
+		</road>				
+	</warfield>
+</level>
