@@ -9,7 +9,7 @@ package com.qq.modules.td.logic.log.data
       public function TDLog_ChangeSun()
       {
          super();
-         _formatStr = "{0}Sun used: {1}{2}, Current sun amount:{3}";
+         _formatStr = "{0}Sun {1}{2}, Current sun amount:{3}";
       }
       
       override public function toString(param1:Array) : String

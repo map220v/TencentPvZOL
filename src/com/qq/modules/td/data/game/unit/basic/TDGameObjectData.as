@@ -258,7 +258,8 @@ package com.qq.modules.td.data.game.unit.basic
             switch(this.unitCatalog)
             {
                case TDConstant.UnitCatalog_Zombie:
-                  if((_loc5_ = this.staticInfo as TDZombieStaticInfo) == null)
+                  _loc5_ = this.staticInfo as TDZombieStaticInfo
+                  if(_loc5_ == null)
                   {
                      break;
                   }
@@ -266,16 +267,18 @@ package com.qq.modules.td.data.game.unit.basic
                   {
                      return;
                   }
-                  if((_loc4_ = TDGameInfo.getInstance().getGameObjctByUID(this.uid)) && _loc4_.getActionID() == TDConstant.ZAction_Wolf_Knight_Swoop)
-                  {
-                     return;
-                  }
-                  this.buffList.push(_loc3_);
-                  _loc3_.onAddedBuffEffect();
-                  if(this.groupId && this.groupId != "")
-                  {
-                     (_loc6_ = GroupManager.getInstance().getGroupFromID(this.groupId) as CamelGroup).addBuff(param1);
-                  }
+            }
+            _loc4_ = TDGameInfo.getInstance().getGameObjctByUID(this.uid)
+            if (_loc4_ && _loc4_.getActionID() == TDConstant.ZAction_Wolf_Knight_Swoop)
+            {
+               return;
+            }
+            this.buffList.push(_loc3_);
+            _loc3_.onAddedBuffEffect();
+            if(this.groupId && this.groupId != "")
+            {
+               _loc6_ = GroupManager.getInstance().getGroupFromID(this.groupId) as CamelGroup
+               _loc6_.addBuff(param1);
             }
          }
          else if((_loc7_ = this.getBuffByID(param1)) != null)
