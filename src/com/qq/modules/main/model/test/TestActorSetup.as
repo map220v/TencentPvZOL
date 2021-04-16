@@ -56,7 +56,7 @@ public class TestActorSetup {
         testMessage.zoneId = 1;
         testMessage.coin = 1000;
         testMessage.exp = 0;
-        testMessage.level = 1;
+        testMessage.level = 80;
         testMessage.name = "TestPlayer";
         testMessage.sun  = 20;
         testMessage.lucky = 1;
@@ -68,7 +68,7 @@ public class TestActorSetup {
         testMessage.prestige = 0;
 
         var latestTDLevelTest:Dto_TDLevelInfo = new Dto_TDLevelInfo();
-        latestTDLevelTest.stageId = 0;
+        latestTDLevelTest.stageId = 5;
         latestTDLevelTest.levelId = 0;
         latestTDLevelTest.subLevelId = 0;
         testMessage.latestTDLevel = latestTDLevelTest;
@@ -77,9 +77,9 @@ public class TestActorSetup {
         testMessage.friendPoint = 10;
 
         var faceAvatarTest:Dto_PlantInfo = new Dto_PlantInfo();
-        faceAvatarTest.plantId = 1;
+        faceAvatarTest.plantId = 1200;
         faceAvatarTest.isNew = true;
-        faceAvatarTest.avatarId = 1;
+        faceAvatarTest.avatarId = 0;
         faceAvatarTest.strengthLevel = 200;
         testMessage.faceAvatar = faceAvatarTest;
 
@@ -87,9 +87,9 @@ public class TestActorSetup {
         testMessage.qqFaceURL = "";
 
         var unlockPeashooter:Dto_PlantInfo = new Dto_PlantInfo();
-        unlockPeashooter.plantId = 1;
+        unlockPeashooter.plantId = 1200;
         unlockPeashooter.isNew = true;
-        unlockPeashooter.avatarId = 1;
+        unlockPeashooter.avatarId = 0;
         unlockPeashooter.strengthLevel = 200;
         testMessage.unlockPlantList = [ unlockPeashooter ];
 

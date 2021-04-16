@@ -150,10 +150,11 @@ package asgui.blit.display.vectorgraph
          }
          this._isPlaying = false;
       }
-      
+
+      //Causes lag temporary disabled
       public function AdvanceTime(param1:Number) : void
       {
-         var _loc2_:int = 0;
+         /*var _loc2_:int = 0;
          var _loc4_:Vector.<FrameLabel> = null;
          var _loc5_:FrameEvent = null;
          if(this.root == null && SystemManager.instance == null)
@@ -204,7 +205,7 @@ package asgui.blit.display.vectorgraph
                this.dispatchEvent(new Event(Event.COMPLETE));
             }
          }
-         this.Render();
+         this.Render();*/
       }
       
       public function Render() : void

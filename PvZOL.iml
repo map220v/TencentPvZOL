@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="PvZOL">
+  <component name="FlexBuildConfigurationManager" active="PvZOL (TD Only)">
     <configurations>
-      <configuration name="PvZOL" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+      <configuration name="PvZOL (TD Only)" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
         <dependencies target-player="11.1">
           <entries>
-            <entry module-name="PvZOL" build-configuration-name="Game">
+            <entry module-name="PvZOL" build-configuration-name="Game (TD Only)">
               <dependency linkage="Loaded" />
             </entry>
           </entries>
@@ -16,12 +16,9 @@
         <packaging-android />
         <packaging-ios />
       </configuration>
-      <configuration name="Game" pure-as="true" output-type="RuntimeLoadedModule" main-class="Main" output-file="Game.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+      <configuration name="Game (TD Only)" pure-as="true" output-type="RuntimeLoadedModule" main-class="Main" output-file="Game.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
         <dependencies target-player="11.1">
           <entries>
-            <entry module-name="PvZOL" build-configuration-name="ModuleLS">
-              <dependency linkage="Loaded" />
-            </entry>
             <entry module-name="PvZOL" build-configuration-name="ModuleTD">
               <dependency linkage="Loaded" />
             </entry>
@@ -44,6 +41,61 @@
       </configuration>
       <configuration name="ModuleTD" pure-as="true" output-type="RuntimeLoadedModule" main-class="ModuleTD" output-file="ModuleTD.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
         <dependencies target-player="11.1">
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="ModuleCity" pure-as="true" output-type="RuntimeLoadedModule" main-class="ModuleCity" output-file="ModuleCity.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="ModuleRoleInfo" pure-as="true" output-type="RuntimeLoadedModule" main-class="ModuleRoleInfo" output-file="ModuleRoleInfo.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="PvZOL" pure-as="true" main-class="GameLoader" output-file="loader.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry module-name="PvZOL" build-configuration-name="Game">
+              <dependency linkage="Loaded" />
+            </entry>
+          </entries>
+          <sdk name="flex_sdk_4.6.0.23201B" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+      <configuration name="Game" pure-as="true" output-type="RuntimeLoadedModule" main-class="Main" output-file="Game.swf" output-folder="$MODULE_DIR$/out/production/PvZOL">
+        <dependencies target-player="11.1">
+          <entries>
+            <entry module-name="PvZOL" build-configuration-name="ModuleCity">
+              <dependency linkage="Loaded" />
+            </entry>
+            <entry module-name="PvZOL" build-configuration-name="ModuleLS">
+              <dependency linkage="Loaded" />
+            </entry>
+            <entry module-name="PvZOL" build-configuration-name="ModuleRoleInfo">
+              <dependency linkage="Loaded" />
+            </entry>
+            <entry module-name="PvZOL" build-configuration-name="ModuleTD">
+              <dependency linkage="Loaded" />
+            </entry>
+          </entries>
           <sdk name="flex_sdk_4.6.0.23201B" />
         </dependencies>
         <compiler-options />

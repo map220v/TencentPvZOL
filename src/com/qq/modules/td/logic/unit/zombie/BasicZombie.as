@@ -98,7 +98,8 @@ package com.qq.modules.td.logic.unit.zombie
             {
                if(param3 != TDConstant.AttackMode_ZombieAttack)
                {
-                  TDEffectCmd.playArmorResistEffect(this);
+                  //Disabled temporary. Requires "asgui.blit.display.vectorgraph.BlitClipVectorgraph.AdvanceTime" to work properly
+                  //TDEffectCmd.playArmorResistEffect(this);
                }
                _loc9_ = true;
             }
